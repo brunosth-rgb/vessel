@@ -1,0 +1,2809 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Torre de Controle | Navio | JBS Terminais</title>
+<style>
+:root{
+  --blue:#0E4A86;
+  --blue-dark:#093666;
+  --blue-soft:#EAF2FB;
+  --blue-border:#C9DBEE;
+  --green:#39C15A;
+  --yellow:#F1C40F;
+  --orange:#F28C28;
+  --red:#E74C3C;
+  --text:#16345B;
+  --muted:#6480A6;
+  --bg:#EDF4FB;
+  --card:#FFFFFF;
+  --line:#D7E3F0;
+  --shadow:0 6px 16px rgba(5,47,98,.08);
+}
+*{box-sizing:border-box}
+html,body{
+  margin:0;
+  width:100%;
+  height:100%;
+  overflow:hidden;
+  background:var(--bg);
+  font-family:Inter, "Segoe UI", Arial, sans-serif;
+  color:var(--text);
+}
+body{min-width:1220px}
+.screen{
+  width:100vw;
+  height:100vh;
+  padding:1.0vh .85vw;
+  display:grid;
+  grid-template-rows:7.5vh 9vh 37vh 42vh;
+  gap:.65vh;
+}
+.card{
+  background:var(--card);
+  border:1px solid var(--blue-border);
+  border-radius:12px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+.app-header{
+  display:flex;
+  align-items:center;
+  gap:1.15vw;
+  min-width:0;
+  padding:.55vh .85vw;
+  border-radius:14px;
+  background:#1B2478;
+  box-shadow:var(--shadow);
+  color:#fff;
+}
+.app-header-logo{
+  height:5.85vh;
+  width:10.8vw;
+  min-width:150px;
+  object-fit:contain;
+  display:block;
+  background:transparent;
+  border-radius:0;
+  padding:0;
+}
+.app-header-divider{
+  width:1px;
+  height:4.4vh;
+  background:rgba(255,255,255,.34);
+  flex:0 0 auto;
+}
+.app-header h1{
+  margin:0;
+  font-size:2.65vh;
+  line-height:1;
+  letter-spacing:.015em;
+  font-weight:800;
+  color:#fff;
+}
+.app-header-info{
+  margin-left:auto;
+  display:grid;
+  grid-template-columns:repeat(3,auto);
+  align-items:center;
+  min-width:0;
+}
+.header-info-item{
+  min-width:7.4vw;
+  padding:0 .9vw;
+  border-left:1px solid rgba(255,255,255,.25);
+}
+.header-info-item span{
+  display:block;
+  font-size:.88vh;
+  line-height:1.1;
+  color:#CFE0F3;
+  text-transform:uppercase;
+  letter-spacing:.055em;
+  font-weight:800;
+  white-space:nowrap;
+}
+.header-info-item strong{
+  display:block;
+  margin-top:.35vh;
+  font-size:1.55vh;
+  line-height:1;
+  color:#fff;
+  font-weight:900;
+  white-space:nowrap;
+}
+.header{
+  display:grid;
+  grid-template-columns:1fr auto;
+  align-items:center;
+  gap:1vw;
+  background:linear-gradient(90deg,#1B2478 0%, #232E8B 100%);
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  color:#fff;
+  padding:1.05vh 1.15vw;
+}
+.brand{
+  background:linear-gradient(135deg,var(--blue-dark),var(--blue));
+  color:#fff;
+  padding:1.2vh 1vw;
+  display:flex;
+  align-items:center;
+  gap:.9vw;
+}
+.brand-icon{
+  width:5vh;
+  height:5vh;
+  border:2px solid rgba(255,255,255,.9);
+  border-radius:10px;
+  display:grid;
+  place-items:center;
+  font-size:2.1vh;
+  font-weight:900;
+}
+.brand-text strong{
+  display:block;
+  font-size:1.9vh;
+  line-height:1.1;
+}
+.brand-text span{
+  display:block;
+  margin-top:.35vh;
+  font-size:1.10vh;
+  color:#D9E8F9;
+  line-height:1.25;
+}
+.header-main{
+  padding:1.25vh 1.1vw;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.header-main h1{
+  margin:0;
+  font-size:3.45vh;
+  letter-spacing:.02em;
+  color:var(--blue-dark);
+}
+.header-sub{
+  margin-top:.75vh;
+  font-size:1.36vh;
+  color:var(--text);
+  display:flex;
+  gap:1vw;
+  flex-wrap:wrap;
+  font-weight:600;
+}
+.header-side{
+  display:flex;
+  align-items:center;
+  justify-content:space-evenly;
+  padding:1vh .7vw;
+  color:var(--blue);
+}
+.side-pill{
+  text-align:center;
+  border-left:1px solid var(--line);
+  padding-left:.9vw;
+}
+.side-pill:first-child{
+  border-left:0;
+  padding-left:0;
+}
+.side-pill strong{
+  display:block;
+  font-size:1.12vh;
+  color:var(--muted);
+  text-transform:uppercase;
+  letter-spacing:.05em;
+}
+.side-pill span{
+  display:block;
+  margin-top:.4vh;
+  font-size:1.78vh;
+  font-weight:900;
+}
+
+.selector-row{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:.7vw;
+}
+.vessel-pill{
+  background:linear-gradient(180deg,#ffffff,#f8fbff);
+  border:1px solid var(--blue-border);
+  border-radius:12px;
+  box-shadow:var(--shadow);
+  padding:.82vh .68vw;
+  cursor:pointer;
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:.4vw;
+  align-items:center;
+}
+.vessel-pill.active{
+  border:2px solid var(--blue);
+}
+.vessel-name{
+  font-size:1.48vh;
+  font-weight:900;
+  color:var(--blue-dark);
+}
+.vessel-sub{
+  font-size:1.05vh;
+  color:var(--muted);
+  margin-top:.2vh;
+}
+.vessel-metrics{
+  display:flex;
+  gap:.8vw;
+  margin-top:.55vh;
+  font-size:.98vh;
+  color:var(--muted);
+}
+.vessel-metrics strong{
+  display:block;
+  font-size:1.34vh;
+  color:var(--text);
+}
+.status-tag{
+  align-self:start;
+  display:flex;
+  align-items:center;
+  gap:.35vw;
+  font-size:.94vh;
+  font-weight:800;
+  color:var(--muted);
+}
+.status-tag::before{
+  content:"";
+  width:.95vh;
+  height:.95vh;
+  border-radius:50%;
+  background:var(--green);
+}
+.status-tag.attention::before{background:var(--yellow)}
+.status-tag.critical::before{background:var(--red)}
+
+.gauge-row{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:.7vw;
+}
+
+.gauge-card{
+  padding:.95vh .75vw .72vh;
+  display:grid;
+  grid-template-rows:auto minmax(0,1fr) auto;
+  min-height:0;
+}
+.gauge-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:.5vw;
+}
+.gauge-title{
+  font-size:1.68vh;
+  font-weight:900;
+  color:var(--blue-dark);
+}
+.gauge-desc{
+  margin-top:.15vh;
+  font-size:1.1vh;
+  color:var(--muted);
+  font-weight:700;
+}
+.gauge-badge{
+  font-size:1.0vh;
+  font-weight:900;
+  color:var(--muted);
+  background:#F1F6FC;
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:.28vh .45vw;
+  white-space:nowrap;
+}
+.gauge{
+  position:relative;
+  width:22vh;
+  height:11.81vh;
+  overflow:hidden;
+  margin:0 auto .15vh;
+  flex:0 0 auto;
+}
+.gauge-visual{
+  min-height:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:.35vh 0 .15vh;
+}
+.gauge-arc{
+  position:absolute;
+  width:22vh;
+  height:22vh;
+  border-radius:50%;
+  background:
+    conic-gradient(
+      from 270deg,
+      var(--red) 0deg var(--red-end),
+      var(--yellow) var(--red-end) var(--target-angle),
+      var(--green) var(--target-angle) 180deg,
+      #E6EDF5 180deg 360deg
+    );
+}
+.gauge-hole{
+  position:absolute;
+  width:16.67vh;
+  height:16.67vh;
+  left:2.665vh;
+  top:2.665vh;
+  border-radius:50%;
+  background:var(--card);
+}
+.needle-wrap{
+  position:absolute;
+  width:22vh;
+  height:22vh;
+  left:0;
+  top:0;
+  transform:rotate(var(--needle-angle));
+  transform-origin:50% 50%;
+}
+.needle{
+  position:absolute;
+  width:8.28vh;
+  height:.35vh;
+  background:var(--blue-dark);
+  top:10.83vh;
+  left:2.72vh;
+  border-radius:4px;
+}
+.needle-dot{
+  position:absolute;
+  width:1.25vh;
+  height:1.25vh;
+  background:var(--blue-dark);
+  border-radius:50%;
+  top:10.37vh;
+  left:10.37vh;
+}
+.gauge-value{
+  text-align:center;
+  font-size:5.15vh;
+  font-weight:900;
+  line-height:.95;
+  color:var(--blue-dark);
+}
+.gauge-unit{
+  text-align:center;
+  font-size:1.05vh;
+  color:var(--muted);
+  margin-top:.28vh;
+  font-weight:700;
+}
+.gauge-foot{
+  margin-top:.75vh;
+  padding-top:.65vh;
+  border-top:1px solid #EAF0F6;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:1vw;
+  font-size:1.12vh;
+  color:var(--muted);
+  font-weight:800;
+}
+.gauge-foot strong{
+  color:var(--text);
+  font-size:1.18vh;
+  font-weight:900;
+}
+
+
+.operations-row{
+  display:grid;
+  grid-template-columns:minmax(0,2.15fr) minmax(330px,1fr);
+  gap:.7vw;
+  min-height:0;
+}
+.hourly-slot{
+  min-width:0;
+  min-height:0;
+  display:flex;
+}
+.hourly-slot > .panel{
+  width:100%;
+}
+.panel{
+  display:flex;
+  flex-direction:column;
+}
+.panel-head{
+  background:linear-gradient(180deg,var(--blue),var(--blue-dark));
+  color:#fff;
+  padding:.9vh .8vw;
+  display:flex;
+  align-items:center;
+  gap:.55vw;
+}
+.panel-head .title{
+  font-size:1.48vh;
+  font-weight:900;
+  letter-spacing:.03em;
+}
+.panel-body{
+  flex:1;
+  padding:.76vh .72vw;
+  min-height:0;
+}
+
+.summary-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:.55vw;
+  margin-bottom:.7vh;
+}
+.summary-card{
+  background:#F7FBFF;
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:.58vh .5vw;
+}
+.summary-card span{
+  display:block;
+  font-size:.79vh;
+  color:var(--muted);
+  text-transform:uppercase;
+  font-weight:800;
+}
+.summary-card strong{
+  display:block;
+  font-size:1.9vh;
+  color:var(--blue-dark);
+  margin-top:.2vh;
+}
+
+.hourly-body{
+  height:100%;
+  display:grid;
+  grid-template-rows:auto 1fr;
+}
+.body-note{
+  font-size:1.0vh;
+  color:var(--muted);
+  font-weight:700;
+}
+.chart{
+  display:flex;
+  align-items:flex-end;
+  gap:.45vw;
+  height:100%;
+  padding:.8vh 0 .2vh;
+}
+.bar-col{
+  flex:1;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  align-items:center;
+}
+.chart-bar{
+  width:68%;
+  min-width:14px;
+  border-radius:8px 8px 3px 3px;
+  background:linear-gradient(180deg,#52B8FF,var(--blue));
+  position:relative;
+}
+.chart-bar span{
+  position:absolute;
+  top:-1.45vh;
+  left:0;
+  right:0;
+  text-align:center;
+  font-size:.94vh;
+  font-weight:900;
+  color:var(--text);
+}
+.chart-hour{
+  margin-top:.35vh;
+  font-size:.82vh;
+  color:var(--muted);
+}
+
+.alerts{
+  display:grid;
+  gap:.6vh;
+}
+.alert{
+  display:grid;
+  grid-template-columns:1.15vh 1fr auto;
+  gap:.5vw;
+  align-items:center;
+  font-size:1.0vh;
+  padding:.45vh .1vw;
+  border-bottom:1px solid #EDF3F9;
+}
+.alert:last-child{border-bottom:0}
+.alert-dot{
+  width:1.15vh;
+  height:1.15vh;
+  border-radius:50%;
+  background:var(--green);
+}
+.alert.warn .alert-dot{background:var(--yellow)}
+.alert.critical .alert-dot{background:var(--red)}
+.alert b{
+  color:var(--blue-dark);
+  font-size:1.12vh;
+}
+
+.status-overview{
+  height:100%;
+  display:grid;
+  grid-template-columns:1fr;
+  align-content:center;
+  gap:.8vh;
+}
+.overview-box{
+  background:#F7FBFF;
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:.9vh .8vw;
+  text-align:center;
+}
+.overview-box span{
+  display:block;
+  font-size:.94vh;
+  color:var(--muted);
+  text-transform:uppercase;
+  font-weight:800;
+}
+.overview-box strong{
+  display:block;
+  font-size:3.35vh;
+  color:var(--blue-dark);
+  line-height:1.05;
+  margin-top:.4vh;
+}
+.overview-box small{
+  display:block;
+  margin-top:.35vh;
+  font-size:.98vh;
+  color:var(--text);
+  font-weight:700;
+}
+
+.table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:1.08vh;
+}
+.table th{
+  background:#EEF5FB;
+  color:#44688F;
+  text-align:left;
+  padding:.48vh .31vw;
+  font-size:.95vh;
+  font-weight:900;
+}
+.table td{
+  padding:.48vh .31vw;
+  border-bottom:1px solid #EAF0F6;
+}
+.badge{
+  display:inline-block;
+  padding:.18vh .4vw;
+  border-radius:999px;
+  font-size:.74vh;
+  font-weight:900;
+}
+.badge.ok{background:#DDF4E4;color:#228542}
+.badge.warn{background:#FFF6D8;color:#A27A00}
+.badge.critical{background:#FFE0DD;color:#B13B30}
+
+.timeline{
+  display:grid;
+  gap:.6vh;
+}
+.event{
+  display:grid;
+  grid-template-columns:3.3vw 1vh 1fr;
+  gap:.45vw;
+  align-items:center;
+  font-size:.98vh;
+}
+.event time{
+  font-weight:900;
+  color:var(--blue-dark);
+}
+.event-dot{
+  width:.75vh;
+  height:.75vh;
+  border-radius:50%;
+  background:var(--green);
+}
+.event span{
+  color:var(--text);
+}
+
+.period-grid{
+  display:grid;
+  grid-template-rows:auto auto 1fr;
+  gap:.8vh;
+  height:100%;
+}
+.period-top{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:.55vw;
+}
+.mini-card{
+  background:#F7FBFF;
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:.58vh .46vw;
+}
+.mini-card span{
+  display:block;
+  font-size:.79vh;
+  color:var(--muted);
+  text-transform:uppercase;
+  font-weight:800;
+}
+.mini-card strong{
+  display:block;
+  font-size:1.72vh;
+  color:var(--blue-dark);
+  margin-top:.15vh;
+}
+.progress-list{
+  display:grid;
+  gap:.75vh;
+}
+.progress-row{
+  display:grid;
+  grid-template-columns:4vw 1fr 2.2vw;
+  gap:.45vw;
+  align-items:center;
+  font-size:.91vh;
+  color:var(--text);
+}
+.track{
+  height:1.05vh;
+  background:#DDEAF6;
+  border-radius:999px;
+  overflow:hidden;
+}
+.track div{
+  height:100%;
+  background:linear-gradient(90deg,var(--green),#52B8FF);
+  border-radius:999px;
+}
+
+.hourly-ship{
+  display:flex;
+  flex-direction:column;
+}
+.hourly-ship .panel-body{
+  display:grid;
+  grid-template-rows:auto auto auto minmax(0,1fr);
+  padding:.76vh .72vw 1.35vh;
+}
+.hourly-top{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:.5vw;
+  align-items:start;
+  margin-bottom:.45vh;
+}
+.hourly-ship-name{
+  font-size:1.45vh;
+  font-weight:900;
+  color:var(--blue-dark);
+  line-height:1.15;
+}
+.hourly-ship-sub{
+  margin-top:.15vh;
+  font-size:1.0vh;
+  color:var(--muted);
+  font-weight:700;
+}
+.hourly-ship-status{
+  display:flex;
+  align-items:center;
+  gap:.32vw;
+  font-size:.94vh;
+  font-weight:900;
+  color:var(--muted);
+}
+.hourly-ship-status::before{
+  content:"";
+  width:.82vh;
+  height:.82vh;
+  border-radius:50%;
+  background:var(--green);
+}
+.hourly-ship-status.warn::before{background:var(--yellow)}
+.hourly-ship-status.critical::before{background:var(--red)}
+.hourly-mini{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:.4vw;
+  margin-bottom:.55vh;
+}
+.hourly-mini-card{
+  background:#F7FBFF;
+  border:1px solid var(--line);
+  border-radius:8px;
+  padding:.45vh .4vw;
+}
+.hourly-mini-card span{
+  display:block;
+  font-size:.82vh;
+  color:var(--muted);
+  text-transform:uppercase;
+  font-weight:800;
+}
+.hourly-mini-card strong{
+  display:block;
+  font-size:1.48vh;
+  color:var(--blue-dark);
+  margin-top:.12vh;
+}
+.chart.last6{
+  height:auto;
+  min-height:0;
+  padding:.75vh .45vw .8vh;
+  align-items:flex-end;
+}
+.chart.last6 .bar-col{
+  min-height:0;
+  padding-bottom:.35vh;
+}
+.chart.last6 .chart-bar{
+  width:48%;
+  min-width:34px;
+}
+.chart.last6 .chart-bar span{
+  font-size:1.08vh;
+  top:-1.65vh;
+}
+.chart.last6 .chart-hour{
+  font-size:1.02vh;
+  margin-top:.5vh;
+}
+.footer{
+  position:fixed;
+  right:1vw;
+  bottom:.25vh;
+  font-size:.74vh;
+  color:#6D87A8;
+  font-weight:700;
+}
+
+.header-import-btn{
+  flex:0 0 auto;
+  border:1px solid rgba(255,255,255,.36);
+  background:rgba(255,255,255,.10);
+  color:#fff;
+  border-radius:9px;
+  padding:.72vh .7vw;
+  font-size:.88vh;
+  font-weight:900;
+  letter-spacing:.035em;
+  text-transform:uppercase;
+  cursor:pointer;
+}
+.header-import-btn:hover{background:rgba(255,255,255,.17)}
+.header-import-btn.live{
+  background:rgba(145,215,0,.16);
+  border-color:rgba(195,230,105,.55);
+}
+
+.import-overlay{
+  position:fixed;
+  inset:0;
+  z-index:1000;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:3vh 3vw;
+  background:rgba(9,30,66,.56);
+  backdrop-filter:blur(4px);
+}
+.import-overlay.open{display:flex}
+.import-modal{
+  width:min(760px,70vw);
+  background:#fff;
+  border:1px solid var(--blue-border);
+  border-radius:16px;
+  box-shadow:0 22px 60px rgba(9,54,102,.28);
+  overflow:hidden;
+}
+.import-modal-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1vw;
+  padding:1.5vh 1.25vw;
+  color:#fff;
+  background:#1B2478;
+}
+.import-modal-head strong{
+  font-size:1.55vh;
+  letter-spacing:.02em;
+}
+.import-close{
+  width:3.2vh;
+  height:3.2vh;
+  border:0;
+  border-radius:8px;
+  background:rgba(255,255,255,.14);
+  color:#fff;
+  font-size:1.5vh;
+  font-weight:900;
+  cursor:pointer;
+}
+.import-modal-body{padding:1.5vh 1.25vw}
+.import-help{
+  margin:0 0 1.25vh;
+  color:var(--muted);
+  font-size:1.05vh;
+  line-height:1.5;
+}
+.import-file-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:.8vw;
+}
+.import-file-card{
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:#F8FBFF;
+  padding:1.05vh .8vw;
+}
+.import-file-card label{
+  display:block;
+  font-size:1.0vh;
+  font-weight:900;
+  color:var(--blue-dark);
+  margin-bottom:.65vh;
+}
+.import-file-card input{
+  display:block;
+  width:100%;
+  font-size:.92vh;
+  color:var(--text);
+}
+.import-file-card small{
+  display:block;
+  margin-top:.55vh;
+  font-size:.82vh;
+  color:var(--muted);
+  line-height:1.35;
+}
+.import-status{
+  margin-top:1.1vh;
+  min-height:4.3vh;
+  padding:.85vh .75vw;
+  border:1px solid var(--line);
+  border-radius:10px;
+  background:#F7F9FC;
+  font-size:.95vh;
+  line-height:1.45;
+  color:var(--muted);
+}
+.import-status.ok{
+  background:#F0F9E4;
+  border-color:#CFE8A7;
+  color:#476B0A;
+}
+.import-status.error{
+  background:#FFF0EE;
+  border-color:#F0BCB5;
+  color:#9A352D;
+}
+.import-actions{
+  display:flex;
+  justify-content:flex-end;
+  gap:.55vw;
+  margin-top:1.1vh;
+}
+.import-action{
+  border:1px solid var(--line);
+  border-radius:9px;
+  padding:.78vh .85vw;
+  font-size:.92vh;
+  font-weight:900;
+  cursor:pointer;
+  background:#fff;
+  color:var(--blue-dark);
+}
+.import-action.primary{
+  border-color:#1B2478;
+  background:#1B2478;
+  color:#fff;
+}
+.import-action:disabled{opacity:.45;cursor:not-allowed}
+
+.data-source-indicator{
+  position:fixed;
+  left:.95vw;
+  bottom:.25vh;
+  font-size:.74vh;
+  color:#6D87A8;
+  font-weight:700;
+}
+
+
+.header-config-btn{
+  flex:0 0 auto;
+  border:1px solid rgba(255,255,255,.36);
+  background:rgba(255,255,255,.10);
+  color:#fff;
+  border-radius:9px;
+  padding:.72vh .7vw;
+  font-size:.88vh;
+  font-weight:900;
+  letter-spacing:.035em;
+  text-transform:uppercase;
+  cursor:pointer;
+}
+.header-config-btn:hover{background:rgba(255,255,255,.17)}
+
+.config-overlay{
+  position:fixed;
+  inset:0;
+  z-index:1001;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:3vh 3vw;
+  background:rgba(9,30,66,.56);
+  backdrop-filter:blur(4px);
+}
+.config-overlay.open{display:flex}
+.config-modal{
+  width:min(880px,76vw);
+  max-height:84vh;
+  background:#fff;
+  border:1px solid var(--blue-border);
+  border-radius:16px;
+  box-shadow:0 22px 60px rgba(9,54,102,.28);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
+.config-modal-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1vw;
+  padding:1.45vh 1.2vw;
+  color:#fff;
+  background:#1B2478;
+}
+.config-modal-head strong{
+  font-size:1.5vh;
+  letter-spacing:.02em;
+}
+.config-close{
+  width:3.2vh;
+  height:3.2vh;
+  border:0;
+  border-radius:8px;
+  background:rgba(255,255,255,.14);
+  color:#fff;
+  font-size:1.5vh;
+  font-weight:900;
+  cursor:pointer;
+}
+.config-modal-body{
+  padding:1.35vh 1.2vw;
+  overflow:auto;
+}
+.config-help{
+  margin:0 0 1.15vh;
+  color:var(--muted);
+  font-size:1.0vh;
+  line-height:1.5;
+}
+.config-section{
+  border:1px solid var(--line);
+  border-radius:12px;
+  overflow:hidden;
+  margin-bottom:1vh;
+}
+.config-section-title{
+  padding:.78vh .72vw;
+  background:#EEF5FB;
+  color:var(--blue-dark);
+  font-size:1.02vh;
+  font-weight:900;
+  letter-spacing:.025em;
+}
+.config-section-body{
+  padding:.9vh .72vw;
+}
+.config-global-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:.7vw;
+}
+.config-field label{
+  display:block;
+  font-size:.82vh;
+  color:var(--muted);
+  text-transform:uppercase;
+  font-weight:900;
+  letter-spacing:.04em;
+  margin-bottom:.35vh;
+}
+.config-field input{
+  width:100%;
+  border:1px solid var(--blue-border);
+  border-radius:8px;
+  padding:.68vh .55vw;
+  font-size:1.05vh;
+  font-weight:800;
+  color:var(--blue-dark);
+  background:#fff;
+  outline:none;
+}
+.config-field input:focus{
+  border-color:var(--blue);
+  box-shadow:0 0 0 2px rgba(14,74,134,.08);
+}
+.config-table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:.95vh;
+}
+.config-table th{
+  text-align:left;
+  padding:.55vh .45vw;
+  background:#F7FAFD;
+  color:#54718F;
+  font-size:.82vh;
+  text-transform:uppercase;
+  letter-spacing:.03em;
+}
+.config-table td{
+  padding:.5vh .45vw;
+  border-top:1px solid #EAF0F6;
+}
+.config-table input{
+  width:100%;
+  border:1px solid var(--blue-border);
+  border-radius:7px;
+  padding:.55vh .45vw;
+  font-size:.95vh;
+  font-weight:800;
+  color:var(--blue-dark);
+}
+.config-table .service-name{
+  font-weight:900;
+  color:var(--blue-dark);
+}
+.config-table .service-source{
+  font-size:.78vh;
+  color:var(--muted);
+  margin-top:.15vh;
+}
+.config-empty{
+  padding:1.3vh .8vw;
+  color:var(--muted);
+  text-align:center;
+  font-size:.92vh;
+}
+.config-status{
+  min-height:3.7vh;
+  padding:.75vh .7vw;
+  border:1px solid var(--line);
+  border-radius:9px;
+  background:#F7F9FC;
+  font-size:.9vh;
+  line-height:1.4;
+  color:var(--muted);
+}
+.config-status.error{
+  background:#FFF0EE;
+  border-color:#F0BCB5;
+  color:#9A352D;
+}
+.config-status.ok{
+  background:#F0F9E4;
+  border-color:#CFE8A7;
+  color:#476B0A;
+}
+.config-actions{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:.6vw;
+  margin-top:1vh;
+}
+.config-actions-right{
+  display:flex;
+  gap:.5vw;
+}
+.config-action{
+  border:1px solid var(--line);
+  border-radius:9px;
+  padding:.75vh .8vw;
+  font-size:.9vh;
+  font-weight:900;
+  cursor:pointer;
+  background:#fff;
+  color:var(--blue-dark);
+}
+.config-action.primary{
+  background:#1B2478;
+  border-color:#1B2478;
+  color:#fff;
+}
+
+
+.service-register{
+  display:grid;
+  grid-template-columns:minmax(220px,1fr) 150px auto;
+  gap:.55vw;
+  align-items:end;
+  padding:.8vh .7vw;
+  border-bottom:1px solid var(--line);
+  background:#FBFDFF;
+}
+.service-register .config-field{
+  min-width:0;
+}
+.service-add-btn{
+  border:1px solid #1B2478;
+  border-radius:8px;
+  padding:.68vh .75vw;
+  font-size:.9vh;
+  font-weight:900;
+  cursor:pointer;
+  background:#1B2478;
+  color:#fff;
+  white-space:nowrap;
+}
+.service-delete-btn{
+  border:1px solid #F0BCB5;
+  border-radius:7px;
+  padding:.48vh .55vw;
+  font-size:.8vh;
+  font-weight:900;
+  cursor:pointer;
+  background:#FFF5F3;
+  color:#A83C33;
+}
+.config-table td.actions-cell{
+  width:90px;
+  text-align:right;
+}
+
+
+.crane-idle-alert{
+  color:var(--red) !important;
+}
+
+
+.config-source{
+  display:flex;
+  align-items:center;
+  gap:.38vw;
+  margin-top:.45vh;
+  font-size:.82vh;
+  color:var(--muted);
+  font-weight:800;
+}
+.config-source::before{
+  content:"";
+  width:.72vh;
+  height:.72vh;
+  border-radius:50%;
+  background:var(--yellow);
+}
+.config-source.remote::before{background:var(--green)}
+.config-source.cache::before{background:var(--yellow)}
+.config-admin{
+  margin-top:.9vh;
+  padding:.8vh .72vw;
+  border:1px dashed var(--blue-border);
+  border-radius:9px;
+  background:#FAFCFF;
+}
+.config-admin .config-field{
+  max-width:360px;
+}
+
+</style>
+</head>
+<body>
+<div class="screen">
+<header class="app-header">
+  <img class="app-header-logo" src="assets/Logo_JBS_Terminais_Monocromatico_claro.png" alt="JBS Terminais">
+  <div class="app-header-divider"></div>
+  <h1>Operational Dashboard - Vessel</h1>
+  <button class="header-config-btn" id="openConfigBtn" type="button">Configurações</button>
+   <button class="header-import-btn" id="openImportBtn" type="button">Importar XLSX</button>
+   <div class="app-header-info">
+    <div class="header-info-item">
+      <span>Horário atual</span>
+      <strong id="currentTime">--:--</strong>
+    </div>
+    <div class="header-info-item">
+      <span>Período atual</span>
+      <strong id="currentPeriod">--</strong>
+    </div>
+    <div class="header-info-item">
+      <span>Última atualização</span>
+      <strong id="lastUpdate">--:--</strong>
+    </div>
+  </div>
+</header>
+
+<section class="selector-row" id="selectorRow"></section>
+
+  <section class="gauge-row" id="gaugeRow"></section>
+
+  
+  <section class="operations-row">
+    <div class="hourly-slot" id="selectedHourlyPanel"></div>
+
+    <div class="card panel">
+      <div class="panel-head">
+        <div class="title">EQUIPAMENTOS EM OPERAÇÃO</div>
+      </div>
+      <div class="panel-body">
+        <table class="table">
+          <thead>
+            <tr><th>Equip.</th><th>Tipo</th><th>Moves</th><th>MPH</th><th>Idle</th><th>Status</th></tr>
+          </thead>
+          <tbody id="equipmentTable"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+</div>
+<div class="footer">JBS Terminais • Protótipo TV v34 • Dados automáticos • Dados simulados</div>
+
+
+
+<div class="config-overlay" id="configOverlay">
+  <div class="config-modal" role="dialog" aria-modal="true" aria-labelledby="configTitle">
+    <div class="config-modal-head">
+      <strong id="configTitle">Configuração de metas de produtividade</strong>
+      <button class="config-close" id="closeConfigBtn" type="button">×</button>
+    </div>
+    <div class="config-modal-body">
+      <p class="config-help">
+        As metas são compartilhadas entre todos os usuários e aplicadas imediatamente ao dashboard.
+        O cadastro de serviços é manual e independente das operações importadas.
+        Quando o Service Name do navio coincidir com um serviço cadastrado, a respectiva meta de BMPH será aplicada.
+        Serviços não cadastrados usam a meta padrão de berço. GMPH, MPH STS e MPH MHC usam metas globais.
+      </p>
+      <div class="config-source" id="configSource">Fonte: verificando configuração compartilhada...</div>
+
+      <div class="config-section">
+        <div class="config-section-title">Metas gerais</div>
+        <div class="config-section-body">
+          <div class="config-global-grid">
+            <div class="config-field">
+              <label for="defaultBerthTarget">BMPH padrão</label>
+              <input id="defaultBerthTarget" type="number" min="0" step="0.1">
+            </div>
+            <div class="config-field">
+              <label for="gmphTarget">GMPH</label>
+              <input id="gmphTarget" type="number" min="0" step="0.1">
+            </div>
+            <div class="config-field">
+              <label for="stsTarget">MPH STS</label>
+              <input id="stsTarget" type="number" min="0" step="0.1">
+            </div>
+            <div class="config-field">
+              <label for="mhcTarget">MPH MHC</label>
+              <input id="mhcTarget" type="number" min="0" step="0.1">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="config-section">
+        <div class="config-section-title">Cadastro de serviços e meta de BMPH</div>
+        <div class="config-section-body" style="padding:0">
+          <div class="service-register">
+            <div class="config-field">
+              <label for="newServiceName">Serviço</label>
+              <input id="newServiceName" type="text" placeholder="Ex.: SEAS3">
+            </div>
+            <div class="config-field">
+              <label for="newServiceTarget">Meta BMPH</label>
+              <input id="newServiceTarget" type="number" min="0" step="0.1" placeholder="52">
+            </div>
+            <button class="service-add-btn" id="addServiceBtn" type="button">Adicionar serviço</button>
+          </div>
+          <div id="serviceTargetsContainer"></div>
+        </div>
+      </div>
+
+
+      <div class="config-admin">
+        <div class="config-field">
+          <label for="configAdminKey">Chave de edição</label>
+          <input id="configAdminKey" type="password" autocomplete="off" placeholder="Necessária apenas para salvar alterações">
+        </div>
+      </div>
+
+      <div class="config-status" id="configStatus">Configurações carregadas.</div>
+
+      <div class="config-actions">
+        <button class="config-action" id="resetConfigBtn" type="button">Restaurar padrões</button>
+        <div class="config-actions-right">
+          <button class="config-action" id="cancelConfigBtn" type="button">Cancelar</button>
+          <button class="config-action primary" id="saveConfigBtn" type="button">Salvar metas</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="import-overlay" id="importOverlay">
+  <div class="import-modal" role="dialog" aria-modal="true" aria-labelledby="importTitle">
+    <div class="import-modal-head">
+      <strong id="importTitle">Importação manual de dados</strong>
+      <button class="import-close" id="closeImportBtn" type="button">×</button>
+    </div>
+    <div class="import-modal-body">
+      <p class="import-help">
+        Selecione os dois reports exportados pelo N4. O dashboard identifica os arquivos pelos campos,
+        cruza <b>Carrier Visit</b> com <b>Visit</b> e mantém somente Vessel Visits em <b>Working</b> ou <b>Complete</b> que possuam movimentos.
+      </p>
+      <div class="import-file-grid">
+        <div class="import-file-card">
+          <label for="moveEventFile">Report de movimentos</label>
+          <input id="moveEventFile" type="file" accept=".xlsx,.xls">
+          <small>Esperado: Time Completed, Move Kind, Crane CHE e Carrier Visit.</small>
+        </div>
+        <div class="import-file-card">
+          <label for="vesselVisitFile">Report de Vessel Visits</label>
+          <input id="vesselVisitFile" type="file" accept=".xlsx,.xls">
+          <small>Esperado: Visit, Service Name, Vessel Name, I/B Vyg e Phase.</small>
+        </div>
+      </div>
+      <div class="import-status" id="importStatus">Aguardando seleção dos dois arquivos.</div>
+      <div class="import-actions">
+        <button class="import-action" id="demoBtn" type="button">Usar dados demo</button>
+        <button class="import-action primary" id="processImportBtn" type="button">Processar arquivos</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="data-source-indicator" id="dataSourceIndicator">Fonte: dados simulados</div>
+
+<script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+
+<script>
+const DEMO_VESSELS = [
+  {
+    id:'overview',
+    name:'VISÃO GERAL',
+    sub:'B1 • B2 • B3',
+    status:'ok',
+    moves:1009,
+    bmph:140.6,
+    operation:'3 navios em operação',
+    start:'-',
+    duration:'-',
+    gauges:[
+      {title:'BMPH',desc:'Berth Moves Per Hour',value:140.6,max:180,unit:'movimentos / hora',target:150,label:'TERMINAL'},
+      {title:'GMPH',desc:'Gross Moves Per Hour',value:27.2,max:40,unit:'movimentos / hora',target:28,label:'MÉDIA'},
+      {title:'MPH STS',desc:'Produtividade dos STS',value:29.8,max:40,unit:'movimentos / hora',target:28,label:'STS'},
+      {title:'MPH MHC',desc:'Produtividade dos MHC',value:14.7,max:25,unit:'movimentos / hora',target:14,label:'MHC'}
+    ],
+    hourly:[['07h',82],['08h',114],['09h',131],['10h',146],['11h',153],['12h',128],['13h',137],['14h',118]],
+    periods:[['01x07',184],['07x13',468],['13x19',357],['19x01',0]],
+    equipment:[['STS 01','STS',31.8,'ATIVO'],['STS 02','STS',29.4,'ATIVO'],['STS 03','STS',28.1,'ATIVO'],['MHC 01','MHC',15.6,'ATIVO'],['MHC 04','MHC',0,'PAUSA']],
+    timeline:[['06:32','Primeira atracação concluída'],['07:08','Primeiro movimento registrado'],['09:15','8 equipamentos em operação'],['12:06','600 movimentos consolidados'],['14:41','Último evento recebido']],
+    alerts:[
+      ['ok','3 navios em operação','B1 • B2 • B3'],
+      ['warn','1 operação abaixo da meta','BMPH'],
+      ['ok','8 equipamentos ativos','Terminal'],
+      ['critical','1 equipamento em pausa','MHC 04'],
+      ['warn','GMPH médio abaixo do alvo','27,2']
+    ]
+  },
+  {
+    id:'v1',
+    name:'MSC NAOMI',
+    sub:'Berço 01 • SEAS3 • 026S',
+    status:'ok',
+    moves:486,
+    bmph:54.2,
+    operation:'MSC NAOMI | Berço 01',
+    start:'07:08',
+    duration:'07h44',
+    gauges:[
+      {title:'BMPH',desc:'Berth Moves Per Hour',value:54.2,max:80,unit:'movimentos / hora',target:52,label:'BERÇO'},
+      {title:'GMPH',desc:'Gross Moves Per Hour',value:28.4,max:40,unit:'movimentos / hora',target:28,label:'GUINDASTE'},
+      {title:'MPH STS',desc:'Produtividade dos STS',value:30.1,max:40,unit:'movimentos / hora',target:28,label:'STS'},
+      {title:'MPH MHC',desc:'Produtividade dos MHC',value:14.7,max:25,unit:'movimentos / hora',target:14,label:'MHC'}
+    ],
+    hourly:[['07h',36],['08h',49],['09h',58],['10h',61],['11h',65],['12h',57],['13h',59],['14h',47]],
+    periods:[['01x07',72],['07x13',224],['13x19',190],['19x01',0]],
+    equipment:[['STS 01','STS',31.8,'ATIVO'],['STS 02','STS',29.4,'ATIVO'],['MHC 01','MHC',14.7,'ATIVO']],
+    timeline:[['06:32','Navio atracado no Berço 01'],['07:08','Primeiro movimento'],['09:15','3º equipamento em operação'],['12:06','300 movimentos concluídos'],['14:41','Último evento recebido']],
+    alerts:[
+      ['ok','BMPH acima da meta','+2,2'],
+      ['ok','GMPH dentro da meta','28,4'],
+      ['ok','3 equipamentos ativos','100%'],
+      ['warn','Ritmo reduziu na última hora','47 mov/h']
+    ]
+  },
+  {
+    id:'v2',
+    name:'CMA CGM THORIUM',
+    sub:'Berço 02 • SEAS2 • 118N',
+    status:'warn',
+    moves:322,
+    bmph:47.8,
+    operation:'CMA CGM THORIUM | Berço 02',
+    start:'08:14',
+    duration:'06h38',
+    gauges:[
+      {title:'BMPH',desc:'Berth Moves Per Hour',value:47.8,max:80,unit:'movimentos / hora',target:52,label:'BERÇO'},
+      {title:'GMPH',desc:'Gross Moves Per Hour',value:25.6,max:40,unit:'movimentos / hora',target:28,label:'GUINDASTE'},
+      {title:'MPH STS',desc:'Produtividade dos STS',value:27.9,max:40,unit:'movimentos / hora',target:28,label:'STS'},
+      {title:'MPH MHC',desc:'Produtividade dos MHC',value:13.8,max:25,unit:'movimentos / hora',target:14,label:'MHC'}
+    ],
+    hourly:[['07h',0],['08h',22],['09h',41],['10h',49],['11h',54],['12h',48],['13h',56],['14h',52]],
+    periods:[['01x07',0],['07x13',184],['13x19',138],['19x01',0]],
+    equipment:[['STS 03','STS',28.1,'ATIVO'],['STS 04','STS',27.7,'ATIVO'],['MHC 02','MHC',13.8,'ATIVO']],
+    timeline:[['07:46','Navio atracado no Berço 02'],['08:14','Primeiro movimento'],['10:22','2º STS iniciou operação'],['12:51','200 movimentos concluídos'],['14:45','Último evento recebido']],
+    alerts:[
+      ['warn','BMPH abaixo da meta','-4,2'],
+      ['warn','GMPH abaixo da meta','-2,4'],
+      ['ok','3 equipamentos ativos','100%'],
+      ['warn','Ritmo estável na última hora','52 mov/h']
+    ]
+  },
+  {
+    id:'v3',
+    name:'MAERSK HORIZON',
+    sub:'Berço 03 • BRAZEX • 042E',
+    status:'critical',
+    moves:201,
+    bmph:38.6,
+    operation:'MAERSK HORIZON | Berço 03',
+    start:'09:02',
+    duration:'05h50',
+    gauges:[
+      {title:'BMPH',desc:'Berth Moves Per Hour',value:38.6,max:80,unit:'movimentos / hora',target:52,label:'BERÇO'},
+      {title:'GMPH',desc:'Gross Moves Per Hour',value:21.5,max:40,unit:'movimentos / hora',target:28,label:'GUINDASTE'},
+      {title:'MPH STS',desc:'Produtividade dos STS',value:25.1,max:40,unit:'movimentos / hora',target:28,label:'STS'},
+      {title:'MPH MHC',desc:'Produtividade dos MHC',value:12.9,max:25,unit:'movimentos / hora',target:14,label:'MHC'}
+    ],
+    hourly:[['07h',0],['08h',0],['09h',32],['10h',36],['11h',34],['12h',23],['13h',22],['14h',54]],
+    periods:[['01x07',0],['07x13',60],['13x19',141],['19x01',0]],
+    equipment:[['STS 05','STS',25.1,'ATIVO'],['MHC 03','MHC',12.9,'ATIVO'],['MHC 04','MHC',0,'PAUSA']],
+    timeline:[['08:31','Navio atracado no Berço 03'],['09:02','Primeiro movimento'],['10:48','MHC 04 em pausa'],['13:16','150 movimentos concluídos'],['14:47','Último evento recebido']],
+    alerts:[
+      ['critical','BMPH abaixo da meta','-13,4'],
+      ['critical','GMPH abaixo da meta','-6,5'],
+      ['critical','MHC 04 em pausa','equipamento'],
+      ['ok','Recuperação na última hora','54 mov/h']
+    ]
+  }
+];
+
+let vessels = JSON.parse(JSON.stringify(DEMO_VESSELS));
+let current = 'v1';
+const TIME_ZONE = 'America/Sao_Paulo';
+let dashboardUpdatedAt = new Date();
+const DASHBOARD_CACHE_KEY = 'jbs_vessel_dashboard_manual_v3';
+const DASHBOARD_CONFIG_KEY = 'jbs_vessel_dashboard_targets_v2';
+const CONFIG_URL = 'data/config.json';
+const DATA_URL = 'data/latest.json';
+const DATA_REFRESH_MS = 5 * 60 * 1000;
+const CONFIG_API_URL = 'COLE_AQUI_A_URL_DO_WEB_APP_APPS_SCRIPT';
+const DEFAULT_TARGET_CONFIG = {
+  defaultBerthTarget: 52,
+  gmphTarget: 28,
+  stsTarget: 28,
+  mhcTarget: 14,
+  serviceTargets: {},
+  updatedAt: null,
+  updatedBy: null
+};
+let targetConfig = loadCachedTargetConfig();
+
+const CACHE_SCHEMA_VERSION = 3;
+const MOVE_KINDS_ALLOWED = new Set(['load','discharge','restow','rehandle','shift','removal']);
+
+
+function br(n, d=0){
+  return Number(n).toLocaleString('pt-BR', {minimumFractionDigits:d, maximumFractionDigits:d});
+}
+function timeLabel(date){
+  return new Intl.DateTimeFormat('pt-BR',{
+    hour:'2-digit',
+    minute:'2-digit',
+    hour12:false,
+    hourCycle:'h23',
+    timeZone:TIME_ZONE
+  }).format(date);
+}
+function getPeriodLabel(){
+  const h = Number(new Intl.DateTimeFormat('pt-BR',{hour:'2-digit',hour12:false,hourCycle:'h23',timeZone:TIME_ZONE}).format(new Date()));
+  if(h >= 1 && h < 7) return '01x07';
+  if(h >= 7 && h < 13) return '07x13';
+  if(h >= 13 && h < 19) return '13x19';
+  return '19x01';
+}
+function selectorStatusText(s, phase){
+  if(String(phase || '').toLowerCase() === 'complete') return 'COMPLETE';
+  if(s === 'critical') return 'CRÍTICO';
+  if(s === 'warn') return 'ATENÇÃO';
+  return 'OPERANDO';
+}
+function gaugeAngle(value,max){
+  const clamped=Math.max(0,Math.min(value,max));
+  return (clamped/max)*180;
+}
+function gaugeZoneAngles(target,max){
+  const targetAngle=Math.max(18,Math.min((target/max)*180,171));
+  return {
+    redEnd: targetAngle * .82,
+    targetAngle
+  };
+}
+
+
+
+function cloneDefaultConfig(){
+  return JSON.parse(JSON.stringify(DEFAULT_TARGET_CONFIG));
+}
+
+function mergeTargetConfig(parsed){
+  return {
+    ...cloneDefaultConfig(),
+    ...(parsed || {}),
+    serviceTargets:{
+      ...cloneDefaultConfig().serviceTargets,
+      ...((parsed && parsed.serviceTargets) || {})
+    }
+  };
+}
+
+function loadCachedTargetConfig(){
+  try{
+    const raw = localStorage.getItem(DASHBOARD_CONFIG_KEY);
+    if(!raw) return cloneDefaultConfig();
+    return mergeTargetConfig(JSON.parse(raw));
+  }catch(err){
+    console.warn('Falha ao carregar cache local das metas:', err);
+    return cloneDefaultConfig();
+  }
+}
+
+function saveConfigCache(config){
+  try{
+    localStorage.setItem(DASHBOARD_CONFIG_KEY, JSON.stringify(config));
+  }catch(err){
+    console.warn('Não foi possível salvar cache local das metas:', err);
+  }
+}
+
+function setConfigSource(kind, text){
+  const el = document.getElementById('configSource');
+  if(!el) return;
+  el.className = `config-source ${kind || ''}`;
+  el.textContent = text;
+}
+
+async function loadSharedTargetConfig(){
+  try{
+    if(location.protocol === 'file:'){
+      setConfigSource('cache', 'Fonte: cache local. A configuração compartilhada funciona quando a página está hospedada.');
+      return false;
+    }
+
+    const url = `${CONFIG_URL}?v=${Date.now()}`;
+    const response = await fetch(url, {cache:'no-store'});
+    if(!response.ok) throw new Error(`HTTP ${response.status}`);
+
+    const remote = mergeTargetConfig(await response.json());
+    targetConfig = remote;
+    saveConfigCache(targetConfig);
+    applyTargetsToExistingData();
+    renderAll();
+
+    const stamp = remote.updatedAt
+      ? ` • atualizada ${new Date(remote.updatedAt).toLocaleString('pt-BR')}`
+      : '';
+
+    setConfigSource('remote', `Fonte: configuração compartilhada${stamp}`);
+    return true;
+  }catch(err){
+    console.warn('Falha ao carregar config.json compartilhado:', err);
+    targetConfig = loadCachedTargetConfig();
+    applyTargetsToExistingData();
+    renderAll();
+    setConfigSource('cache', 'Fonte: último cache local válido. Não foi possível acessar config.json.');
+    return false;
+  }
+}
+
+function validConfigApiUrl(){
+  return CONFIG_API_URL &&
+    !CONFIG_API_URL.includes('COLE_AQUI') &&
+    /^https:\/\/script\.google\.com\//i.test(CONFIG_API_URL);
+}
+
+async function postSharedTargetConfig(config, adminKey){
+  if(!validConfigApiUrl()){
+    throw new Error('A URL do Web App do Apps Script ainda não foi configurada no HTML.');
+  }
+
+  const payload = {
+    action:'saveConfig',
+    adminKey:String(adminKey || ''),
+    config
+  };
+
+  try{
+    const response = await fetch(CONFIG_API_URL, {
+      method:'POST',
+      headers:{'Content-Type':'text/plain;charset=utf-8'},
+      body:JSON.stringify(payload),
+      redirect:'follow'
+    });
+
+    if(!response.ok) throw new Error(`HTTP ${response.status}`);
+    const result = await response.json().catch(() => null);
+
+    if(result && result.ok === false){
+      throw new Error(result.error || 'O Apps Script recusou a alteração.');
+    }
+
+    return result || {ok:true};
+  }catch(primaryError){
+    // Alguns navegadores bloqueiam a leitura da resposta de Web Apps por CORS,
+    // embora o POST seja aceito. Nesse caso enviamos novamente em modo no-cors.
+    try{
+      await fetch(CONFIG_API_URL, {
+        method:'POST',
+        mode:'no-cors',
+        headers:{'Content-Type':'text/plain;charset=utf-8'},
+        body:JSON.stringify(payload)
+      });
+      return {ok:true, opaque:true};
+    }catch(fallbackError){
+      throw primaryError;
+    }
+  }
+}
+
+function normalizedServiceKey(service){
+  return String(service || '').trim().toUpperCase();
+}
+
+function berthTargetForService(service){
+  const key = normalizedServiceKey(service);
+  const custom = Number(targetConfig.serviceTargets?.[key]);
+  if(Number.isFinite(custom) && custom > 0) return custom;
+
+  const fallback = Number(targetConfig.defaultBerthTarget);
+  return Number.isFinite(fallback) && fallback > 0 ? fallback : 52;
+}
+
+
+function normalizeEquipmentRows(){
+  vessels.forEach(v => {
+    if(!Array.isArray(v.equipment)) return;
+    v.equipment = v.equipment.map(row => {
+      if(row.length >= 7) return row;
+      if(row.length === 5){
+        // estrutura antiga: [equip, tipo, mph, idle, status]
+        return [row[0], row[1], 0, row[2], row[3], row[4], 0];
+      }
+      if(row.length === 4){
+        // dados demo antigos: [equip, tipo, mph, status]
+        return [row[0], row[1], 0, row[2], '-', row[3], 0];
+      }
+      return row;
+    });
+  });
+}
+
+function applyTargetsToExistingData(){
+  const realVessels = vessels.filter(v => v.id !== 'overview');
+
+  realVessels.forEach(v => {
+    const serviceName = v.serviceName || extractServiceFromSub(v.sub);
+    const bmphTarget = berthTargetForService(serviceName);
+
+    if(v.gauges?.[0]) v.gauges[0].target = bmphTarget;
+    if(v.gauges?.[1]) v.gauges[1].target = Number(targetConfig.gmphTarget) || 28;
+    if(v.gauges?.[2]) v.gauges[2].target = Number(targetConfig.stsTarget) || 28;
+    if(v.gauges?.[3]) v.gauges[3].target = Number(targetConfig.mhcTarget) || 14;
+
+    v.status = statusFromBmph(v.bmph, bmphTarget);
+  });
+
+  const overview = vessels.find(v => v.id === 'overview');
+  if(overview && realVessels.length){
+    if(overview.gauges?.[0]){
+      overview.gauges[0].target = realVessels.reduce(
+        (sum, v) => sum + berthTargetForService(v.serviceName || extractServiceFromSub(v.sub)),
+        0
+      );
+    }
+    if(overview.gauges?.[1]) overview.gauges[1].target = Number(targetConfig.gmphTarget) || 28;
+    if(overview.gauges?.[2]) overview.gauges[2].target = Number(targetConfig.stsTarget) || 28;
+    if(overview.gauges?.[3]) overview.gauges[3].target = Number(targetConfig.mhcTarget) || 14;
+  }
+}
+
+function extractServiceFromSub(sub){
+  const parts = String(sub || '').split('•').map(s => s.trim()).filter(Boolean);
+  return parts[0] || '';
+}
+
+function renderServiceTargetsConfig(){
+  const container = document.getElementById('serviceTargetsContainer');
+  const entries = Object.entries(targetConfig.serviceTargets || {})
+    .sort(([a],[b]) => a.localeCompare(b, 'pt-BR'));
+
+  if(!entries.length){
+    container.innerHTML = '<div class="config-empty">Nenhum serviço cadastrado. Use os campos acima para adicionar o primeiro serviço.</div>';
+    return;
+  }
+
+  let rows = '';
+  entries.forEach(([service, value]) => {
+    rows += `
+      <tr>
+        <td>
+          <div class="service-name">${service}</div>
+          <div class="service-source">Cadastro manual</div>
+        </td>
+        <td style="width:180px">
+          <input
+            class="service-target-input"
+            type="number"
+            min="0"
+            step="0.1"
+            data-service="${service}"
+            value="${Number(value)}"
+          >
+        </td>
+        <td class="actions-cell">
+          <button class="service-delete-btn" type="button" data-delete-service="${service}">Excluir</button>
+        </td>
+      </tr>
+    `;
+  });
+
+  container.innerHTML = `
+    <table class="config-table">
+      <thead>
+        <tr>
+          <th>Serviço</th>
+          <th>Meta BMPH</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>${rows}</tbody>
+    </table>
+  `;
+
+  container.querySelectorAll('[data-delete-service]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      deleteServiceTarget(btn.dataset.deleteService);
+    });
+  });
+}
+
+function addServiceTarget(){
+  const nameInput = document.getElementById('newServiceName');
+  const targetInput = document.getElementById('newServiceTarget');
+  const status = document.getElementById('configStatus');
+
+  const service = normalizedServiceKey(nameInput.value);
+  const target = Number(targetInput.value);
+
+  if(!service){
+    status.className = 'config-status';
+    status.textContent = 'Informe o nome do serviço.';
+    nameInput.focus();
+    return;
+  }
+
+  if(!(target > 0)){
+    status.className = 'config-status';
+    status.textContent = 'Informe uma meta de BMPH maior que zero.';
+    targetInput.focus();
+    return;
+  }
+
+  targetConfig.serviceTargets = {
+    ...(targetConfig.serviceTargets || {}),
+    [service]: target
+  };
+
+  nameInput.value = '';
+  targetInput.value = '';
+  renderServiceTargetsConfig();
+
+  status.className = 'config-status ok';
+  status.textContent = `Serviço ${service} adicionado. Clique em Salvar metas para confirmar as alterações.`;
+}
+
+function deleteServiceTarget(service){
+  const key = normalizedServiceKey(service);
+  if(!key) return;
+
+  const next = {...(targetConfig.serviceTargets || {})};
+  delete next[key];
+  targetConfig.serviceTargets = next;
+  renderServiceTargetsConfig();
+
+  const status = document.getElementById('configStatus');
+  status.className = 'config-status ok';
+  status.textContent = `Serviço ${key} removido. Clique em Salvar metas para confirmar as alterações.`;
+}
+
+function openConfig(){
+  document.getElementById('defaultBerthTarget').value = targetConfig.defaultBerthTarget;
+  document.getElementById('gmphTarget').value = targetConfig.gmphTarget;
+  document.getElementById('stsTarget').value = targetConfig.stsTarget;
+  document.getElementById('mhcTarget').value = targetConfig.mhcTarget;
+  document.getElementById('configStatus').className = 'config-status';
+  document.getElementById('configStatus').textContent = 'Configurações compartilhadas carregadas.';
+  renderServiceTargetsConfig();
+  document.getElementById('configOverlay').classList.add('open');
+}
+
+function closeConfig(){
+  document.getElementById('configOverlay').classList.remove('open');
+}
+
+async function saveTargetConfig(){
+  const status = document.getElementById('configStatus');
+  const saveBtn = document.getElementById('saveConfigBtn');
+
+  const defaultBerthTarget = Number(document.getElementById('defaultBerthTarget').value);
+  const gmphTarget = Number(document.getElementById('gmphTarget').value);
+  const stsTarget = Number(document.getElementById('stsTarget').value);
+  const mhcTarget = Number(document.getElementById('mhcTarget').value);
+  const adminKey = document.getElementById('configAdminKey').value;
+
+  if(!(defaultBerthTarget > 0) || !(gmphTarget > 0) || !(stsTarget > 0) || !(mhcTarget > 0)){
+    status.className = 'config-status';
+    status.textContent = 'Informe valores maiores que zero para todas as metas gerais.';
+    return;
+  }
+
+  if(!adminKey){
+    status.className = 'config-status';
+    status.textContent = 'Informe a chave de edição para salvar a configuração compartilhada.';
+    return;
+  }
+
+  const serviceTargets = {...(targetConfig.serviceTargets || {})};
+  document.querySelectorAll('.service-target-input').forEach(input => {
+    const service = normalizedServiceKey(input.dataset.service);
+    const value = Number(input.value);
+    if(service && value > 0) serviceTargets[service] = value;
+  });
+
+  const nextConfig = {
+    defaultBerthTarget,
+    gmphTarget,
+    stsTarget,
+    mhcTarget,
+    serviceTargets,
+    updatedAt:new Date().toISOString()
+  };
+
+  try{
+    saveBtn.disabled = true;
+    status.className = 'config-status';
+    status.textContent = 'Salvando configuração compartilhada...';
+
+    const result = await postSharedTargetConfig(nextConfig, adminKey);
+
+    targetConfig = mergeTargetConfig({
+      ...nextConfig,
+      updatedAt:result?.config?.updatedAt || nextConfig.updatedAt,
+      updatedBy:result?.config?.updatedBy || null
+    });
+
+    saveConfigCache(targetConfig);
+    applyTargetsToExistingData();
+    renderAll();
+
+    status.className = 'config-status ok';
+
+    if(result?.opaque){
+      status.textContent = 'Alteração enviada. O navegador não permitiu confirmar a resposta do Web App; o config.json será atualizado se a chave estiver correta.';
+    }else{
+      status.textContent = 'Metas salvas na configuração compartilhada e aplicadas ao dashboard.';
+    }
+
+    setConfigSource('remote', 'Fonte: configuração compartilhada');
+    document.getElementById('configAdminKey').value = '';
+
+  }catch(err){
+    console.error(err);
+    status.className = 'config-status error';
+    status.textContent = err?.message || 'Falha ao salvar a configuração compartilhada.';
+  }finally{
+    saveBtn.disabled = false;
+  }
+}
+
+function resetTargetConfig(){
+  targetConfig = cloneDefaultConfig();
+  saveConfigCache(targetConfig);
+  document.getElementById('defaultBerthTarget').value = targetConfig.defaultBerthTarget;
+  document.getElementById('gmphTarget').value = targetConfig.gmphTarget;
+  document.getElementById('stsTarget').value = targetConfig.stsTarget;
+  document.getElementById('mhcTarget').value = targetConfig.mhcTarget;
+  renderServiceTargetsConfig();
+
+  const status = document.getElementById('configStatus');
+  status.className = 'config-status ok';
+  status.textContent = 'Valores padrão preparados e cadastro de serviços limpo. Clique em Salvar metas para publicar para todos os usuários.';
+}
+
+function setupConfigUi(){
+  const overlay = document.getElementById('configOverlay');
+
+  document.getElementById('openConfigBtn').addEventListener('click', openConfig);
+  document.getElementById('closeConfigBtn').addEventListener('click', closeConfig);
+  document.getElementById('cancelConfigBtn').addEventListener('click', closeConfig);
+  document.getElementById('saveConfigBtn').addEventListener('click', saveTargetConfig);
+  document.getElementById('resetConfigBtn').addEventListener('click', resetTargetConfig);
+  document.getElementById('addServiceBtn').addEventListener('click', addServiceTarget);
+  document.getElementById('newServiceName').addEventListener('keydown', event => {
+    if(event.key === 'Enter') addServiceTarget();
+  });
+  document.getElementById('newServiceTarget').addEventListener('keydown', event => {
+    if(event.key === 'Enter') addServiceTarget();
+  });
+
+  overlay.addEventListener('click', event => {
+    if(event.target === overlay) closeConfig();
+  });
+}
+
+function normalizeHeader(value){
+  return String(value ?? '').trim().replace(/\s+/g,' ').toLowerCase();
+}
+
+function pad2(n){ return String(n).padStart(2,'0'); }
+
+function parseN4Date(value){
+  if(value instanceof Date && !Number.isNaN(value.getTime())) return value;
+  if(typeof value === 'number' && Number.isFinite(value)){
+    const epoch = Date.UTC(1899,11,30);
+    return new Date(epoch + value * 86400000);
+  }
+
+  const raw = String(value ?? '').trim();
+  if(!raw) return null;
+
+  const months = {
+    jan:0,feb:1,mar:2,apr:3,may:4,jun:5,
+    jul:6,aug:7,sep:8,oct:9,nov:10,dec:11
+  };
+
+  let m = raw.match(/^(\d{2})-([A-Za-z]{3})-(\d{2})\s+(\d{2})(\d{2})$/);
+  if(m){
+    const yy = Number(m[1]);
+    const year = yy >= 70 ? 1900 + yy : 2000 + yy;
+    const month = months[m[2].toLowerCase()];
+    if(month !== undefined) return new Date(Date.UTC(year,month,Number(m[3]),Number(m[4]),Number(m[5])));
+  }
+
+  m = raw.match(/^(\d{4})-([A-Za-z]{3})-(\d{2})\s+(\d{2})(\d{2})$/);
+  if(m){
+    const month = months[m[2].toLowerCase()];
+    if(month !== undefined) return new Date(Date.UTC(Number(m[1]),month,Number(m[3]),Number(m[4]),Number(m[5])));
+  }
+
+  m = raw.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})\s+(\d{1,2}):(\d{2})$/);
+  if(m) return new Date(Date.UTC(Number(m[3]),Number(m[2])-1,Number(m[1]),Number(m[4]),Number(m[5])));
+
+  const parsed = new Date(raw);
+  return Number.isNaN(parsed.getTime()) ? null : parsed;
+}
+
+function formatMoveTime(date){
+  if(!date) return '-';
+  return `${pad2(date.getUTCHours())}:${pad2(date.getUTCMinutes())}`;
+}
+
+function formatDuration(ms){
+  if(!Number.isFinite(ms) || ms < 0) return '-';
+  const totalMinutes = Math.round(ms / 60000);
+  const h = Math.floor(totalMinutes / 60);
+  const m = totalMinutes % 60;
+  return `${pad2(h)}h${pad2(m)}`;
+}
+
+function equipmentType(code){
+  const value = String(code || '').trim().toUpperCase();
+  if(/^S/.test(value)) return 'STS';
+  if(/^M/.test(value)) return 'MHC';
+  return 'OUTRO';
+}
+
+function calcRateFromDates(dates){
+  if(!dates || dates.length < 2) return 0;
+  const first = Math.min(...dates.map(d => d.getTime()));
+  const last = Math.max(...dates.map(d => d.getTime()));
+  const hours = (last - first) / 3600000;
+  return hours > 0 ? dates.length / hours : 0;
+}
+
+function mean(values){
+  const valid = values.filter(v => Number.isFinite(v));
+  return valid.length ? valid.reduce((a,b) => a+b, 0) / valid.length : 0;
+}
+
+function statusFromBmph(value, target){
+  if(!Number.isFinite(value) || !Number.isFinite(target) || target <= 0) return 'ok';
+  const ratio = value / target;
+  if(ratio < .80) return 'critical';
+  if(ratio < .95) return 'warn';
+  return 'ok';
+}
+
+function sheetRows(workbook){
+  const sheetName = workbook.SheetNames[0];
+  if(!sheetName) throw new Error('Arquivo sem planilha disponível.');
+  return XLSX.utils.sheet_to_json(workbook.Sheets[sheetName], {
+    header:1,
+    defval:'',
+    raw:false,
+    blankrows:false
+  });
+}
+
+function tableFromReport(rows, requiredHeaders){
+  const normalizedRequired = requiredHeaders.map(normalizeHeader);
+  let headerIndex = -1;
+
+  for(let i=0; i<Math.min(rows.length,20); i++){
+    const normalized = rows[i].map(normalizeHeader);
+    if(normalizedRequired.every(h => normalized.includes(h))){
+      headerIndex = i;
+      break;
+    }
+  }
+
+  if(headerIndex < 0){
+    throw new Error(`Não encontrei os campos obrigatórios: ${requiredHeaders.join(', ')}.`);
+  }
+
+  const headers = rows[headerIndex].map(v => String(v ?? '').trim());
+  return rows.slice(headerIndex + 1)
+    .filter(row => row.some(v => String(v ?? '').trim() !== ''))
+    .map(row => {
+      const obj = {};
+      headers.forEach((h, idx) => {
+        if(h) obj[h] = row[idx] ?? '';
+      });
+      return obj;
+    });
+}
+
+async function workbookFromFile(file){
+  if(!file) throw new Error('Selecione os dois arquivos XLSX.');
+  const buffer = await file.arrayBuffer();
+  return XLSX.read(buffer, {type:'array', cellDates:true});
+}
+
+function buildHourlySeries(moves){
+  const buckets = new Map();
+
+  moves.forEach(move => {
+    const d = move.time;
+    const key = `${d.getUTCFullYear()}-${pad2(d.getUTCMonth()+1)}-${pad2(d.getUTCDate())}T${pad2(d.getUTCHours())}`;
+    if(!buckets.has(key)) buckets.set(key, {key, date:d, value:0});
+    buckets.get(key).value += 1;
+  });
+
+  return Array.from(buckets.values())
+    .sort((a,b) => a.date - b.date)
+    .map(item => [`${pad2(item.date.getUTCHours())}h`, item.value]);
+}
+
+
+function reportDateFromFilename(filename){
+  const raw = String(filename || '');
+  const match = raw.match(/(\d{4})(\d{2})(\d{2})[_-](\d{2})(\d{2})/);
+  if(!match) return null;
+
+  const [, y, mo, d, h, mi] = match;
+  const date = new Date(Date.UTC(
+    Number(y),
+    Number(mo) - 1,
+    Number(d),
+    Number(h),
+    Number(mi)
+  ));
+
+  return Number.isNaN(date.getTime()) ? null : date;
+}
+
+function formatIdle(ms){
+  if(!Number.isFinite(ms) || ms < 0) return '-';
+
+  const totalMinutes = Math.floor(ms / 60000);
+  const days = Math.floor(totalMinutes / 1440);
+  const hours = Math.floor((totalMinutes % 1440) / 60);
+  const minutes = totalMinutes % 60;
+
+  if(days > 0) return `${days}d ${pad2(hours)}h${pad2(minutes)}`;
+  if(hours > 0) return `${pad2(hours)}h${pad2(minutes)}`;
+  return `${minutes} min`;
+}
+
+function buildEquipmentRows(moves, phase, reportReferenceTime){
+  const cranes = new Map();
+
+  moves.forEach(move => {
+    const code = move.crane || 'N/I';
+    if(!cranes.has(code)) cranes.set(code, []);
+    cranes.get(code).push(move.time);
+  });
+
+  return Array.from(cranes.entries())
+    .map(([code, dates]) => {
+      dates.sort((a,b) => a-b);
+      const mph = calcRateFromDates(dates);
+      const last = dates[dates.length-1];
+      const reference = reportReferenceTime instanceof Date
+        ? reportReferenceTime
+        : new Date(reportReferenceTime || Date.now());
+
+      const idleMs = last ? Math.max(0, reference - last) : 0;
+      let status = 'ATIVO';
+
+      if(String(phase).toLowerCase() === 'complete'){
+        status = 'FINALIZADO';
+      } else if(last && idleMs > 30 * 60000){
+        status = 'PAUSA';
+      }
+
+      const idleLabel = status === 'FINALIZADO' ? '-' : formatIdle(idleMs);
+      return [code, equipmentType(code), dates.length, mph, idleLabel, status, idleMs];
+    })
+    .sort((a,b) => b[2] - a[2]);
+}
+
+function buildVesselData(meta, moves, reportReferenceTime){
+  moves.sort((a,b) => a.time - b.time);
+
+  const first = moves[0].time;
+  const last = moves[moves.length-1].time;
+  const elapsedHours = (last - first) / 3600000;
+  const bmph = elapsedHours > 0 ? moves.length / elapsedHours : 0;
+
+  const cranes = new Map();
+  moves.forEach(move => {
+    const code = move.crane || 'N/I';
+    if(!cranes.has(code)) cranes.set(code, []);
+    cranes.get(code).push(move.time);
+  });
+
+  const craneRates = Array.from(cranes.entries()).map(([code, dates]) => ({
+    code,
+    type: equipmentType(code),
+    mph: calcRateFromDates(dates)
+  }));
+
+  const allRates = craneRates.map(item => item.mph);
+  const stsRates = craneRates.filter(item => item.type === 'STS').map(item => item.mph);
+  const mhcRates = craneRates.filter(item => item.type === 'MHC').map(item => item.mph);
+
+  const gmph = mean(allRates);
+  const mphSts = mean(stsRates);
+  const mphMhc = mean(mhcRates);
+
+  const TARGETS = {
+    bmph:berthTargetForService(meta.serviceName),
+    gmph:Number(targetConfig.gmphTarget) || 28,
+    sts:Number(targetConfig.stsTarget) || 28,
+    mhc:Number(targetConfig.mhcTarget) || 14
+  };
+  const status = statusFromBmph(bmph, TARGETS.bmph);
+
+  const moveKinds = moves.reduce((acc, move) => {
+    const k = String(move.kind || '').toLowerCase();
+    if(k === 'load') acc.load += 1;
+    else if(k === 'discharge') acc.discharge += 1;
+    else acc.restow += 1;
+    return acc;
+  }, {load:0, discharge:0, restow:0});
+
+  return {
+    id: meta.visit,
+    visit: meta.visit,
+    phase: meta.phase,
+    serviceName: meta.serviceName,
+    berthId: meta.berthId || '',
+    berth: meta.berth || meta.berthId || '',
+    outboundVoyage: meta.outboundVoyage || '',
+    timeStartWork: meta.timeStartWork || '',
+    timeEndWork: meta.timeEndWork || '',
+    name: meta.vesselName || meta.visit,
+    sub: [meta.serviceName, meta.voyage, (meta.berth || meta.berthId), meta.visit].filter(Boolean).join(' • '),
+    status,
+    moves: moves.length,
+    bmph,
+    operation: `${meta.vesselName || meta.visit} | ${meta.visit}`,
+    start: formatMoveTime(first),
+    duration: formatDuration(last - first),
+    firstMove: first.toISOString(),
+    lastMove: last.toISOString(),
+    moveKinds,
+    gauges:[
+      {title:'BMPH',desc:'Berth Moves Per Hour',value:bmph,max:80,unit:'movimentos / hora',target:TARGETS.bmph,label:'BERÇO'},
+      {title:'GMPH',desc:'Gross Moves Per Hour',value:gmph,max:40,unit:'movimentos / hora',target:TARGETS.gmph,label:'GUINDASTE'},
+      {title:'MPH STS',desc:'Produtividade dos STS',value:mphSts,max:40,unit:'movimentos / hora',target:TARGETS.sts,label:'STS'},
+      {title:'MPH MHC',desc:'Produtividade dos MHC',value:mphMhc,max:25,unit:'movimentos / hora',target:TARGETS.mhc,label:'MHC'}
+    ],
+    hourly:buildHourlySeries(moves),
+    equipment:buildEquipmentRows(moves, meta.phase, reportReferenceTime)
+  };
+}
+
+function buildOverview(vesselList){
+  const individual = vesselList.filter(v => v.id !== 'overview');
+  const allEquipment = individual.flatMap(v =>
+    v.equipment.map(row => ({
+      visit:v.visit,
+      code:row[0],
+      type:row[1],
+      moves:row[2],
+      mph:row[3],
+      idle:row[4],
+      status:row[5],
+      idleMs:row[6] || 0
+    }))
+  );
+
+  const bmph = individual.reduce((sum,v) => sum + v.gauges[0].value, 0);
+  const gmph = mean(allEquipment.map(e => e.mph));
+  const mphSts = mean(allEquipment.filter(e => e.type === 'STS').map(e => e.mph));
+  const mphMhc = mean(allEquipment.filter(e => e.type === 'MHC').map(e => e.mph));
+  const totalMoves = individual.reduce((sum,v) => sum + v.moves, 0);
+
+  return {
+    id:'overview',
+    phase:'Working',
+    name:'VISÃO GERAL',
+    sub:individual.map(v => v.name).join(' • '),
+    status:'ok',
+    moves:totalMoves,
+    bmph,
+    operation:`${individual.length} navio(s) com movimentos`,
+    start:'-',
+    duration:'-',
+    gauges:[
+      {title:'BMPH',desc:'Soma do BMPH dos navios',value:bmph,max:Math.max(80,Math.ceil((bmph+20)/20)*20),unit:'movimentos / hora',target:individual.reduce((sum,v)=>sum+berthTargetForService(v.serviceName || extractServiceFromSub(v.sub)),0),label:'TERMINAL'},
+      {title:'GMPH',desc:'Média dos guindastes',value:gmph,max:40,unit:'movimentos / hora',target:Number(targetConfig.gmphTarget)||28,label:'MÉDIA'},
+      {title:'MPH STS',desc:'Média dos equipamentos STS',value:mphSts,max:40,unit:'movimentos / hora',target:Number(targetConfig.stsTarget)||28,label:'STS'},
+      {title:'MPH MHC',desc:'Média dos equipamentos MHC',value:mphMhc,max:25,unit:'movimentos / hora',target:Number(targetConfig.mhcTarget)||14,label:'MHC'}
+    ],
+    hourly:[],
+    equipment:allEquipment
+      .sort((a,b) => b.mph - a.mph)
+      .map(e => [`${e.code}`, e.type, e.moves, e.mph, e.idle, e.status, e.idleMs])
+  };
+}
+
+
+function normalizeVesselPhase(value){
+  const raw = String(value ?? '').trim().toUpperCase();
+  if(raw === 'W' || raw === 'WORKING') return 'Working';
+  if(raw === 'T' || raw === 'COMPLETE' || raw === 'COMPLETED' || raw === 'TERMINATED') return 'Complete';
+  if(raw === 'D' || raw === 'DEPARTED') return 'Departed';
+  return String(value ?? '').trim();
+}
+
+function processReportRows(moveRows, vesselRows, reportReferenceTime){
+  const visitMap = new Map();
+
+  vesselRows.forEach(row => {
+    const visit = String(row['Visit'] ?? '').trim();
+    const phase = normalizeVesselPhase(row['Phase']);
+    if(!visit || !['working','complete'].includes(phase.toLowerCase())) return;
+
+    visitMap.set(visit, {
+      visit,
+      phase,
+      vesselName:String(row['Vessel Name'] ?? '').trim(),
+      serviceName:String(row['Service Name'] ?? '').trim(),
+      voyage:String(row['I/B Vyg'] ?? '').trim(),
+      outboundVoyage:String(row['O/B Vyg'] ?? '').trim(),
+      berthId:String(row['Berth ID'] ?? '').trim(),
+      berth:String(row['Berth'] ?? '').trim(),
+      timeStartWork:String(row['Time Start Work'] ?? '').trim(),
+      timeEndWork:String(row['Time End Work'] ?? '').trim()
+    });
+  });
+
+  const movesByVisit = new Map();
+
+  moveRows.forEach(row => {
+    const visit = String(row['Carrier Visit'] ?? '').trim();
+    if(!visitMap.has(visit)) return;
+
+    const kind = String(row['Move Kind'] ?? '').trim();
+    const normalizedKind = kind.toLowerCase();
+    if(!MOVE_KINDS_ALLOWED.has(normalizedKind)) return;
+
+    const time = parseN4Date(row['Time Completed']);
+    if(!time) return;
+
+    const crane = String(row['Crane CHE'] ?? '').trim();
+    if(!movesByVisit.has(visit)) movesByVisit.set(visit, []);
+    movesByVisit.get(visit).push({time, kind, crane});
+  });
+
+  const result = [];
+  visitMap.forEach((meta, visit) => {
+    const moves = movesByVisit.get(visit) || [];
+    if(!moves.length) return;
+    result.push(buildVesselData(meta, moves, reportReferenceTime));
+  });
+
+  result.sort((a,b) => {
+    const phaseA = String(a.phase).toLowerCase() === 'working' ? 0 : 1;
+    const phaseB = String(b.phase).toLowerCase() === 'working' ? 0 : 1;
+    if(phaseA !== phaseB) return phaseA - phaseB;
+    return new Date(b.lastMove) - new Date(a.lastMove);
+  });
+
+  if(!result.length){
+    throw new Error('Nenhuma Vessel Visit Working/Complete com movimentos correspondentes foi encontrada.');
+  }
+
+  return [buildOverview(result), ...result];
+}
+
+async function importReports(){
+  const status = document.getElementById('importStatus');
+  const btn = document.getElementById('processImportBtn');
+  const moveFile = document.getElementById('moveEventFile').files[0];
+  const vesselFile = document.getElementById('vesselVisitFile').files[0];
+
+  try{
+    if(typeof XLSX === 'undefined'){
+      throw new Error('A biblioteca de leitura XLSX não foi carregada. Verifique a conexão com a internet.');
+    }
+    if(!moveFile || !vesselFile) throw new Error('Selecione os dois arquivos antes de processar.');
+
+    btn.disabled = true;
+    status.className = 'import-status';
+    status.textContent = 'Lendo e processando os reports...';
+
+    const [moveWb, vesselWb] = await Promise.all([
+      workbookFromFile(moveFile),
+      workbookFromFile(vesselFile)
+    ]);
+
+    const moveRows = tableFromReport(
+      sheetRows(moveWb),
+      ['Time Completed','Move Kind','Crane CHE','Carrier Visit']
+    );
+    const vesselRows = tableFromReport(
+      sheetRows(vesselWb),
+      ['Visit','Service Name','Vessel Name','I/B Vyg','Phase']
+    );
+
+    const reportReferenceTime = reportDateFromFilename(moveFile.name) || new Date();
+    const processed = processReportRows(moveRows, vesselRows, reportReferenceTime);
+    vessels = processed;
+    normalizeEquipmentRows();
+    applyTargetsToExistingData();
+    current = processed.find(v => String(v.phase).toLowerCase() === 'working' && v.id !== 'overview')?.id
+      || processed.find(v => v.id !== 'overview')?.id
+      || 'overview';
+
+    dashboardUpdatedAt = reportReferenceTime;
+    localStorage.setItem(DASHBOARD_CACHE_KEY, JSON.stringify({
+      schemaVersion:CACHE_SCHEMA_VERSION,
+      savedAt:dashboardUpdatedAt.toISOString(),
+      reportReferenceTime:reportReferenceTime.toISOString(),
+      vessels
+    }));
+
+    document.getElementById('dataSourceIndicator').textContent =
+      `Fonte: ${moveFile.name} + ${vesselFile.name}`;
+    document.getElementById('openImportBtn').classList.add('live');
+
+    renderAll();
+
+    const realVessels = processed.filter(v => v.id !== 'overview');
+    status.className = 'import-status ok';
+    const configuredCount = realVessels.filter(v =>
+      Object.prototype.hasOwnProperty.call(
+        targetConfig.serviceTargets || {},
+        normalizedServiceKey(v.serviceName || '')
+      )
+    ).length;
+
+    status.innerHTML =
+      `<b>Importação concluída.</b> ${realVessels.length} Vessel Visit(s) com movimentos processadas, ` +
+      `${realVessels.reduce((sum,v) => sum + v.moves, 0).toLocaleString('pt-BR')} movimentos válidos. ` +
+      `${configuredCount} operação(ões) utilizaram meta específica por serviço. ` +
+      `Referência do report: ${timeLabel(reportReferenceTime)}.`;
+
+  }catch(err){
+    console.error(err);
+    status.className = 'import-status error';
+    status.textContent = err?.message || 'Falha ao processar os arquivos.';
+  }finally{
+    btn.disabled = false;
+  }
+}
+
+
+function saveOperationalCache(payload){
+  try{
+    localStorage.setItem('jbs_vessel_dashboard_remote_data_v1', JSON.stringify(payload));
+  }catch(err){
+    console.warn('Não foi possível salvar cache dos dados operacionais:', err);
+  }
+}
+
+function loadOperationalCache(){
+  try{
+    const raw = localStorage.getItem('jbs_vessel_dashboard_remote_data_v1');
+    return raw ? JSON.parse(raw) : null;
+  }catch(err){
+    console.warn('Falha ao ler cache dos dados operacionais:', err);
+    return null;
+  }
+}
+
+function applyRemoteOperationalPayload(payload, sourceLabel){
+  if(!payload || !Array.isArray(payload.moveRows) || !Array.isArray(payload.vesselRows)){
+    throw new Error('latest.json não contém moveRows/vesselRows válidos.');
+  }
+
+  const referenceRaw = payload.reportReferenceTime || payload.generatedAt || payload.source?.moveHistory?.receivedAt;
+  const referenceTime = referenceRaw ? new Date(referenceRaw) : new Date();
+
+  if(Number.isNaN(referenceTime.getTime())){
+    throw new Error('reportReferenceTime inválido em latest.json.');
+  }
+
+  const processed = processReportRows(payload.moveRows, payload.vesselRows, referenceTime);
+  if(!processed || !processed.some(v => v.id !== 'overview')){
+    throw new Error('Nenhuma Vessel Visit elegível com movimentos foi encontrada.');
+  }
+
+  vessels = processed;
+  dashboardUpdatedAt = referenceTime;
+  current = processed.find(v => String(v.phase).toLowerCase() === 'working' && v.id !== 'overview')?.id
+    || processed.find(v => v.id !== 'overview')?.id
+    || 'overview';
+
+  applyTargetsToExistingData();
+  renderAll();
+
+  const source = document.getElementById('dataSource');
+  if(source){
+    source.textContent = sourceLabel || 'Fonte: atualização automática via Gmail';
+  }
+
+  return true;
+}
+
+async function loadAutomaticOperationalData(){
+  try{
+    if(location.protocol === 'file:'){
+      return false;
+    }
+
+    const response = await fetch(`${DATA_URL}?v=${Date.now()}`, {cache:'no-store'});
+    if(!response.ok) throw new Error(`HTTP ${response.status}`);
+
+    const payload = await response.json();
+    applyRemoteOperationalPayload(payload, 'Fonte: atualização automática via Gmail');
+    saveOperationalCache(payload);
+    return true;
+
+  }catch(err){
+    console.warn('Falha ao carregar dados automáticos:', err);
+
+    const cached = loadOperationalCache();
+    if(cached){
+      try{
+        applyRemoteOperationalPayload(cached, 'Fonte: último dado automático salvo neste navegador');
+        return false;
+      }catch(cacheErr){
+        console.warn('Cache automático inválido:', cacheErr);
+      }
+    }
+
+    return false;
+  }
+}
+
+function restoreCache(){
+  try{
+    const raw = localStorage.getItem(DASHBOARD_CACHE_KEY);
+    if(!raw) return false;
+
+    const cached = JSON.parse(raw);
+    if(!cached?.vessels?.length) return false;
+    if(cached.schemaVersion !== CACHE_SCHEMA_VERSION) return false;
+
+    const hasIdleSchema = cached.vessels
+      .filter(v => v.id !== 'overview')
+      .every(v => !Array.isArray(v.equipment) || v.equipment.every(row => Array.isArray(row) && row.length >= 7));
+
+    if(!hasIdleSchema) return false;
+
+    vessels = cached.vessels;
+    applyTargetsToExistingData();
+    dashboardUpdatedAt = cached.savedAt ? new Date(cached.savedAt) : new Date();
+
+    current = vessels.find(v => String(v.phase).toLowerCase() === 'working' && v.id !== 'overview')?.id
+      || vessels.find(v => v.id !== 'overview')?.id
+      || 'overview';
+
+    document.getElementById('dataSourceIndicator').textContent =
+      'Fonte: última importação manual salva neste navegador';
+    document.getElementById('openImportBtn').classList.add('live');
+    return true;
+  }catch(err){
+    console.warn('Cache inválido:', err);
+    return false;
+  }
+}
+
+function useDemoData(){
+  vessels = JSON.parse(JSON.stringify(DEMO_VESSELS));
+  normalizeEquipmentRows();
+  applyTargetsToExistingData();
+  current = vessels.find(v => v.id === 'v1')?.id || vessels[0]?.id || 'overview';
+  dashboardUpdatedAt = new Date();
+  localStorage.removeItem(DASHBOARD_CACHE_KEY);
+  document.getElementById('dataSourceIndicator').textContent = 'Fonte: dados simulados';
+  document.getElementById('openImportBtn').classList.remove('live');
+  document.getElementById('importStatus').className = 'import-status';
+  document.getElementById('importStatus').textContent = 'Dados demo restaurados.';
+  renderAll();
+}
+
+function setupImportUi(){
+  const overlay = document.getElementById('importOverlay');
+  document.getElementById('openImportBtn').addEventListener('click', () => overlay.classList.add('open'));
+  document.getElementById('closeImportBtn').addEventListener('click', () => overlay.classList.remove('open'));
+  document.getElementById('processImportBtn').addEventListener('click', importReports);
+  document.getElementById('demoBtn').addEventListener('click', useDemoData);
+  overlay.addEventListener('click', event => {
+    if(event.target === overlay) overlay.classList.remove('open');
+  });
+}
+
+function renderSelector(){
+  const root = document.getElementById('selectorRow');
+  root.innerHTML = '';
+  vessels.forEach(v => {
+    const el = document.createElement('div');
+    el.className = 'vessel-pill ' + (v.id === current ? 'active' : '');
+    el.innerHTML = `
+      <div>
+        <div class="vessel-name">${v.name}</div>
+        <div class="vessel-sub">${v.sub}</div>
+        <div class="vessel-metrics">
+          <div><span>BMPH</span><strong>${br(v.bmph,1)}</strong></div>
+          <div><span>Moves</span><strong>${br(v.moves)}</strong></div>
+          <div><span>${v.id === 'overview' ? 'Navios' : 'Início'}</span><strong>${v.id === 'overview' ? String(vessels.filter(item => item.id !== 'overview').length) : v.start}</strong></div>
+        </div>
+      </div>
+      <div class="status-tag ${v.status === 'ok' ? '' : v.status === 'warn' ? 'attention' : 'critical'}">${v.id === 'overview' ? 'GERAL' : selectorStatusText(v.status, v.phase)}</div>
+    `;
+    el.onclick = () => {
+      current = v.id;
+      renderAll();
+    };
+    root.appendChild(el);
+  });
+}
+
+function renderGauges(v){
+  const row = document.getElementById('gaugeRow');
+  row.innerHTML = '';
+  v.gauges.forEach(g => {
+    const diff = g.value - g.target;
+    const zones = gaugeZoneAngles(g.target,g.max);
+    const card = document.createElement('div');
+    card.className = 'card gauge-card';
+    card.innerHTML = `
+      <div class="gauge-head">
+        <div>
+          <div class="gauge-title">${g.title}</div>
+          <div class="gauge-desc">${g.desc}</div>
+        </div>
+        <div class="gauge-badge">${g.label}</div>
+      </div>
+      <div class="gauge-visual">
+        <div class="gauge" style="--needle-angle:${gaugeAngle(g.value,g.max)}deg;--red-end:${zones.redEnd}deg;--target-angle:${zones.targetAngle}deg">
+          <div class="gauge-arc"></div>
+          <div class="gauge-hole"></div>
+          <div class="needle-wrap">
+            <div class="needle"></div>
+            <div class="needle-dot"></div>
+          </div>
+        </div>
+        <div class="gauge-value">${br(g.value,1)}</div>
+        <div class="gauge-unit">${g.unit}</div>
+      </div>
+      <div class="gauge-foot">
+        <span>Meta <strong>${br(g.target)}</strong></span>
+        <span>vs meta <strong>${diff >= 0 ? '+' : ''}${br(diff,1)}</strong></span>
+      </div>
+    `;
+    row.appendChild(card);
+  });
+}
+
+function hourlySeries(v){
+  if(v.id !== 'overview') return v.hourly;
+
+  const totals = new Map();
+  vessels
+    .filter(item => item.id !== 'overview')
+    .forEach(item => item.hourly.forEach(([hour, value]) => {
+      totals.set(hour, (totals.get(hour) || 0) + value);
+    }));
+
+  return Array.from(totals.entries());
+}
+
+function renderSelectedHourlyPanel(v){
+  const root = document.getElementById('selectedHourlyPanel');
+  root.innerHTML = '';
+
+  const panel = document.createElement('div');
+  panel.className = 'card panel hourly-ship';
+
+  const last6 = hourlySeries(v).slice(-6);
+  const max = Math.max(...last6.map(x => x[1]), 1);
+  const overview = v.id === 'overview';
+  const statusClass = overview ? '' : (v.status === 'warn' ? 'warn' : (v.status === 'critical' ? 'critical' : ''));
+  const statusLabel = overview ? 'CONSOLIDADO' : (v.status === 'warn' ? 'ATENÇÃO' : (v.status === 'critical' ? 'CRÍTICO' : 'OPERANDO'));
+
+  let bars = '';
+  for (const [h, val] of last6) {
+    const height = Math.max(5.2, (val / max) * 12.4);
+    bars += `<div class="bar-col"><div class="chart-bar" style="height:${height}vh"><span>${val}</span></div><div class="chart-hour">${h}</div></div>`;
+  }
+
+  const firstLabel = overview ? 'Escopo' : 'Início';
+  const firstValue = overview ? '3 navios' : v.start;
+  const secondLabel = overview ? 'Leitura' : 'Operação';
+  const secondValue = overview ? 'Consolidada' : v.duration;
+
+  panel.innerHTML = `
+    <div class="panel-head">
+      <div class="title">MOVIMENTAÇÃO POR HORA</div>
+    </div>
+    <div class="panel-body">
+      <div class="hourly-top">
+        <div>
+          <div class="hourly-ship-name">${v.name}</div>
+          <div class="hourly-ship-sub">${overview ? 'Soma dos movimentos dos navios em operação' : v.sub}</div>
+        </div>
+        <div class="hourly-ship-status ${statusClass}">${statusLabel}</div>
+      </div>
+      <div class="hourly-mini">
+        <div class="hourly-mini-card"><span>${firstLabel}</span><strong>${firstValue}</strong></div>
+        <div class="hourly-mini-card"><span>${secondLabel}</span><strong>${secondValue}</strong></div>
+        <div class="hourly-mini-card"><span>Moves</span><strong>${br(v.moves)}</strong></div>
+      </div>
+      <div class="body-note">Últimas 6 horas</div>
+      <div class="chart last6">${bars}</div>
+    </div>
+  `;
+  root.appendChild(panel);
+}
+
+function renderEquipment(v){
+  const root = document.getElementById('equipmentTable');
+  root.innerHTML = '';
+
+  v.equipment.slice(0,6).forEach(([eq, type, moves, mph, idle, status, idleMs]) => {
+    const cls = status === 'ATIVO' ? 'ok' : status === 'PAUSA' ? 'critical' : 'warn';
+    const craneAlert = status !== 'FINALIZADO' && Number(idleMs) > 10 * 60000;
+    const idleLabel = status === 'FINALIZADO' ? '-' : (idle || '-');
+
+    root.innerHTML += `
+      <tr>
+        <td><strong class="${craneAlert ? 'crane-idle-alert' : ''}">${eq}</strong></td>
+        <td>${type}</td>
+        <td>${br(moves)}</td>
+        <td>${br(mph,1)}</td>
+        <td><strong>${idleLabel}</strong></td>
+        <td><span class="badge ${cls}">${status}</span></td>
+      </tr>
+    `;
+  });
+}
+
+function renderTimeline(v){
+  const root = document.getElementById('timeline');
+  root.innerHTML = '';
+  v.timeline.slice(0,6).forEach(([t, txt]) => {
+    root.innerHTML += `<div class="event"><time>${t}</time><div class="event-dot"></div><span>${txt}</span></div>`;
+  });
+}
+
+function renderPeriods(v){
+  const root = document.getElementById('periodList');
+  root.innerHTML = '';
+  const max = Math.max(...v.periods.map(x => x[1]), 1);
+  v.periods.forEach(([p, val]) => {
+    root.innerHTML += `<div class="progress-row"><span>${p}</span><div class="track"><div style="width:${(val/max)*100}%"></div></div><strong>${val}</strong></div>`;
+  });
+  const cp = getPeriodLabel();
+  const currentVal = (v.periods.find(x => x[0] === cp) || ['',0])[1];
+  const active = v.periods.filter(x => x[1] > 0);
+  const avg = active.reduce((acc, cur) => acc + cur[1], 0) / Math.max(active.length, 1);
+  document.getElementById('periodCurrent').textContent = br(currentVal);
+  document.getElementById('periodAvg').textContent = br(avg,1);
+}
+
+function renderHeader(){
+  document.getElementById('currentTime').textContent = timeLabel(new Date());
+  document.getElementById('currentPeriod').textContent = getPeriodLabel();
+  document.getElementById('lastUpdate').textContent = timeLabel(dashboardUpdatedAt);
+}
+
+function renderAll(){
+  const v = vessels.find(x => x.id === current);
+  renderSelector();
+  renderHeader(v);
+  renderGauges(v);
+  renderSelectedHourlyPanel(v);
+  renderEquipment(v);
+}
+
+setupConfigUi();
+setupImportUi();
+restoreCache();
+normalizeEquipmentRows();
+applyTargetsToExistingData();
+renderAll();
+
+Promise.all([
+  loadSharedTargetConfig(),
+  loadAutomaticOperationalData()
+]);
+
+setInterval(renderHeader, 30000);
+setInterval(loadSharedTargetConfig, 5 * 60 * 1000);
+setInterval(loadAutomaticOperationalData, DATA_REFRESH_MS);
+</script>
+</body>
+</html>
