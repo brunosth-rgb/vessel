@@ -516,6 +516,63 @@ body{min-width:1220px}
   color:var(--muted);
 }
 
+.hour-group{
+  flex:1;
+  min-width:0;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  align-items:center;
+}
+.crane-bars{
+  width:100%;
+  flex:1;
+  min-height:0;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  gap:.16vw;
+}
+.crane-bar-wrap{
+  flex:0 1 18%;
+  min-width:17px;
+  max-width:42px;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  align-items:center;
+}
+.crane-chart-bar{
+  width:100%;
+  min-width:14px;
+  border-radius:6px 6px 2px 2px;
+  background:linear-gradient(180deg,#52B8FF,var(--blue));
+  position:relative;
+}
+.crane-chart-bar span{
+  position:absolute;
+  top:-1.35vh;
+  left:50%;
+  transform:translateX(-50%);
+  white-space:nowrap;
+  font-size:.82vh;
+  font-weight:900;
+  color:var(--text);
+}
+.crane-code{
+  margin-top:.24vh;
+  font-size:.72vh;
+  line-height:1;
+  font-weight:900;
+  color:var(--blue-dark);
+}
+.hour-group .chart-hour{
+  margin-top:.36vh;
+  font-weight:900;
+}
+
 .alerts{
   display:grid;
   gap:.6vh;
@@ -2181,6 +2238,42 @@ function buildHourlySeries(moves){
 }
 
 
+
+function buildHourlyByCrane(moves){
+  const buckets = new Map();
+
+  moves.forEach(move => {
+    const d = move.time;
+    const p = timeZoneParts(d);
+    const hourKey = `${p.year}-${p.month}-${p.day}T${p.hour}`;
+    const crane = String(move.crane || 'N/I').trim().toUpperCase() || 'N/I';
+
+    if(!buckets.has(hourKey)){
+      buckets.set(hourKey, {
+        key:hourKey,
+        date:d,
+        hour:`${p.hour}h`,
+        cranes:new Map()
+      });
+    }
+
+    const bucket = buckets.get(hourKey);
+    bucket.cranes.set(crane, (bucket.cranes.get(crane) || 0) + 1);
+  });
+
+  return Array.from(buckets.values())
+    .sort((a,b) => a.date - b.date)
+    .map(bucket => ({
+      key:bucket.key,
+      date:bucket.date.toISOString(),
+      hour:bucket.hour,
+      cranes:Array.from(bucket.cranes.entries())
+        .sort((a,b) => a[0].localeCompare(b[0])),
+      total:Array.from(bucket.cranes.values()).reduce((sum,value) => sum + value, 0)
+    }));
+}
+
+
 function reportDateFromFilename(filename){
   const raw = String(filename || '');
   const match = raw.match(/(\d{4})(\d{2})(\d{2})[_-](\d{2})(\d{2})/);
@@ -2315,6 +2408,7 @@ function buildVesselData(meta, moves, reportReferenceTime){
       {title:'MPH MHC',desc:'Produtividade dos MHC',value:mphMhc,max:25,unit:'movimentos / hora',target:TARGETS.mhc,label:'MHC'}
     ],
     hourly:buildHourlySeries(moves),
+    hourlyByCrane:buildHourlyByCrane(moves),
     equipment:buildEquipmentRows(moves, meta.phase, reportReferenceTime)
   };
 }
@@ -2729,6 +2823,63 @@ function hourlySeries(v){
   return Array.from(totals.entries());
 }
 
+function hourlyCraneSeries(v){
+  if(v.id !== 'overview'){
+    if(Array.isArray(v.hourlyByCrane) && v.hourlyByCrane.length){
+      return v.hourlyByCrane;
+    }
+
+    // Compatibilidade com caches antigos, sem quebra do painel.
+    return (v.hourly || []).map(([hour,total]) => ({
+      hour,
+      total,
+      cranes:[['TOTAL', total]]
+    }));
+  }
+
+  const hours = new Map();
+
+  vessels
+    .filter(item => item.id !== 'overview')
+    .forEach(item => {
+      const source = Array.isArray(item.hourlyByCrane) && item.hourlyByCrane.length
+        ? item.hourlyByCrane
+        : (item.hourly || []).map(([hour,total]) => ({
+            hour,
+            total,
+            cranes:[['TOTAL', total]]
+          }));
+
+      source.forEach(bucket => {
+        const hour = bucket.hour;
+        if(!hours.has(hour)){
+          hours.set(hour, {
+            hour,
+            total:0,
+            cranes:new Map()
+          });
+        }
+
+        const target = hours.get(hour);
+        target.total += Number(bucket.total || 0);
+
+        (bucket.cranes || []).forEach(([crane,value]) => {
+          target.cranes.set(
+            crane,
+            (target.cranes.get(crane) || 0) + Number(value || 0)
+          );
+        });
+      });
+    });
+
+  return Array.from(hours.values()).map(bucket => ({
+    hour:bucket.hour,
+    total:bucket.total,
+    cranes:Array.from(bucket.cranes.entries())
+      .sort((a,b) => a[0].localeCompare(b[0]))
+  }));
+}
+
 function renderSelectedHourlyPanel(v){
   const root = document.getElementById('selectedHourlyPanel');
   root.innerHTML = '';
@@ -2736,16 +2887,40 @@ function renderSelectedHourlyPanel(v){
   const panel = document.createElement('div');
   panel.className = 'card panel hourly-ship';
 
-  const last6 = hourlySeries(v).slice(-6);
-  const max = Math.max(...last6.map(x => x[1]), 1);
+  const last6 = hourlyCraneSeries(v).slice(-6);
+  const max = Math.max(
+    ...last6.flatMap(bucket => (bucket.cranes || []).map(([,value]) => Number(value || 0))),
+    1
+  );
   const overview = v.id === 'overview';
   const statusClass = overview ? '' : (v.status === 'warn' ? 'warn' : (v.status === 'critical' ? 'critical' : ''));
   const statusLabel = overview ? 'CONSOLIDADO' : (v.status === 'warn' ? 'ATENÇÃO' : (v.status === 'critical' ? 'CRÍTICO' : 'OPERANDO'));
 
   let bars = '';
-  for (const [h, val] of last6) {
-    const height = Math.max(5.2, (val / max) * 12.4);
-    bars += `<div class="bar-col"><div class="chart-bar" style="height:${height}vh"><span>${val}</span></div><div class="chart-hour">${h}</div></div>`;
+
+  for (const bucket of last6) {
+    let craneBars = '';
+
+    for (const [crane, valueRaw] of (bucket.cranes || [])) {
+      const value = Number(valueRaw || 0);
+      const height = Math.max(1.2, (value / max) * 11.2);
+
+      craneBars += `
+        <div class="crane-bar-wrap" title="${crane}: ${value} movimento(s)">
+          <div class="crane-chart-bar" style="height:${height}vh">
+            <span>${value}</span>
+          </div>
+          <div class="crane-code">${crane}</div>
+        </div>
+      `;
+    }
+
+    bars += `
+      <div class="hour-group">
+        <div class="crane-bars">${craneBars}</div>
+        <div class="chart-hour">${bucket.hour}</div>
+      </div>
+    `;
   }
 
   const firstLabel = overview ? 'Escopo' : 'Início';
@@ -2770,7 +2945,7 @@ function renderSelectedHourlyPanel(v){
         <div class="hourly-mini-card"><span>${secondLabel}</span><strong>${secondValue}</strong></div>
         <div class="hourly-mini-card"><span>Moves</span><strong>${br(v.moves)}</strong></div>
       </div>
-      <div class="body-note">Últimas 6 horas</div>
+      <div class="body-note">Últimas 6 horas • movimentos separados por guindaste</div>
       <div class="chart last6">${bars}</div>
     </div>
   `;
