@@ -1273,7 +1273,7 @@ body{min-width:1220px}
   </section>
 
 </div>
-<div class="footer">JBS Terminais • Protótipo TV v34 • Dados automáticos • Dados simulados</div>
+<div class="footer">JBS Terminais - Vessel Dashboard - Desenvolvido por Bruno Duarte</div>
 
 
 
@@ -1387,7 +1387,7 @@ body{min-width:1220px}
     </div>
   </div>
 </div>
-<div class="data-source-indicator" id="dataSourceIndicator">Fonte: dados simulados</div>
+<div class="data-source-indicator" id="dataSourceIndicator">Fonte Dados: N4 Jasper Report</div>
 
 <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
 
@@ -1993,6 +1993,40 @@ function normalizeHeader(value){
 
 function pad2(n){ return String(n).padStart(2,'0'); }
 
+function saoPauloDate(year, month, day, hour, minute, second = 0){
+  // N4 exports wall-clock times in America/Sao_Paulo.
+  // Brazil no longer observes DST, so current operational timestamps use UTC-03:00.
+  const iso =
+    `${String(year).padStart(4,'0')}-` +
+    `${String(month).padStart(2,'0')}-` +
+    `${String(day).padStart(2,'0')}T` +
+    `${String(hour).padStart(2,'0')}:` +
+    `${String(minute).padStart(2,'0')}:` +
+    `${String(second).padStart(2,'0')}-03:00`;
+
+  const date = new Date(iso);
+  return Number.isNaN(date.getTime()) ? null : date;
+}
+
+function timeZoneParts(date){
+  const parts = new Intl.DateTimeFormat('en-CA', {
+    timeZone: TIME_ZONE,
+    year:'numeric',
+    month:'2-digit',
+    day:'2-digit',
+    hour:'2-digit',
+    minute:'2-digit',
+    hour12:false,
+    hourCycle:'h23'
+  }).formatToParts(date);
+
+  return Object.fromEntries(
+    parts
+      .filter(p => p.type !== 'literal')
+      .map(p => [p.type, p.value])
+  );
+}
+
 function parseN4Date(value){
   if(value instanceof Date && !Number.isNaN(value.getTime())) return value;
   if(typeof value === 'number' && Number.isFinite(value)){
@@ -2013,17 +2047,17 @@ function parseN4Date(value){
     const yy = Number(m[1]);
     const year = yy >= 70 ? 1900 + yy : 2000 + yy;
     const month = months[m[2].toLowerCase()];
-    if(month !== undefined) return new Date(Date.UTC(year,month,Number(m[3]),Number(m[4]),Number(m[5])));
+    if(month !== undefined) return saoPauloDate(year, month + 1, Number(m[3]), Number(m[4]), Number(m[5]));
   }
 
   m = raw.match(/^(\d{4})-([A-Za-z]{3})-(\d{2})\s+(\d{2})(\d{2})$/);
   if(m){
     const month = months[m[2].toLowerCase()];
-    if(month !== undefined) return new Date(Date.UTC(Number(m[1]),month,Number(m[3]),Number(m[4]),Number(m[5])));
+    if(month !== undefined) return saoPauloDate(Number(m[1]), month + 1, Number(m[3]), Number(m[4]), Number(m[5]));
   }
 
   m = raw.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})\s+(\d{1,2}):(\d{2})$/);
-  if(m) return new Date(Date.UTC(Number(m[3]),Number(m[2])-1,Number(m[1]),Number(m[4]),Number(m[5])));
+  if(m) return saoPauloDate(Number(m[3]), Number(m[2]), Number(m[1]), Number(m[4]), Number(m[5]));
 
   const parsed = new Date(raw);
   return Number.isNaN(parsed.getTime()) ? null : parsed;
@@ -2031,7 +2065,13 @@ function parseN4Date(value){
 
 function formatMoveTime(date){
   if(!date) return '-';
-  return `${pad2(date.getUTCHours())}:${pad2(date.getUTCMinutes())}`;
+  return new Intl.DateTimeFormat('pt-BR',{
+    timeZone:TIME_ZONE,
+    hour:'2-digit',
+    minute:'2-digit',
+    hour12:false,
+    hourCycle:'h23'
+  }).format(date);
 }
 
 function formatDuration(ms){
@@ -2120,14 +2160,24 @@ function buildHourlySeries(moves){
 
   moves.forEach(move => {
     const d = move.time;
-    const key = `${d.getUTCFullYear()}-${pad2(d.getUTCMonth()+1)}-${pad2(d.getUTCDate())}T${pad2(d.getUTCHours())}`;
-    if(!buckets.has(key)) buckets.set(key, {key, date:d, value:0});
+    const p = timeZoneParts(d);
+    const key = `${p.year}-${p.month}-${p.day}T${p.hour}`;
+
+    if(!buckets.has(key)){
+      buckets.set(key, {
+        key,
+        date:d,
+        hour:p.hour,
+        value:0
+      });
+    }
+
     buckets.get(key).value += 1;
   });
 
   return Array.from(buckets.values())
     .sort((a,b) => a.date - b.date)
-    .map(item => [`${pad2(item.date.getUTCHours())}h`, item.value]);
+    .map(item => [`${item.hour}h`, item.value]);
 }
 
 
@@ -2137,15 +2187,13 @@ function reportDateFromFilename(filename){
   if(!match) return null;
 
   const [, y, mo, d, h, mi] = match;
-  const date = new Date(Date.UTC(
+  return saoPauloDate(
     Number(y),
-    Number(mo) - 1,
+    Number(mo),
     Number(d),
     Number(h),
     Number(mi)
-  ));
-
-  return Number.isNaN(date.getTime()) ? null : date;
+  );
 }
 
 function formatIdle(ms){
@@ -2510,7 +2558,7 @@ function applyRemoteOperationalPayload(payload, sourceLabel){
 
   const source = document.getElementById('dataSource');
   if(source){
-    source.textContent = sourceLabel || 'Fonte: atualização automática via Gmail';
+    source.textContent = sourceLabel || 'Fonte Dados: N4 Jasper Report';
   }
 
   return true;
@@ -2526,7 +2574,7 @@ async function loadAutomaticOperationalData(){
     if(!response.ok) throw new Error(`HTTP ${response.status}`);
 
     const payload = await response.json();
-    applyRemoteOperationalPayload(payload, 'Fonte: atualização automática via Gmail');
+    applyRemoteOperationalPayload(payload, 'Fonte Dados: N4 Jasper Report');
     saveOperationalCache(payload);
     return true;
 
@@ -2536,7 +2584,7 @@ async function loadAutomaticOperationalData(){
     const cached = loadOperationalCache();
     if(cached){
       try{
-        applyRemoteOperationalPayload(cached, 'Fonte: último dado automático salvo neste navegador');
+        applyRemoteOperationalPayload(cached, 'Fonte Dados: N4 Jasper Report');
         return false;
       }catch(cacheErr){
         console.warn('Cache automático inválido:', cacheErr);
@@ -2587,7 +2635,7 @@ function useDemoData(){
   current = vessels.find(v => v.id === 'v1')?.id || vessels[0]?.id || 'overview';
   dashboardUpdatedAt = new Date();
   localStorage.removeItem(DASHBOARD_CACHE_KEY);
-  document.getElementById('dataSourceIndicator').textContent = 'Fonte: dados simulados';
+  document.getElementById('dataSourceIndicator').textContent = 'Fonte Dados: N4 Jasper Report';
   document.getElementById('openImportBtn').classList.remove('live');
   document.getElementById('importStatus').className = 'import-status';
   document.getElementById('importStatus').textContent = 'Dados demo restaurados.';
