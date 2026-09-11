@@ -21,6 +21,65 @@
   --line:#D7E3F0;
   --shadow:0 6px 16px rgba(5,47,98,.08);
 }
+
+body.dark-mode{
+  --blue:#2D73B9;
+  --blue-dark:#E8F2FF;
+  --blue-soft:#12243A;
+  --blue-border:#284767;
+  --text:#E8F2FF;
+  --muted:#91A9C2;
+  --bg:#071421;
+  --card:#0D1D2D;
+  --line:#20384F;
+  --shadow:0 6px 16px rgba(0,0,0,.24);
+}
+
+body.dark-mode .vessel-pill{
+  background:linear-gradient(180deg,#102337,#0B1A29);
+}
+body.dark-mode .gauge-badge,
+body.dark-mode .summary-card,
+body.dark-mode .hourly-mini-card,
+body.dark-mode .overview-box,
+body.dark-mode .mini-card{
+  background:#102337;
+}
+body.dark-mode .table th{
+  background:#13283D;
+  color:#A9BED3;
+}
+body.dark-mode .table td{
+  border-bottom-color:#20384F;
+}
+body.dark-mode .panel-head{
+  background:linear-gradient(180deg,#0E4A86,#093666);
+}
+body.dark-mode .gauge-hole{
+  background:var(--card);
+}
+body.dark-mode .config-modal,
+body.dark-mode .import-modal{
+  background:#0D1D2D;
+  color:var(--text);
+}
+body.dark-mode .config-section,
+body.dark-mode .config-admin,
+body.dark-mode .import-file-card{
+  background:#102337;
+  border-color:var(--line);
+}
+body.dark-mode .config-field input,
+body.dark-mode .service-target-input,
+body.dark-mode #configAdminKey{
+  background:#0A1826;
+  color:var(--text);
+  border-color:var(--line);
+}
+body.dark-mode .config-empty{
+  background:#102337;
+  color:var(--muted);
+}
 *{box-sizing:border-box}
 html,body{
   margin:0;
@@ -884,6 +943,21 @@ body::before{
   background:transparent;
 }
 
+.header-theme-btn{
+  flex:0 0 auto;
+  border:1px solid rgba(255,255,255,.36);
+  background:rgba(255,255,255,.10);
+  color:#fff;
+  border-radius:9px;
+  padding:.72vh .7vw;
+  font-size:.88vh;
+  font-weight:900;
+  letter-spacing:.035em;
+  text-transform:uppercase;
+  cursor:pointer;
+}
+.header-theme-btn:hover{background:rgba(255,255,255,.17)}
+
 .header-import-btn{
   flex:0 0 auto;
   border:1px solid rgba(255,255,255,.36);
@@ -1329,7 +1403,8 @@ body::before{
   <div class="app-header-divider"></div>
   <h1>Operational Dashboard - Vessel</h1>
   <button class="header-config-btn" id="openConfigBtn" type="button">Configurações</button>
-   <button class="header-import-btn" id="openImportBtn" type="button">Importar XLSX</button>
+  <button class="header-theme-btn" id="themeToggleBtn" type="button">Modo Escuro</button>
+  <button class="header-import-btn" id="openImportBtn" type="button">Importar XLSX</button>
    <div class="app-header-info">
     <div class="header-info-item">
       <span>Horário atual</span>
@@ -3074,6 +3149,46 @@ function renderAll(){
   renderEquipment(v);
 }
 
+
+const DASHBOARD_THEME_KEY = 'jbsVesselDashboardTheme';
+
+function applyDashboardTheme(theme){
+  const dark = theme === 'dark';
+  document.body.classList.toggle('dark-mode', dark);
+
+  const btn = document.getElementById('themeToggleBtn');
+  if(btn){
+    btn.textContent = dark ? 'Modo Claro' : 'Modo Escuro';
+    btn.setAttribute('aria-pressed', dark ? 'true' : 'false');
+  }
+}
+
+function setupThemeToggle(){
+  let savedTheme = null;
+  try{
+    savedTheme = localStorage.getItem(DASHBOARD_THEME_KEY);
+  }catch(err){
+    console.warn('Não foi possível ler a preferência de tema:', err);
+  }
+
+  applyDashboardTheme(savedTheme === 'dark' ? 'dark' : 'light');
+
+  const btn = document.getElementById('themeToggleBtn');
+  if(!btn) return;
+
+  btn.addEventListener('click', () => {
+    const nextTheme = document.body.classList.contains('dark-mode') ? 'light' : 'dark';
+    applyDashboardTheme(nextTheme);
+
+    try{
+      localStorage.setItem(DASHBOARD_THEME_KEY, nextTheme);
+    }catch(err){
+      console.warn('Não foi possível salvar a preferência de tema:', err);
+    }
+  });
+}
+
+setupThemeToggle();
 setupConfigUi();
 setupImportUi();
 restoreCache();
