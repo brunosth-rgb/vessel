@@ -21,6 +21,96 @@
   --line:#D7E3F0;
   --shadow:0 6px 16px rgba(5,47,98,.08);
 }
+
+body.dark-mode{
+  --blue:#2F6FB0;
+  --blue-dark:#DCEBFA;
+  --blue-soft:#16283A;
+  --blue-border:#2D465E;
+  --green:#4CD964;
+  --yellow:#F5C542;
+  --orange:#FF9F43;
+  --red:#FF5E57;
+  --text:#E8F1FA;
+  --muted:#9CB3C9;
+  --bg:#0E1722;
+  --card:#152231;
+  --line:#2A3B4D;
+  --shadow:0 6px 18px rgba(0,0,0,.28);
+}
+
+body.dark-mode .app-header{
+  background:#111A63;
+}
+
+body.dark-mode .vessel-pill{
+  background:linear-gradient(180deg,#192838,#13202D);
+}
+
+body.dark-mode .gauge-hole{
+  background:var(--card);
+}
+
+body.dark-mode .summary-card,
+body.dark-mode .hourly-mini-card,
+body.dark-mode .overview-box,
+body.dark-mode .mini-card,
+body.dark-mode .config-admin{
+  background:#192838;
+}
+
+body.dark-mode .table th{
+  background:#1B2E40;
+  color:#AFC7DC;
+}
+
+body.dark-mode .table td{
+  border-bottom-color:#293B4D;
+}
+
+body.dark-mode .panel-head{
+  background:linear-gradient(180deg,#163E6E,#0F2F55);
+}
+
+body.dark-mode .config-modal,
+body.dark-mode .import-modal{
+  background:#152231;
+  color:var(--text);
+}
+
+body.dark-mode input,
+body.dark-mode select{
+  background:#101A24;
+  color:var(--text);
+  border-color:#35506A;
+}
+
+body.dark-mode .config-section{
+  border-color:#2D465E;
+}
+
+body.dark-mode .config-source,
+body.dark-mode .import-status,
+body.dark-mode .config-status{
+  background:#101A24;
+  border-color:#2D465E;
+  color:var(--muted);
+}
+
+body.dark-mode .header-config-btn,
+body.dark-mode .header-import-btn,
+body.dark-mode .header-theme-btn{
+  background:rgba(255,255,255,.08);
+  border-color:rgba(255,255,255,.25);
+  color:#fff;
+}
+
+body.dark-mode .header-theme-btn:hover,
+body.dark-mode .header-config-btn:hover,
+body.dark-mode .header-import-btn:hover{
+  background:rgba(255,255,255,.14);
+}
+
 *{box-sizing:border-box}
 html,body{
   margin:0;
@@ -869,7 +959,8 @@ body{min-width:1220px}
   font-weight:700;
 }
 
-.header-import-btn{
+.header-import-btn,
+.header-theme-btn{
   flex:0 0 auto;
   border:1px solid rgba(255,255,255,.36);
   background:rgba(255,255,255,.10);
@@ -1305,6 +1396,30 @@ body{min-width:1220px}
   max-width:360px;
 }
 
+
+.header-theme-btn{
+  border:1px solid rgba(255,255,255,.35);
+  background:rgba(255,255,255,.06);
+  color:#fff;
+  border-radius:9px;
+  padding:.62vh .75vw;
+  font-size:.92vh;
+  font-weight:900;
+  text-transform:uppercase;
+  cursor:pointer;
+  white-space:nowrap;
+}
+.header-theme-btn:hover{
+  background:rgba(255,255,255,.12);
+}
+
+body.dark-mode .crane-chart-bar,
+body.dark-mode .chart-bar{
+  background:linear-gradient(180deg,#4FAAF0,#1C5D9C);
+}
+body.dark-mode .footer{
+  color:#8FA8C0;
+}
 </style>
 </head>
 <body>
@@ -1314,6 +1429,7 @@ body{min-width:1220px}
   <div class="app-header-divider"></div>
   <h1>Operational Dashboard - Vessel</h1>
   <button class="header-config-btn" id="openConfigBtn" type="button">Configurações</button>
+  <button class="header-theme-btn" id="themeToggleBtn" type="button">Modo escuro</button>
    <button class="header-import-btn" id="openImportBtn" type="button">Importar XLSX</button>
    <div class="app-header-info">
     <div class="header-info-item">
@@ -3059,6 +3175,49 @@ function renderAll(){
   renderEquipment(v);
 }
 
+
+const THEME_STORAGE_KEY = 'jbs-vessel-dashboard-theme';
+
+function applyTheme(theme){
+  const dark = theme === 'dark';
+  document.body.classList.toggle('dark-mode', dark);
+
+  const btn = document.getElementById('themeToggleBtn');
+  if(btn){
+    btn.textContent = dark ? 'Modo claro' : 'Modo escuro';
+  }
+
+  try{
+    localStorage.setItem(THEME_STORAGE_KEY, dark ? 'dark' : 'light');
+  }catch(err){
+    console.warn('Não foi possível salvar a preferência de tema:', err);
+  }
+}
+
+function loadTheme(){
+  let saved = 'light';
+
+  try{
+    saved = localStorage.getItem(THEME_STORAGE_KEY) || 'light';
+  }catch(err){
+    console.warn('Não foi possível ler a preferência de tema:', err);
+  }
+
+  applyTheme(saved);
+}
+
+function setupThemeToggle(){
+  const btn = document.getElementById('themeToggleBtn');
+  if(!btn) return;
+
+  btn.addEventListener('click', () => {
+    const next = document.body.classList.contains('dark-mode') ? 'light' : 'dark';
+    applyTheme(next);
+  });
+}
+
+loadTheme();
+setupThemeToggle();
 setupConfigUi();
 setupImportUi();
 restoreCache();
