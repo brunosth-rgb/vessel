@@ -1422,7 +1422,7 @@ body{min-width:1220px}
     <div class="import-modal-body">
       <p class="import-help">
         Selecione os dois reports exportados pelo N4. O dashboard identifica os arquivos pelos campos,
-        cruza <b>Carrier Visit</b> com <b>Visit</b> e mantém somente Vessel Visits em <b>Working</b> ou <b>Complete</b> que possuam movimentos.
+        cruza <b>Carrier Visit</b> com <b>Visit</b> e mantém somente Vessel Visits em <b>Working</b> que possuam movimentos.
       </p>
       <div class="import-file-grid">
         <div class="import-file-card">
@@ -2473,7 +2473,7 @@ function processReportRows(moveRows, vesselRows, reportReferenceTime){
   vesselRows.forEach(row => {
     const visit = String(row['Visit'] ?? '').trim();
     const phase = normalizeVesselPhase(row['Phase']);
-    if(!visit || !['working','complete'].includes(phase.toLowerCase())) return;
+    if(!visit || phase.toLowerCase() !== 'working') return;
 
     visitMap.set(visit, {
       visit,
@@ -2522,7 +2522,7 @@ function processReportRows(moveRows, vesselRows, reportReferenceTime){
   });
 
   if(!result.length){
-    throw new Error('Nenhuma Vessel Visit Working/Complete com movimentos correspondentes foi encontrada.');
+    throw new Error('Nenhuma Vessel Visit Working com movimentos correspondentes foi encontrada.');
   }
 
   return [buildOverview(result), ...result];
