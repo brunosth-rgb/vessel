@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Vessel Dashboard | JBS Terminais</title>
+<title>Torre de Controle | Navio | JBS Terminais</title>
 <style>
 :root{
   --blue:#0E4A86;
@@ -1422,7 +1422,7 @@ body{min-width:1220px}
     <div class="import-modal-body">
       <p class="import-help">
         Selecione os dois reports exportados pelo N4. O dashboard identifica os arquivos pelos campos,
-        cruza <b>Carrier Visit</b> com <b>Visit</b> e mantém somente Vessel Visits em <b>Working</b> que possuam movimentos.
+        cruza <b>Carrier Visit</b> com <b>Visit</b>, exibe apenas Vessel Visits em <b>Working</b> e, quando não houver navio em operação, apresenta somente o último navio operado.
       </p>
       <div class="import-file-grid">
         <div class="import-file-card">
@@ -2470,10 +2470,15 @@ function normalizeVesselPhase(value){
 function processReportRows(moveRows, vesselRows, reportReferenceTime){
   const visitMap = new Map();
 
+  // Mantém Working e Complete disponíveis para processamento.
+  // Working é sempre a prioridade. Complete é usado somente como fallback
+  // quando não existir nenhum navio atualmente em operação.
   vesselRows.forEach(row => {
     const visit = String(row['Visit'] ?? '').trim();
     const phase = normalizeVesselPhase(row['Phase']);
-    if(!visit || phase.toLowerCase() !== 'working') return;
+    const phaseKey = phase.toLowerCase();
+
+    if(!visit || !['working','complete'].includes(phaseKey)) return;
 
     visitMap.set(visit, {
       visit,
@@ -2507,25 +2512,42 @@ function processReportRows(moveRows, vesselRows, reportReferenceTime){
     movesByVisit.get(visit).push({time, kind, crane});
   });
 
-  const result = [];
+  const allWithMoves = [];
+
   visitMap.forEach((meta, visit) => {
     const moves = movesByVisit.get(visit) || [];
     if(!moves.length) return;
-    result.push(buildVesselData(meta, moves, reportReferenceTime));
+
+    allWithMoves.push(
+      buildVesselData(meta, moves, reportReferenceTime)
+    );
   });
 
-  result.sort((a,b) => {
-    const phaseA = String(a.phase).toLowerCase() === 'working' ? 0 : 1;
-    const phaseB = String(b.phase).toLowerCase() === 'working' ? 0 : 1;
-    if(phaseA !== phaseB) return phaseA - phaseB;
-    return new Date(b.lastMove) - new Date(a.lastMove);
-  });
-
-  if(!result.length){
-    throw new Error('Nenhuma Vessel Visit Working com movimentos correspondentes foi encontrada.');
+  if(!allWithMoves.length){
+    throw new Error('Nenhuma Vessel Visit Working/Complete com movimentos correspondentes foi encontrada.');
   }
 
-  return [buildOverview(result), ...result];
+  // Cenário normal: mostra exclusivamente os navios em Working.
+  const working = allWithMoves
+    .filter(v => String(v.phase).toLowerCase() === 'working')
+    .sort((a,b) => new Date(b.lastMove) - new Date(a.lastMove));
+
+  if(working.length){
+    return [buildOverview(working), ...working];
+  }
+
+  // Fallback: sem navio em Working, exibe somente o último navio operado.
+  // A referência é o horário do último movimento registrado.
+  const lastOperated = allWithMoves
+    .filter(v => String(v.phase).toLowerCase() === 'complete')
+    .sort((a,b) => new Date(b.lastMove) - new Date(a.lastMove))[0];
+
+  if(!lastOperated){
+    throw new Error('Nenhum navio em Working e nenhum último navio operado disponível.');
+  }
+
+  lastOperated.isLastOperatedFallback = true;
+  return [lastOperated];
 }
 
 async function importReports(){
