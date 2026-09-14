@@ -83,16 +83,16 @@ body.dark-mode .config-empty{
 *{box-sizing:border-box}
 html,body{
   margin:0;
-  width:100%;
-  height:100%;
-  min-height:100dvh;
+  width:100vw;
+  height:100vh;
+  min-width:0;
+  min-height:0;
   overflow:hidden;
   background:var(--bg);
   font-family:Inter, "Segoe UI", Arial, sans-serif;
   color:var(--text);
 }
 body{
-  min-width:1220px;
   position:relative;
 }
 body::before{
@@ -103,13 +103,17 @@ body::before{
   z-index:-1;
 }
 .screen{
+  position:fixed;
+  inset:0;
   width:100vw;
-  height:100dvh;
-  min-height:100dvh;
+  height:100vh;
+  min-width:0;
+  min-height:0;
   padding:1.0vh .85vw;
   display:grid;
-  grid-template-rows:7.5vh 10.5vh 36.5vh 41.5vh;
+  grid-template-rows:7.5vh 10.5vh 36.5vh minmax(0,1fr);
   gap:.65vh;
+  overflow:hidden;
   background:var(--bg);
 }
 .card{
@@ -118,6 +122,14 @@ body::before{
   border-radius:12px;
   box-shadow:var(--shadow);
   overflow:hidden;
+}
+
+.screen > *,
+.selector-row,
+.gauge-row,
+.operations-row{
+  min-width:0;
+  min-height:0;
 }
 .app-header{
   display:flex;
@@ -935,7 +947,7 @@ body::before{
 .footer{
   position:fixed;
   right:1vw;
-  bottom:.25vh;
+  bottom:.20vh;
   font-size:.74vh;
   color:#6D87A8;
   font-weight:700;
@@ -1106,7 +1118,7 @@ body::before{
 .data-source-indicator{
   position:fixed;
   left:.95vw;
-  bottom:.25vh;
+  bottom:.20vh;
   font-size:.74vh;
   color:#6D87A8;
   font-weight:700;
