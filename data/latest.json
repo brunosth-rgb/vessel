@@ -1,24 +1,24 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-16T22:42:24.694Z",
-  "reportReferenceTime": "2026-09-16T22:40:01.000Z",
+  "generatedAt": "2026-09-16T22:47:10.203Z",
+  "reportReferenceTime": "2026-09-16T22:45:01.000Z",
   "source": {
     "moveHistory": {
-      "fileName": "REP_VESSELDASHBOARD_400927975.csv",
-      "receivedAt": "2026-09-16T22:40:01.000Z",
+      "fileName": "REP_VESSELDASHBOARD_416340333.csv",
+      "receivedAt": "2026-09-16T22:45:01.000Z",
       "messageSubject": "VESSEL DASHBOARD"
     },
     "vesselVisits": {
-      "fileName": "REP_VESSELVISITSDASHBOARD_631560230.csv",
-      "receivedAt": "2026-09-16T22:40:01.000Z",
+      "fileName": "REP_VESSELVISITSDASHBOARD_142452155.csv",
+      "receivedAt": "2026-09-16T22:45:01.000Z",
       "messageSubject": "VESSEL DASHBOARD"
     }
   },
   "stats": {
-    "moveRowsInput": 4939,
-    "moveRowsPublished": 1151,
+    "moveRowsInput": 4940,
+    "moveRowsPublished": 1152,
     "vesselRowsInput": 8,
-    "vesselRowsPublished": 3
+    "vesselRowsPublished": 4
   },
   "moveRows": [
     {
@@ -9013,6 +9013,42 @@
       "Restow Type": "-"
     },
     {
+      "Time Completed": "16/09/2026 19:44",
+      "Move Kind": "Discharge",
+      "Unit Nbr": "HLBU9658419",
+      "Crane CHE": "M006",
+      "Carrier Visit": "NCBRI030N",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "16/09/2026 14:41",
+      "Move Kind": "Load",
+      "Unit Nbr": "MNBU0670156",
+      "Crane CHE": "S001",
+      "Carrier Visit": "MSKLO638N",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "16/09/2026 14:37",
+      "Move Kind": "Load",
+      "Unit Nbr": "MNBU3182319",
+      "Crane CHE": "S001",
+      "Carrier Visit": "MSKLO638N",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "16/09/2026 14:12",
+      "Move Kind": "Load",
+      "Unit Nbr": "MMAU1303393",
+      "Crane CHE": "M003",
+      "Carrier Visit": "MSKLO638N",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
       "Time Completed": "16/09/2026 14:52",
       "Move Kind": "Load",
       "Unit Nbr": "SUDU6290797",
@@ -9188,33 +9224,6 @@
       "Move Kind": "Load",
       "Unit Nbr": "MNBU9163384",
       "Crane CHE": "M006",
-      "Carrier Visit": "MSKLO638N",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "16/09/2026 14:41",
-      "Move Kind": "Load",
-      "Unit Nbr": "MNBU0670156",
-      "Crane CHE": "S001",
-      "Carrier Visit": "MSKLO638N",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "16/09/2026 14:37",
-      "Move Kind": "Load",
-      "Unit Nbr": "MNBU3182319",
-      "Crane CHE": "S001",
-      "Carrier Visit": "MSKLO638N",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "16/09/2026 14:12",
-      "Move Kind": "Load",
-      "Unit Nbr": "MMAU1303393",
-      "Crane CHE": "M003",
       "Carrier Visit": "MSKLO638N",
       "Exclude": "false",
       "Restow Type": "-"
@@ -10405,6 +10414,18 @@
       "Berth": "BERCO4",
       "Time Start Work": "15/09/2026 19:15",
       "Time End Work": "16/09/2026 10:20"
+    },
+    {
+      "Visit": "NCBRI030N",
+      "Phase": "W",
+      "Vessel Name": "NC BRISA",
+      "Service Name": "NORCOAST",
+      "I/B Vyg": "030N",
+      "O/B Vyg": "030N",
+      "Berth ID": "BERCO4",
+      "Berth": "BERCO4",
+      "Time Start Work": "16/09/2026 19:15",
+      "Time End Work": ""
     },
     {
       "Visit": "MSKLO638N",
