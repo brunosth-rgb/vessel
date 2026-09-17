@@ -1,24 +1,24 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-17T16:22:03.413Z",
-  "reportReferenceTime": "2026-09-17T16:20:01.000Z",
+  "generatedAt": "2026-09-17T16:27:22.992Z",
+  "reportReferenceTime": "2026-09-17T16:25:01.000Z",
   "source": {
     "moveHistory": {
-      "fileName": "REP_VESSELDASHBOARD_-12663954.csv",
-      "receivedAt": "2026-09-17T16:20:01.000Z",
+      "fileName": "REP_VESSELDASHBOARD_661756719.csv",
+      "receivedAt": "2026-09-17T16:25:01.000Z",
       "messageSubject": "VESSEL DASHBOARD"
     },
     "vesselVisits": {
-      "fileName": "REP_VESSELVISITSDASHBOARD_-12018436.csv",
-      "receivedAt": "2026-09-17T16:20:01.000Z",
+      "fileName": "REP_VESSELVISITSDASHBOARD_188375348.csv",
+      "receivedAt": "2026-09-17T16:25:01.000Z",
       "messageSubject": "VESSEL DASHBOARD"
     }
   },
   "stats": {
-    "moveRowsInput": 5031,
-    "moveRowsPublished": 649,
+    "moveRowsInput": 5032,
+    "moveRowsPublished": 650,
     "vesselRowsInput": 7,
-    "vesselRowsPublished": 2
+    "vesselRowsPublished": 3
   },
   "moveRows": [
     {
@@ -5861,6 +5861,15 @@
       "Carrier Visit": "NCBRI030N",
       "Exclude": "false",
       "Restow Type": "R"
+    },
+    {
+      "Time Completed": "17/09/2026 13:23",
+      "Move Kind": "Discharge",
+      "Unit Nbr": "SZLU9816148",
+      "Crane CHE": "S001",
+      "Carrier Visit": "SBERG0WO3UE1MA",
+      "Exclude": "false",
+      "Restow Type": "-"
     }
   ],
   "vesselRows": [
@@ -5887,6 +5896,18 @@
       "Berth": "BERCO4",
       "Time Start Work": "16/09/2026 19:15",
       "Time End Work": "17/09/2026 09:44"
+    },
+    {
+      "Visit": "SBERG0WO3UE1MA",
+      "Phase": "W",
+      "Vessel Name": "TONSBERG",
+      "Service Name": "SEAS3",
+      "I/B Vyg": "0WO3UE1MA",
+      "O/B Vyg": "0WO3UE1MA",
+      "Berth ID": "BERCO2",
+      "Berth": "BERCO2",
+      "Time Start Work": "17/09/2026 13:00",
+      "Time End Work": ""
     }
   ]
 }
