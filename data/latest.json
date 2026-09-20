@@ -1,22 +1,22 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-20T02:37:18.442Z",
-  "reportReferenceTime": "2026-09-20T02:35:02.000Z",
+  "generatedAt": "2026-09-20T02:42:02.776Z",
+  "reportReferenceTime": "2026-09-20T02:40:01.000Z",
   "source": {
     "moveHistory": {
-      "fileName": "REP_VESSELDASHBOARD_-21958805.csv",
-      "receivedAt": "2026-09-20T02:35:02.000Z",
+      "fileName": "REP_VESSELDASHBOARD_193506735.csv",
+      "receivedAt": "2026-09-20T02:40:01.000Z",
       "messageSubject": "VESSEL DASHBOARD"
     },
     "vesselVisits": {
-      "fileName": "REP_VESSELVISITSDASHBOARD_-35430862.csv",
-      "receivedAt": "2026-09-20T02:35:02.000Z",
+      "fileName": "REP_VESSELVISITSDASHBOARD_388410447.csv",
+      "receivedAt": "2026-09-20T02:40:01.000Z",
       "messageSubject": "VESSEL DASHBOARD"
     }
   },
   "stats": {
-    "moveRowsInput": 6948,
-    "moveRowsPublished": 3354,
+    "moveRowsInput": 6946,
+    "moveRowsPublished": 3359,
     "vesselRowsInput": 10,
     "vesselRowsPublished": 5
   },
@@ -1879,6 +1879,33 @@
       "Time Completed": "19/09/2026 23:13",
       "Move Kind": "Load",
       "Unit Nbr": "HLBU2697075",
+      "Crane CHE": "S001",
+      "Carrier Visit": "LHEXP2630N",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "19/09/2026 23:35",
+      "Move Kind": "Load",
+      "Unit Nbr": "HLBU9411162",
+      "Crane CHE": "S001",
+      "Carrier Visit": "LHEXP2630N",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "19/09/2026 23:37",
+      "Move Kind": "Load",
+      "Unit Nbr": "HLBU9597550",
+      "Crane CHE": "S001",
+      "Carrier Visit": "LHEXP2630N",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "19/09/2026 23:38",
+      "Move Kind": "Load",
+      "Unit Nbr": "CAAU4062859",
       "Crane CHE": "S001",
       "Carrier Visit": "LHEXP2630N",
       "Exclude": "false",
@@ -30181,9 +30208,27 @@
       "Restow Type": "-"
     },
     {
+      "Time Completed": "19/09/2026 23:37",
+      "Move Kind": "Discharge",
+      "Unit Nbr": "CULU6033501",
+      "Crane CHE": "M006",
+      "Carrier Visit": "LDING26310E",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
       "Time Completed": "19/09/2026 23:14",
       "Move Kind": "Discharge",
       "Unit Nbr": "VOLU4968330",
+      "Crane CHE": "M003",
+      "Carrier Visit": "LDING26310E",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "19/09/2026 23:35",
+      "Move Kind": "Discharge",
+      "Unit Nbr": "SLVU4713920",
       "Crane CHE": "M003",
       "Carrier Visit": "LDING26310E",
       "Exclude": "false",
