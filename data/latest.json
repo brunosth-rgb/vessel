@@ -1,24 +1,24 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-20T00:47:02.029Z",
-  "reportReferenceTime": "2026-09-20T00:45:01.000Z",
+  "generatedAt": "2026-09-20T00:52:01.983Z",
+  "reportReferenceTime": "2026-09-20T00:50:01.000Z",
   "source": {
     "moveHistory": {
-      "fileName": "REP_VESSELDASHBOARD_-28624336.csv",
-      "receivedAt": "2026-09-20T00:45:01.000Z",
+      "fileName": "REP_VESSELDASHBOARD_-58498590.csv",
+      "receivedAt": "2026-09-20T00:50:01.000Z",
       "messageSubject": "VESSEL DASHBOARD"
     },
     "vesselVisits": {
-      "fileName": "REP_VESSELVISITSDASHBOARD_816149307.csv",
-      "receivedAt": "2026-09-20T00:45:01.000Z",
+      "fileName": "REP_VESSELVISITSDASHBOARD_575702098.csv",
+      "receivedAt": "2026-09-20T00:50:01.000Z",
       "messageSubject": "VESSEL DASHBOARD"
     }
   },
   "stats": {
-    "moveRowsInput": 6934,
-    "moveRowsPublished": 3215,
+    "moveRowsInput": 6931,
+    "moveRowsPublished": 3217,
     "vesselRowsInput": 10,
-    "vesselRowsPublished": 4
+    "vesselRowsPublished": 5
   },
   "moveRows": [
     {
@@ -28955,6 +28955,24 @@
       "Carrier Visit": "ACAST2637E",
       "Exclude": "false",
       "Restow Type": "R"
+    },
+    {
+      "Time Completed": "19/09/2026 21:49",
+      "Move Kind": "Discharge",
+      "Unit Nbr": "ESHU7238872",
+      "Crane CHE": "M006",
+      "Carrier Visit": "LDING26310E",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "19/09/2026 21:49",
+      "Move Kind": "Discharge",
+      "Unit Nbr": "VOLU4929400",
+      "Crane CHE": "M006",
+      "Carrier Visit": "LDING26310E",
+      "Exclude": "false",
+      "Restow Type": "-"
     }
   ],
   "vesselRows": [
@@ -29005,6 +29023,18 @@
       "Berth": "BERCO4",
       "Time Start Work": "18/09/2026 21:00",
       "Time End Work": "19/09/2026 11:00"
+    },
+    {
+      "Visit": "LDING26310E",
+      "Phase": "W",
+      "Vessel Name": "LI DA XING",
+      "Service Name": "LAM",
+      "I/B Vyg": "26310E",
+      "O/B Vyg": "26310E",
+      "Berth ID": "BERCO4",
+      "Berth": "BERCO4",
+      "Time Start Work": "19/09/2026 21:30",
+      "Time End Work": ""
     }
   ]
 }
