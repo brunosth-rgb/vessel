@@ -1,22 +1,22 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-20T06:17:03.397Z",
-  "reportReferenceTime": "2026-09-20T06:15:01.000Z",
+  "generatedAt": "2026-09-20T06:22:02.800Z",
+  "reportReferenceTime": "2026-09-20T06:20:02.000Z",
   "source": {
     "moveHistory": {
-      "fileName": "REP_VESSELDASHBOARD_-24898061.csv",
-      "receivedAt": "2026-09-20T06:15:01.000Z",
+      "fileName": "REP_VESSELDASHBOARD_300077136.csv",
+      "receivedAt": "2026-09-20T06:20:02.000Z",
       "messageSubject": "VESSEL DASHBOARD"
     },
     "vesselVisits": {
-      "fileName": "REP_VESSELVISITSDASHBOARD_597295210.csv",
-      "receivedAt": "2026-09-20T06:15:01.000Z",
+      "fileName": "REP_VESSELVISITSDASHBOARD_-64362441.csv",
+      "receivedAt": "2026-09-20T06:20:02.000Z",
       "messageSubject": "VESSEL DASHBOARD"
     }
   },
   "stats": {
     "moveRowsInput": 6935,
-    "moveRowsPublished": 3566,
+    "moveRowsPublished": 3569,
     "vesselRowsInput": 10,
     "vesselRowsPublished": 5
   },
@@ -3238,6 +3238,24 @@
       "Time Completed": "20/09/2026 03:14",
       "Move Kind": "Load",
       "Unit Nbr": "HLBU3695950",
+      "Crane CHE": "S002",
+      "Carrier Visit": "LHEXP2630N",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "20/09/2026 03:17",
+      "Move Kind": "Load",
+      "Unit Nbr": "CAAU2363961",
+      "Crane CHE": "S002",
+      "Carrier Visit": "LHEXP2630N",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "20/09/2026 03:17",
+      "Move Kind": "Load",
+      "Unit Nbr": "FBIU0461490",
       "Crane CHE": "S002",
       "Carrier Visit": "LHEXP2630N",
       "Exclude": "false",
@@ -31939,6 +31957,15 @@
       "Time Completed": "19/09/2026 23:20",
       "Move Kind": "Discharge",
       "Unit Nbr": "SLVU4415891",
+      "Crane CHE": "M006",
+      "Carrier Visit": "LDING26310E",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "20/09/2026 03:15",
+      "Move Kind": "Discharge",
+      "Unit Nbr": "VOLU4951297",
       "Crane CHE": "M006",
       "Carrier Visit": "LDING26310E",
       "Exclude": "false",
