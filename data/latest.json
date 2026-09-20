@@ -1,22 +1,22 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-20T06:42:03.227Z",
-  "reportReferenceTime": "2026-09-20T06:40:01.000Z",
+  "generatedAt": "2026-09-20T06:47:03.005Z",
+  "reportReferenceTime": "2026-09-20T06:45:02.000Z",
   "source": {
     "moveHistory": {
-      "fileName": "REP_VESSELDASHBOARD_638506931.csv",
-      "receivedAt": "2026-09-20T06:40:01.000Z",
+      "fileName": "REP_VESSELDASHBOARD_-87909414.csv",
+      "receivedAt": "2026-09-20T06:45:02.000Z",
       "messageSubject": "VESSEL DASHBOARD"
     },
     "vesselVisits": {
-      "fileName": "REP_VESSELVISITSDASHBOARD_338179202.csv",
-      "receivedAt": "2026-09-20T06:40:01.000Z",
+      "fileName": "REP_VESSELVISITSDASHBOARD_-72761597.csv",
+      "receivedAt": "2026-09-20T06:45:02.000Z",
       "messageSubject": "VESSEL DASHBOARD"
     }
   },
   "stats": {
-    "moveRowsInput": 6929,
-    "moveRowsPublished": 3583,
+    "moveRowsInput": 6925,
+    "moveRowsPublished": 3584,
     "vesselRowsInput": 10,
     "vesselRowsPublished": 5
   },
@@ -3329,6 +3329,15 @@
       "Move Kind": "Load",
       "Unit Nbr": "CAIU6345676",
       "Crane CHE": "S002",
+      "Carrier Visit": "LHEXP2630N",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "20/09/2026 03:43",
+      "Move Kind": "Load",
+      "Unit Nbr": "HLBU1734600",
+      "Crane CHE": "S001",
       "Carrier Visit": "LHEXP2630N",
       "Exclude": "false",
       "Restow Type": "-"
