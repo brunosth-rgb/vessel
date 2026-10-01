@@ -1,22 +1,22 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-01T13:07:10.592Z",
-  "reportReferenceTime": "2026-10-01T13:05:01.000Z",
+  "generatedAt": "2026-10-01T13:12:03.325Z",
+  "reportReferenceTime": "2026-10-01T13:10:02.000Z",
   "source": {
     "moveHistory": {
-      "fileName": "REP_VESSELDASHBOARD_313627157.csv",
-      "receivedAt": "2026-10-01T13:05:01.000Z",
+      "fileName": "REP_VESSELDASHBOARD_-62587372.csv",
+      "receivedAt": "2026-10-01T13:10:02.000Z",
       "messageSubject": "VESSEL DASHBOARD"
     },
     "vesselVisits": {
-      "fileName": "REP_VESSELVISITSDASHBOARD_-99305461.csv",
-      "receivedAt": "2026-10-01T13:05:01.000Z",
+      "fileName": "REP_VESSELVISITSDASHBOARD_592140537.csv",
+      "receivedAt": "2026-10-01T13:10:02.000Z",
       "messageSubject": "VESSEL DASHBOARD"
     }
   },
   "stats": {
-    "moveRowsInput": 7797,
-    "moveRowsPublished": 2521,
+    "moveRowsInput": 7799,
+    "moveRowsPublished": 2525,
     "vesselRowsInput": 10,
     "vesselRowsPublished": 3
   },
@@ -2185,6 +2185,15 @@
       "Time Completed": "01/10/2026 09:58",
       "Move Kind": "Load",
       "Unit Nbr": "MRSU8026970",
+      "Crane CHE": "S002",
+      "Carrier Visit": "XPCES640E",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "01/10/2026 10:08",
+      "Move Kind": "Load",
+      "Unit Nbr": "MRSU7394704",
       "Crane CHE": "S002",
       "Carrier Visit": "XPCES640E",
       "Exclude": "false",
@@ -8230,15 +8239,6 @@
       "Restow Type": "-"
     },
     {
-      "Time Completed": "30/09/2026 08:25",
-      "Move Kind": "Load",
-      "Unit Nbr": "TCNU2529909",
-      "Crane CHE": "S001",
-      "Carrier Visit": "MSKLA640N",
-      "Exclude": "false",
-      "Restow Type": "R"
-    },
-    {
       "Time Completed": "30/09/2026 00:21",
       "Move Kind": "Discharge",
       "Unit Nbr": "TCNU2529909",
@@ -8248,10 +8248,10 @@
       "Restow Type": "R"
     },
     {
-      "Time Completed": "30/09/2026 00:19",
-      "Move Kind": "Discharge",
-      "Unit Nbr": "MRKU4546879",
-      "Crane CHE": "S002",
+      "Time Completed": "30/09/2026 08:25",
+      "Move Kind": "Load",
+      "Unit Nbr": "TCNU2529909",
+      "Crane CHE": "S001",
       "Carrier Visit": "MSKLA640N",
       "Exclude": "false",
       "Restow Type": "R"
@@ -8261,6 +8261,15 @@
       "Move Kind": "Load",
       "Unit Nbr": "MRKU4546879",
       "Crane CHE": "S001",
+      "Carrier Visit": "MSKLA640N",
+      "Exclude": "false",
+      "Restow Type": "R"
+    },
+    {
+      "Time Completed": "30/09/2026 00:19",
+      "Move Kind": "Discharge",
+      "Unit Nbr": "MRKU4546879",
+      "Crane CHE": "S002",
       "Carrier Visit": "MSKLA640N",
       "Exclude": "false",
       "Restow Type": "R"
@@ -15565,6 +15574,15 @@
       "Restow Type": "-"
     },
     {
+      "Time Completed": "01/10/2026 10:05",
+      "Move Kind": "Discharge",
+      "Unit Nbr": "EITU9393577",
+      "Crane CHE": "M006",
+      "Carrier Visit": "KOELA001WE",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
       "Time Completed": "29/09/2026 17:20",
       "Move Kind": "Discharge",
       "Unit Nbr": "FFAU8493040",
@@ -15965,6 +15983,15 @@
       "Move Kind": "Discharge",
       "Unit Nbr": "FFAU6276025",
       "Crane CHE": "M005",
+      "Carrier Visit": "KOELA001WE",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "01/10/2026 10:05",
+      "Move Kind": "Discharge",
+      "Unit Nbr": "BEAU5026371",
+      "Crane CHE": "M006",
       "Carrier Visit": "KOELA001WE",
       "Exclude": "false",
       "Restow Type": "-"
@@ -21914,6 +21941,15 @@
       "Move Kind": "Discharge",
       "Unit Nbr": "GCXU5838597",
       "Crane CHE": "M006",
+      "Carrier Visit": "KOELA001WE",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "01/10/2026 10:06",
+      "Move Kind": "Discharge",
+      "Unit Nbr": "ECMU5047306",
+      "Crane CHE": "M005",
       "Carrier Visit": "KOELA001WE",
       "Exclude": "false",
       "Restow Type": "-"
