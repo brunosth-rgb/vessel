@@ -1,22 +1,22 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-01T20:47:03.047Z",
-  "reportReferenceTime": "2026-10-01T20:45:01.000Z",
+  "generatedAt": "2026-10-01T20:52:02.656Z",
+  "reportReferenceTime": "2026-10-01T20:50:02.000Z",
   "source": {
     "moveHistory": {
-      "fileName": "REP_VESSELDASHBOARD_609756795.csv",
-      "receivedAt": "2026-10-01T20:45:01.000Z",
+      "fileName": "REP_VESSELDASHBOARD_-44683869.csv",
+      "receivedAt": "2026-10-01T20:50:02.000Z",
       "messageSubject": "VESSEL DASHBOARD"
     },
     "vesselVisits": {
-      "fileName": "REP_VESSELVISITSDASHBOARD_219736813.csv",
-      "receivedAt": "2026-10-01T20:45:01.000Z",
+      "fileName": "REP_VESSELVISITSDASHBOARD_162098377.csv",
+      "receivedAt": "2026-10-01T20:50:02.000Z",
       "messageSubject": "VESSEL DASHBOARD"
     }
   },
   "stats": {
-    "moveRowsInput": 8116,
-    "moveRowsPublished": 3102,
+    "moveRowsInput": 8119,
+    "moveRowsPublished": 3105,
     "vesselRowsInput": 10,
     "vesselRowsPublished": 3
   },
@@ -241,6 +241,15 @@
       "Time Completed": "01/10/2026 10:46",
       "Move Kind": "Load",
       "Unit Nbr": "MNBU4457004",
+      "Crane CHE": "S002",
+      "Carrier Visit": "XPCES640E",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "01/10/2026 17:49",
+      "Move Kind": "Load",
+      "Unit Nbr": "TEMU9272812",
       "Crane CHE": "S002",
       "Carrier Visit": "XPCES640E",
       "Exclude": "false",
@@ -17977,6 +17986,15 @@
       "Restow Type": "-"
     },
     {
+      "Time Completed": "01/10/2026 17:49",
+      "Move Kind": "Discharge",
+      "Unit Nbr": "PIDU4176900",
+      "Crane CHE": "M005",
+      "Carrier Visit": "KOELA001WE",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
       "Time Completed": "29/09/2026 22:40",
       "Move Kind": "Discharge",
       "Unit Nbr": "PCIU8484160",
@@ -18206,6 +18224,15 @@
       "Move Kind": "Discharge",
       "Unit Nbr": "EGSU9986370",
       "Crane CHE": "M006",
+      "Carrier Visit": "KOELA001WE",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "01/10/2026 17:47",
+      "Move Kind": "Discharge",
+      "Unit Nbr": "TIIU5286571",
+      "Crane CHE": "M005",
       "Carrier Visit": "KOELA001WE",
       "Exclude": "false",
       "Restow Type": "-"
