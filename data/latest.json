@@ -1,22 +1,22 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-04T04:12:02.785Z",
-  "reportReferenceTime": "2026-10-04T04:10:01.000Z",
+  "generatedAt": "2026-10-04T04:17:02.242Z",
+  "reportReferenceTime": "2026-10-04T04:15:01.000Z",
   "source": {
     "moveHistory": {
-      "fileName": "REP_VESSELDASHBOARD_786409789.csv",
-      "receivedAt": "2026-10-04T04:10:01.000Z",
+      "fileName": "REP_VESSELDASHBOARD_-85239861.csv",
+      "receivedAt": "2026-10-04T04:15:01.000Z",
       "messageSubject": "VESSEL DASHBOARD"
     },
     "vesselVisits": {
-      "fileName": "REP_VESSELVISITSDASHBOARD_343468109.csv",
-      "receivedAt": "2026-10-04T04:10:01.000Z",
+      "fileName": "REP_VESSELVISITSDASHBOARD_300873553.csv",
+      "receivedAt": "2026-10-04T04:15:01.000Z",
       "messageSubject": "VESSEL DASHBOARD"
     }
   },
   "stats": {
-    "moveRowsInput": 9462,
-    "moveRowsPublished": 760,
+    "moveRowsInput": 9464,
+    "moveRowsPublished": 762,
     "vesselRowsInput": 9,
     "vesselRowsPublished": 1
   },
@@ -6857,6 +6857,24 @@
       "Move Kind": "Load",
       "Unit Nbr": "MSBU5078344",
       "Crane CHE": "S002",
+      "Carrier Visit": "MSDAM640N",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "04/10/2026 01:14",
+      "Move Kind": "Load",
+      "Unit Nbr": "CAAU9063246",
+      "Crane CHE": "S001",
+      "Carrier Visit": "MSDAM640N",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "04/10/2026 01:14",
+      "Move Kind": "Load",
+      "Unit Nbr": "MRKU6069986",
+      "Crane CHE": "S001",
       "Carrier Visit": "MSDAM640N",
       "Exclude": "false",
       "Restow Type": "-"
