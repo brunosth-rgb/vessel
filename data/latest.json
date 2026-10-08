@@ -1,24 +1,24 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-08T16:27:03.105Z",
-  "reportReferenceTime": "2026-10-08T16:25:03.000Z",
+  "generatedAt": "2026-10-08T16:32:05.330Z",
+  "reportReferenceTime": "2026-10-08T16:30:03.000Z",
   "source": {
     "moveHistory": {
-      "fileName": "REP_VESSELDASHBOARD_-34396012.csv",
-      "receivedAt": "2026-10-08T16:25:03.000Z",
+      "fileName": "REP_VESSELDASHBOARD_768660685.csv",
+      "receivedAt": "2026-10-08T16:30:03.000Z",
       "messageSubject": "VESSEL DASHBOARD"
     },
     "vesselVisits": {
-      "fileName": "REP_VESSELVISITSDASHBOARD_-82829692.csv",
-      "receivedAt": "2026-10-08T16:25:03.000Z",
+      "fileName": "REP_VESSELVISITSDASHBOARD_399864522.csv",
+      "receivedAt": "2026-10-08T16:30:03.000Z",
       "messageSubject": "VESSEL DASHBOARD"
     }
   },
   "stats": {
     "moveRowsInput": 6419,
-    "moveRowsPublished": 83,
+    "moveRowsPublished": 88,
     "vesselRowsInput": 9,
-    "vesselRowsPublished": 2
+    "vesselRowsPublished": 3
   },
   "moveRows": [
     {
@@ -27,6 +27,105 @@
       "Unit Nbr": "HLBU9974377",
       "Crane CHE": "M005",
       "Carrier Visit": "JAZAN2634N",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "08/10/2026 13:29",
+      "Move Kind": "Load",
+      "Unit Nbr": "HLBU9368810",
+      "Crane CHE": "M005",
+      "Carrier Visit": "JAZAN2634N",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "08/10/2026 13:28",
+      "Move Kind": "Load",
+      "Unit Nbr": "CSLU2360122",
+      "Crane CHE": "S002",
+      "Carrier Visit": "NYRNA078N",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "08/10/2026 13:27",
+      "Move Kind": "Load",
+      "Unit Nbr": "OOCU1050244",
+      "Crane CHE": "S002",
+      "Carrier Visit": "NYRNA078N",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "08/10/2026 13:29",
+      "Move Kind": "Discharge",
+      "Unit Nbr": "SZLU9425499",
+      "Crane CHE": "S001",
+      "Carrier Visit": "NYRNA078N",
+      "Exclude": "false",
+      "Restow Type": "R"
+    },
+    {
+      "Time Completed": "08/10/2026 13:29",
+      "Move Kind": "Discharge",
+      "Unit Nbr": "DRYU9462105",
+      "Crane CHE": "S002",
+      "Carrier Visit": "NYRNA078N",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "05/10/2026 18:57",
+      "Move Kind": "Load",
+      "Unit Nbr": "9ADN1252TVM574622",
+      "Crane CHE": "",
+      "Carrier Visit": "GRBRA10",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "05/10/2026 18:57",
+      "Move Kind": "Load",
+      "Unit Nbr": "9ADD1254TVM574623",
+      "Crane CHE": "",
+      "Carrier Visit": "GRBRA10",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "05/10/2026 19:31",
+      "Move Kind": "Load",
+      "Unit Nbr": "KITPECAREPOSI1462098",
+      "Crane CHE": "",
+      "Carrier Visit": "GRBRA10",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "05/10/2026 19:31",
+      "Move Kind": "Load",
+      "Unit Nbr": "KITPECAREPOSI1462099",
+      "Crane CHE": "",
+      "Carrier Visit": "GRBRA10",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "05/10/2026 14:19",
+      "Move Kind": "Load",
+      "Unit Nbr": "9ADN1252TVM574574",
+      "Crane CHE": "",
+      "Carrier Visit": "GRBRA10",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "05/10/2026 14:19",
+      "Move Kind": "Load",
+      "Unit Nbr": "9ADD1254TVM574575",
+      "Crane CHE": "",
+      "Carrier Visit": "GRBRA10",
       "Exclude": "false",
       "Restow Type": "-"
     },
@@ -713,60 +812,6 @@
       "Carrier Visit": "GRBRA10",
       "Exclude": "false",
       "Restow Type": "-"
-    },
-    {
-      "Time Completed": "05/10/2026 14:19",
-      "Move Kind": "Load",
-      "Unit Nbr": "9ADN1252TVM574574",
-      "Crane CHE": "",
-      "Carrier Visit": "GRBRA10",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "05/10/2026 14:19",
-      "Move Kind": "Load",
-      "Unit Nbr": "9ADD1254TVM574575",
-      "Crane CHE": "",
-      "Carrier Visit": "GRBRA10",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "05/10/2026 18:57",
-      "Move Kind": "Load",
-      "Unit Nbr": "9ADN1252TVM574622",
-      "Crane CHE": "",
-      "Carrier Visit": "GRBRA10",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "05/10/2026 18:57",
-      "Move Kind": "Load",
-      "Unit Nbr": "9ADD1254TVM574623",
-      "Crane CHE": "",
-      "Carrier Visit": "GRBRA10",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "05/10/2026 19:31",
-      "Move Kind": "Load",
-      "Unit Nbr": "KITPECAREPOSI1462098",
-      "Crane CHE": "",
-      "Carrier Visit": "GRBRA10",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "05/10/2026 19:31",
-      "Move Kind": "Load",
-      "Unit Nbr": "KITPECAREPOSI1462099",
-      "Crane CHE": "",
-      "Carrier Visit": "GRBRA10",
-      "Exclude": "false",
-      "Restow Type": "-"
     }
   ],
   "vesselRows": [
@@ -779,6 +824,18 @@
       "O/B Vyg": "2634N",
       "Berth ID": "BERCO4",
       "Berth": "BERCO4",
+      "Time Start Work": "08/10/2026 13:00",
+      "Time End Work": ""
+    },
+    {
+      "Visit": "NYRNA078N",
+      "Phase": "W",
+      "Vessel Name": "NYK RUMINA",
+      "Service Name": "LUX",
+      "I/B Vyg": "078N",
+      "O/B Vyg": "078N",
+      "Berth ID": "BERCO2",
+      "Berth": "BERCO2",
       "Time Start Work": "08/10/2026 13:00",
       "Time End Work": ""
     },
