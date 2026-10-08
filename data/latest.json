@@ -1,26 +1,35 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-08T16:22:02.941Z",
-  "reportReferenceTime": "2026-10-08T16:20:04.000Z",
+  "generatedAt": "2026-10-08T16:27:03.105Z",
+  "reportReferenceTime": "2026-10-08T16:25:03.000Z",
   "source": {
     "moveHistory": {
-      "fileName": "REP_VESSELDASHBOARD_-82784535.csv",
-      "receivedAt": "2026-10-08T16:20:04.000Z",
+      "fileName": "REP_VESSELDASHBOARD_-34396012.csv",
+      "receivedAt": "2026-10-08T16:25:03.000Z",
       "messageSubject": "VESSEL DASHBOARD"
     },
     "vesselVisits": {
-      "fileName": "REP_VESSELVISITSDASHBOARD_-85185809.csv",
-      "receivedAt": "2026-10-08T16:20:04.000Z",
+      "fileName": "REP_VESSELVISITSDASHBOARD_-82829692.csv",
+      "receivedAt": "2026-10-08T16:25:03.000Z",
       "messageSubject": "VESSEL DASHBOARD"
     }
   },
   "stats": {
-    "moveRowsInput": 6427,
-    "moveRowsPublished": 82,
+    "moveRowsInput": 6419,
+    "moveRowsPublished": 83,
     "vesselRowsInput": 9,
-    "vesselRowsPublished": 1
+    "vesselRowsPublished": 2
   },
   "moveRows": [
+    {
+      "Time Completed": "08/10/2026 13:24",
+      "Move Kind": "Load",
+      "Unit Nbr": "HLBU9974377",
+      "Crane CHE": "M005",
+      "Carrier Visit": "JAZAN2634N",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
     {
       "Time Completed": "05/10/2026 14:19",
       "Move Kind": "Load",
@@ -761,6 +770,18 @@
     }
   ],
   "vesselRows": [
+    {
+      "Visit": "JAZAN2634N",
+      "Phase": "W",
+      "Vessel Name": "JAZAN",
+      "Service Name": "GS-1",
+      "I/B Vyg": "2634N",
+      "O/B Vyg": "2634N",
+      "Berth ID": "BERCO4",
+      "Berth": "BERCO4",
+      "Time Start Work": "08/10/2026 13:00",
+      "Time End Work": ""
+    },
     {
       "Visit": "GRBRA10",
       "Phase": "T",
