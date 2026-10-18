@@ -1,22 +1,22 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-18T06:47:02.591Z",
-  "reportReferenceTime": "2026-10-18T06:45:01.000Z",
+  "generatedAt": "2026-10-18T06:52:02.269Z",
+  "reportReferenceTime": "2026-10-18T06:50:03.000Z",
   "source": {
     "moveHistory": {
-      "fileName": "REP_VESSELDASHBOARD_-37553172.csv",
-      "receivedAt": "2026-10-18T06:45:01.000Z",
+      "fileName": "REP_VESSELDASHBOARD_-14060918.csv",
+      "receivedAt": "2026-10-18T06:50:03.000Z",
       "messageSubject": "VESSEL DASHBOARD"
     },
     "vesselVisits": {
-      "fileName": "REP_VESSELVISITSDASHBOARD_-73231702.csv",
-      "receivedAt": "2026-10-18T06:45:01.000Z",
+      "fileName": "REP_VESSELVISITSDASHBOARD_305987791.csv",
+      "receivedAt": "2026-10-18T06:50:03.000Z",
       "messageSubject": "VESSEL DASHBOARD"
     }
   },
   "stats": {
-    "moveRowsInput": 10657,
-    "moveRowsPublished": 2483,
+    "moveRowsInput": 10659,
+    "moveRowsPublished": 2485,
     "vesselRowsInput": 10,
     "vesselRowsPublished": 4
   },
@@ -2465,6 +2465,15 @@
       "Move Kind": "Load",
       "Unit Nbr": "MRFU0001996",
       "Crane CHE": "S002",
+      "Carrier Visit": "NWALK642E",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "18/10/2026 03:46",
+      "Move Kind": "Load",
+      "Unit Nbr": "MNBU0469291",
+      "Crane CHE": "S001",
       "Carrier Visit": "NWALK642E",
       "Exclude": "false",
       "Restow Type": "-"
@@ -21635,6 +21644,15 @@
       "Move Kind": "Discharge",
       "Unit Nbr": "MSNU5841670",
       "Crane CHE": "M006",
+      "Carrier Visit": "MSTELQI633A",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "18/10/2026 03:45",
+      "Move Kind": "Discharge",
+      "Unit Nbr": "CAAU5620934",
+      "Crane CHE": "M005",
       "Carrier Visit": "MSTELQI633A",
       "Exclude": "false",
       "Restow Type": "-"
