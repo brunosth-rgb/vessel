@@ -1,26 +1,53 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-19T22:27:08.505Z",
-  "reportReferenceTime": "2026-10-19T22:25:02.000Z",
+  "generatedAt": "2026-10-19T22:32:03.067Z",
+  "reportReferenceTime": "2026-10-19T22:30:03.000Z",
   "source": {
     "moveHistory": {
-      "fileName": "REP_VESSELDASHBOARD_424032832.csv",
-      "receivedAt": "2026-10-19T22:25:02.000Z",
+      "fileName": "REP_VESSELDASHBOARD_785778868.csv",
+      "receivedAt": "2026-10-19T22:30:03.000Z",
       "messageSubject": "VESSEL DASHBOARD"
     },
     "vesselVisits": {
-      "fileName": "REP_VESSELVISITSDASHBOARD_126348155.csv",
-      "receivedAt": "2026-10-19T22:25:02.000Z",
+      "fileName": "REP_VESSELVISITSDASHBOARD_903024669.csv",
+      "receivedAt": "2026-10-19T22:30:03.000Z",
       "messageSubject": "VESSEL DASHBOARD"
     }
   },
   "stats": {
-    "moveRowsInput": 10260,
-    "moveRowsPublished": 439,
+    "moveRowsInput": 10261,
+    "moveRowsPublished": 441,
     "vesselRowsInput": 11,
-    "vesselRowsPublished": 2
+    "vesselRowsPublished": 3
   },
   "moveRows": [
+    {
+      "Time Completed": "19/10/2026 19:28",
+      "Move Kind": "Discharge",
+      "Unit Nbr": "BSIU8359294",
+      "Crane CHE": "M006",
+      "Carrier Visit": "GHIBL26311E",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "19/10/2026 19:28",
+      "Move Kind": "Discharge",
+      "Unit Nbr": "BSIU8321576",
+      "Crane CHE": "M005",
+      "Carrier Visit": "GHIBL26311E",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "15/10/2026 23:12",
+      "Move Kind": "Load",
+      "Unit Nbr": "SEKU6411450",
+      "Crane CHE": "S001",
+      "Carrier Visit": "WOTEL2635N",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
     {
       "Time Completed": "15/10/2026 21:43",
       "Move Kind": "Load",
@@ -1741,19 +1768,19 @@
       "Restow Type": "-"
     },
     {
-      "Time Completed": "16/10/2026 01:30",
-      "Move Kind": "Load",
+      "Time Completed": "15/10/2026 22:00",
+      "Move Kind": "Discharge",
       "Unit Nbr": "HAMU4787028",
-      "Crane CHE": "S002",
+      "Crane CHE": "S001",
       "Carrier Visit": "WOTEL2635N",
       "Exclude": "false",
       "Restow Type": "R"
     },
     {
-      "Time Completed": "15/10/2026 22:00",
-      "Move Kind": "Discharge",
+      "Time Completed": "16/10/2026 01:30",
+      "Move Kind": "Load",
       "Unit Nbr": "HAMU4787028",
-      "Crane CHE": "S001",
+      "Crane CHE": "S002",
       "Carrier Visit": "WOTEL2635N",
       "Exclude": "false",
       "Restow Type": "R"
@@ -2807,15 +2834,6 @@
       "Move Kind": "Load",
       "Unit Nbr": "UETU2826478",
       "Crane CHE": "M005",
-      "Carrier Visit": "WOTEL2635N",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "15/10/2026 23:12",
-      "Move Kind": "Load",
-      "Unit Nbr": "SEKU6411450",
-      "Crane CHE": "S001",
       "Carrier Visit": "WOTEL2635N",
       "Exclude": "false",
       "Restow Type": "-"
@@ -3974,6 +3992,18 @@
     }
   ],
   "vesselRows": [
+    {
+      "Visit": "GHIBL26311E",
+      "Phase": "W",
+      "Vessel Name": "GHIBLI",
+      "Service Name": "LAM",
+      "I/B Vyg": "26311E",
+      "O/B Vyg": "26311E",
+      "Berth ID": "BERCO4",
+      "Berth": "BERCO4",
+      "Time Start Work": "19/10/2026 19:00",
+      "Time End Work": ""
+    },
     {
       "Visit": "WOTEL2635N",
       "Phase": "T",
