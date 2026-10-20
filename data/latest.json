@@ -1,53 +1,26 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-20T15:32:03.743Z",
-  "reportReferenceTime": "2026-10-20T15:30:03.000Z",
+  "generatedAt": "2026-10-20T15:37:03.660Z",
+  "reportReferenceTime": "2026-10-20T15:35:01.000Z",
   "source": {
     "moveHistory": {
-      "fileName": "REP_VESSELDASHBOARD_518396758.csv",
-      "receivedAt": "2026-10-20T15:30:03.000Z",
+      "fileName": "REP_VESSELDASHBOARD_-44887988.csv",
+      "receivedAt": "2026-10-20T15:35:01.000Z",
       "messageSubject": "VESSEL DASHBOARD"
     },
     "vesselVisits": {
-      "fileName": "REP_VESSELVISITSDASHBOARD_-96025834.csv",
-      "receivedAt": "2026-10-20T15:30:03.000Z",
+      "fileName": "REP_VESSELVISITSDASHBOARD_-81217965.csv",
+      "receivedAt": "2026-10-20T15:35:01.000Z",
       "messageSubject": "VESSEL DASHBOARD"
     }
   },
   "stats": {
-    "moveRowsInput": 9447,
+    "moveRowsInput": 9439,
     "moveRowsPublished": 567,
     "vesselRowsInput": 12,
     "vesselRowsPublished": 2
   },
   "moveRows": [
-    {
-      "Time Completed": "20/10/2026 01:27",
-      "Move Kind": "Load",
-      "Unit Nbr": "TTNU8079360",
-      "Crane CHE": "M005",
-      "Carrier Visit": "GHIBL26311E",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "20/10/2026 01:27",
-      "Move Kind": "Load",
-      "Unit Nbr": "TTNU8243767",
-      "Crane CHE": "M005",
-      "Carrier Visit": "GHIBL26311E",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "20/10/2026 02:12",
-      "Move Kind": "Load",
-      "Unit Nbr": "CXRU1147291",
-      "Crane CHE": "M005",
-      "Carrier Visit": "GHIBL26311E",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
     {
       "Time Completed": "20/10/2026 01:12",
       "Move Kind": "Load",
@@ -121,6 +94,33 @@
       "Restow Type": "-"
     },
     {
+      "Time Completed": "20/10/2026 01:27",
+      "Move Kind": "Load",
+      "Unit Nbr": "TTNU8079360",
+      "Crane CHE": "M005",
+      "Carrier Visit": "GHIBL26311E",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "20/10/2026 01:27",
+      "Move Kind": "Load",
+      "Unit Nbr": "TTNU8243767",
+      "Crane CHE": "M005",
+      "Carrier Visit": "GHIBL26311E",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "20/10/2026 00:26",
+      "Move Kind": "Load",
+      "Unit Nbr": "EGSU5008865",
+      "Crane CHE": "M006",
+      "Carrier Visit": "GHIBL26311E",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
       "Time Completed": "20/10/2026 01:23",
       "Move Kind": "Load",
       "Unit Nbr": "TEMU9187201",
@@ -148,10 +148,10 @@
       "Restow Type": "-"
     },
     {
-      "Time Completed": "20/10/2026 00:26",
+      "Time Completed": "20/10/2026 02:12",
       "Move Kind": "Load",
-      "Unit Nbr": "EGSU5008865",
-      "Crane CHE": "M006",
+      "Unit Nbr": "CXRU1147291",
+      "Crane CHE": "M005",
       "Carrier Visit": "GHIBL26311E",
       "Exclude": "false",
       "Restow Type": "-"
@@ -161,15 +161,6 @@
       "Move Kind": "Load",
       "Unit Nbr": "TDRU3973160",
       "Crane CHE": "M006",
-      "Carrier Visit": "GHIBL26311E",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "20/10/2026 01:38",
-      "Move Kind": "Load",
-      "Unit Nbr": "SEGU9152723",
-      "Crane CHE": "M005",
       "Carrier Visit": "GHIBL26311E",
       "Exclude": "false",
       "Restow Type": "-"
@@ -193,18 +184,27 @@
       "Restow Type": "-"
     },
     {
-      "Time Completed": "20/10/2026 00:26",
+      "Time Completed": "19/10/2026 23:42",
       "Move Kind": "Load",
-      "Unit Nbr": "TCLU1232159",
+      "Unit Nbr": "IKSU2545054",
       "Crane CHE": "M006",
       "Carrier Visit": "GHIBL26311E",
       "Exclude": "false",
       "Restow Type": "-"
     },
     {
-      "Time Completed": "19/10/2026 23:42",
+      "Time Completed": "20/10/2026 01:38",
       "Move Kind": "Load",
-      "Unit Nbr": "IKSU2545054",
+      "Unit Nbr": "SEGU9152723",
+      "Crane CHE": "M005",
+      "Carrier Visit": "GHIBL26311E",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "20/10/2026 00:26",
+      "Move Kind": "Load",
+      "Unit Nbr": "TCLU1232159",
       "Crane CHE": "M006",
       "Carrier Visit": "GHIBL26311E",
       "Exclude": "false",
@@ -1410,15 +1410,6 @@
     {
       "Time Completed": "20/10/2026 02:12",
       "Move Kind": "Load",
-      "Unit Nbr": "CXRU1579485",
-      "Crane CHE": "M005",
-      "Carrier Visit": "GHIBL26311E",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "20/10/2026 02:12",
-      "Move Kind": "Load",
       "Unit Nbr": "TRIU8597560",
       "Crane CHE": "M005",
       "Carrier Visit": "GHIBL26311E",
@@ -1435,38 +1426,20 @@
       "Restow Type": "-"
     },
     {
-      "Time Completed": "20/10/2026 01:25",
+      "Time Completed": "20/10/2026 02:12",
       "Move Kind": "Load",
-      "Unit Nbr": "TTNU8468660",
+      "Unit Nbr": "CXRU1579485",
       "Crane CHE": "M005",
       "Carrier Visit": "GHIBL26311E",
       "Exclude": "false",
       "Restow Type": "-"
     },
     {
-      "Time Completed": "19/10/2026 23:07",
+      "Time Completed": "20/10/2026 01:25",
       "Move Kind": "Load",
-      "Unit Nbr": "OTPU6411400",
-      "Crane CHE": "S001",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "19/10/2026 22:45",
-      "Move Kind": "Load",
-      "Unit Nbr": "MSGU9187207",
-      "Crane CHE": "S001",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "19/10/2026 22:44",
-      "Move Kind": "Load",
-      "Unit Nbr": "MSGU9245746",
-      "Crane CHE": "S001",
-      "Carrier Visit": "MINGRUA642R",
+      "Unit Nbr": "TTNU8468660",
+      "Crane CHE": "M005",
+      "Carrier Visit": "GHIBL26311E",
       "Exclude": "false",
       "Restow Type": "-"
     },
@@ -1507,36 +1480,234 @@
       "Restow Type": "-"
     },
     {
-      "Time Completed": "20/10/2026 01:38",
+      "Time Completed": "19/10/2026 21:10",
       "Move Kind": "Load",
-      "Unit Nbr": "MSGU9287438",
+      "Unit Nbr": "MSBU3884546",
       "Crane CHE": "S002",
       "Carrier Visit": "MINGRUA642R",
       "Exclude": "false",
       "Restow Type": "-"
     },
     {
-      "Time Completed": "19/10/2026 23:00",
+      "Time Completed": "19/10/2026 20:52",
       "Move Kind": "Load",
-      "Unit Nbr": "MEDU9871206",
+      "Unit Nbr": "MSBU2606052",
       "Crane CHE": "S002",
       "Carrier Visit": "MINGRUA642R",
       "Exclude": "false",
       "Restow Type": "-"
     },
     {
-      "Time Completed": "19/10/2026 23:00",
+      "Time Completed": "19/10/2026 23:32",
       "Move Kind": "Load",
-      "Unit Nbr": "MSGU9213121",
+      "Unit Nbr": "UETU8285051",
+      "Crane CHE": "S001",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "20/10/2026 00:03",
+      "Move Kind": "Load",
+      "Unit Nbr": "MSBU6887615",
       "Crane CHE": "S002",
       "Carrier Visit": "MINGRUA642R",
       "Exclude": "false",
       "Restow Type": "-"
     },
     {
-      "Time Completed": "19/10/2026 23:00",
+      "Time Completed": "20/10/2026 03:57",
       "Move Kind": "Load",
-      "Unit Nbr": "MEDU9640399",
+      "Unit Nbr": "CAAU8056047",
+      "Crane CHE": "S002",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "19/10/2026 23:45",
+      "Move Kind": "Load",
+      "Unit Nbr": "MSMU6738929",
+      "Crane CHE": "S001",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "19/10/2026 23:55",
+      "Move Kind": "Load",
+      "Unit Nbr": "MSGU5259084",
+      "Crane CHE": "S001",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "19/10/2026 23:32",
+      "Move Kind": "Load",
+      "Unit Nbr": "UETU8757902",
+      "Crane CHE": "S001",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "19/10/2026 23:59",
+      "Move Kind": "Load",
+      "Unit Nbr": "MSGU5189053",
+      "Crane CHE": "S001",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "20/10/2026 00:03",
+      "Move Kind": "Load",
+      "Unit Nbr": "MSGU5019695",
+      "Crane CHE": "S002",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "20/10/2026 03:57",
+      "Move Kind": "Load",
+      "Unit Nbr": "UETU8700445",
+      "Crane CHE": "S002",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "19/10/2026 23:52",
+      "Move Kind": "Load",
+      "Unit Nbr": "MSBU7704848",
+      "Crane CHE": "S001",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "19/10/2026 23:56",
+      "Move Kind": "Load",
+      "Unit Nbr": "UETU8760830",
+      "Crane CHE": "S001",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "19/10/2026 23:58",
+      "Move Kind": "Load",
+      "Unit Nbr": "UETU8766150",
+      "Crane CHE": "S001",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "20/10/2026 00:01",
+      "Move Kind": "Load",
+      "Unit Nbr": "GAOU7756747",
+      "Crane CHE": "S001",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "19/10/2026 23:51",
+      "Move Kind": "Load",
+      "Unit Nbr": "MSNU9926538",
+      "Crane CHE": "S001",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "19/10/2026 23:53",
+      "Move Kind": "Load",
+      "Unit Nbr": "CAAU7474660",
+      "Crane CHE": "S001",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "19/10/2026 23:41",
+      "Move Kind": "Load",
+      "Unit Nbr": "MSNU5552039",
+      "Crane CHE": "S001",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "19/10/2026 23:47",
+      "Move Kind": "Load",
+      "Unit Nbr": "MSBU7662383",
+      "Crane CHE": "S001",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "19/10/2026 20:22",
+      "Move Kind": "Load",
+      "Unit Nbr": "UETU8409091",
+      "Crane CHE": "S002",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "19/10/2026 19:49",
+      "Move Kind": "Load",
+      "Unit Nbr": "MSBU5401729",
+      "Crane CHE": "S002",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "19/10/2026 19:49",
+      "Move Kind": "Load",
+      "Unit Nbr": "MSNU8279925",
+      "Crane CHE": "S002",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "19/10/2026 19:49",
+      "Move Kind": "Load",
+      "Unit Nbr": "MSNU8269151",
+      "Crane CHE": "S002",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "19/10/2026 19:49",
+      "Move Kind": "Load",
+      "Unit Nbr": "MSBU5624487",
+      "Crane CHE": "S002",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "19/10/2026 21:10",
+      "Move Kind": "Load",
+      "Unit Nbr": "MSNU3540471",
+      "Crane CHE": "S002",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "19/10/2026 21:10",
+      "Move Kind": "Load",
+      "Unit Nbr": "MSBU1784213",
       "Crane CHE": "S002",
       "Carrier Visit": "MINGRUA642R",
       "Exclude": "false",
@@ -2470,6 +2641,33 @@
       "Restow Type": "-"
     },
     {
+      "Time Completed": "20/10/2026 02:58",
+      "Move Kind": "Load",
+      "Unit Nbr": "CRSU6023674",
+      "Crane CHE": "S002",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "19/10/2026 23:16",
+      "Move Kind": "Load",
+      "Unit Nbr": "MEDU9173859",
+      "Crane CHE": "S002",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "19/10/2026 23:15",
+      "Move Kind": "Load",
+      "Unit Nbr": "TEMU9376669",
+      "Crane CHE": "S001",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
       "Time Completed": "19/10/2026 23:00",
       "Move Kind": "Load",
       "Unit Nbr": "MSGU9275592",
@@ -2497,24 +2695,6 @@
       "Restow Type": "-"
     },
     {
-      "Time Completed": "19/10/2026 23:16",
-      "Move Kind": "Load",
-      "Unit Nbr": "MSDU9777162",
-      "Crane CHE": "S002",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "19/10/2026 23:02",
-      "Move Kind": "Load",
-      "Unit Nbr": "TEMU9629915",
-      "Crane CHE": "S002",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
       "Time Completed": "20/10/2026 02:00",
       "Move Kind": "Load",
       "Unit Nbr": "MSDU9837106",
@@ -2533,37 +2713,19 @@
       "Restow Type": "-"
     },
     {
-      "Time Completed": "19/10/2026 23:22",
+      "Time Completed": "19/10/2026 23:16",
       "Move Kind": "Load",
-      "Unit Nbr": "FSCU5776779",
-      "Crane CHE": "S001",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "19/10/2026 23:31",
-      "Move Kind": "Load",
-      "Unit Nbr": "SZLU9264178",
+      "Unit Nbr": "MSDU9777162",
       "Crane CHE": "S002",
       "Carrier Visit": "MINGRUA642R",
       "Exclude": "false",
       "Restow Type": "-"
     },
     {
-      "Time Completed": "19/10/2026 23:31",
+      "Time Completed": "19/10/2026 23:02",
       "Move Kind": "Load",
-      "Unit Nbr": "TRIU8947821",
+      "Unit Nbr": "TEMU9629915",
       "Crane CHE": "S002",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "19/10/2026 23:12",
-      "Move Kind": "Load",
-      "Unit Nbr": "MEDU9078532",
-      "Crane CHE": "S001",
       "Carrier Visit": "MINGRUA642R",
       "Exclude": "false",
       "Restow Type": "-"
@@ -2659,10 +2821,55 @@
       "Restow Type": "-"
     },
     {
-      "Time Completed": "19/10/2026 23:16",
+      "Time Completed": "19/10/2026 23:31",
       "Move Kind": "Load",
-      "Unit Nbr": "MEDU9173859",
+      "Unit Nbr": "SZLU9264178",
       "Crane CHE": "S002",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "19/10/2026 23:31",
+      "Move Kind": "Load",
+      "Unit Nbr": "TRIU8947821",
+      "Crane CHE": "S002",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "19/10/2026 23:12",
+      "Move Kind": "Load",
+      "Unit Nbr": "MEDU9078532",
+      "Crane CHE": "S001",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "19/10/2026 23:07",
+      "Move Kind": "Load",
+      "Unit Nbr": "OTPU6411400",
+      "Crane CHE": "S001",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "19/10/2026 22:45",
+      "Move Kind": "Load",
+      "Unit Nbr": "MSGU9187207",
+      "Crane CHE": "S001",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "19/10/2026 22:44",
+      "Move Kind": "Load",
+      "Unit Nbr": "MSGU9245746",
+      "Crane CHE": "S001",
       "Carrier Visit": "MINGRUA642R",
       "Exclude": "false",
       "Restow Type": "-"
@@ -2677,6 +2884,15 @@
       "Restow Type": "-"
     },
     {
+      "Time Completed": "19/10/2026 23:22",
+      "Move Kind": "Load",
+      "Unit Nbr": "FSCU5776779",
+      "Crane CHE": "S001",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
       "Time Completed": "19/10/2026 23:23",
       "Move Kind": "Load",
       "Unit Nbr": "MEDU9711790",
@@ -2686,28 +2902,37 @@
       "Restow Type": "-"
     },
     {
-      "Time Completed": "20/10/2026 02:58",
+      "Time Completed": "20/10/2026 01:38",
       "Move Kind": "Load",
-      "Unit Nbr": "CRSU6023674",
+      "Unit Nbr": "MSGU9287438",
       "Crane CHE": "S002",
       "Carrier Visit": "MINGRUA642R",
       "Exclude": "false",
       "Restow Type": "-"
     },
     {
-      "Time Completed": "19/10/2026 23:15",
+      "Time Completed": "19/10/2026 23:00",
       "Move Kind": "Load",
-      "Unit Nbr": "TEMU9376669",
-      "Crane CHE": "S001",
+      "Unit Nbr": "MEDU9871206",
+      "Crane CHE": "S002",
       "Carrier Visit": "MINGRUA642R",
       "Exclude": "false",
       "Restow Type": "-"
     },
     {
-      "Time Completed": "19/10/2026 20:06",
+      "Time Completed": "19/10/2026 23:00",
       "Move Kind": "Load",
-      "Unit Nbr": "MSDU6543793",
-      "Crane CHE": "S001",
+      "Unit Nbr": "MSGU9213121",
+      "Crane CHE": "S002",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "19/10/2026 23:00",
+      "Move Kind": "Load",
+      "Unit Nbr": "MEDU9640399",
+      "Crane CHE": "S002",
       "Carrier Visit": "MINGRUA642R",
       "Exclude": "false",
       "Restow Type": "-"
@@ -2722,235 +2947,10 @@
       "Restow Type": "-"
     },
     {
-      "Time Completed": "19/10/2026 21:10",
+      "Time Completed": "19/10/2026 20:06",
       "Move Kind": "Load",
-      "Unit Nbr": "MSBU3884546",
-      "Crane CHE": "S002",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "19/10/2026 20:52",
-      "Move Kind": "Load",
-      "Unit Nbr": "MSBU2606052",
-      "Crane CHE": "S002",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "19/10/2026 23:32",
-      "Move Kind": "Load",
-      "Unit Nbr": "UETU8285051",
+      "Unit Nbr": "MSDU6543793",
       "Crane CHE": "S001",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "20/10/2026 00:03",
-      "Move Kind": "Load",
-      "Unit Nbr": "MSBU6887615",
-      "Crane CHE": "S002",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "20/10/2026 03:57",
-      "Move Kind": "Load",
-      "Unit Nbr": "CAAU8056047",
-      "Crane CHE": "S002",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "19/10/2026 23:45",
-      "Move Kind": "Load",
-      "Unit Nbr": "MSMU6738929",
-      "Crane CHE": "S001",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "19/10/2026 23:55",
-      "Move Kind": "Load",
-      "Unit Nbr": "MSGU5259084",
-      "Crane CHE": "S001",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "19/10/2026 23:32",
-      "Move Kind": "Load",
-      "Unit Nbr": "UETU8757902",
-      "Crane CHE": "S001",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "19/10/2026 23:59",
-      "Move Kind": "Load",
-      "Unit Nbr": "MSGU5189053",
-      "Crane CHE": "S001",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "20/10/2026 00:03",
-      "Move Kind": "Load",
-      "Unit Nbr": "MSGU5019695",
-      "Crane CHE": "S002",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "20/10/2026 03:57",
-      "Move Kind": "Load",
-      "Unit Nbr": "UETU8700445",
-      "Crane CHE": "S002",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "19/10/2026 23:52",
-      "Move Kind": "Load",
-      "Unit Nbr": "MSBU7704848",
-      "Crane CHE": "S001",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "19/10/2026 23:56",
-      "Move Kind": "Load",
-      "Unit Nbr": "UETU8760830",
-      "Crane CHE": "S001",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "19/10/2026 23:58",
-      "Move Kind": "Load",
-      "Unit Nbr": "UETU8766150",
-      "Crane CHE": "S001",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "20/10/2026 00:01",
-      "Move Kind": "Load",
-      "Unit Nbr": "GAOU7756747",
-      "Crane CHE": "S001",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "19/10/2026 23:51",
-      "Move Kind": "Load",
-      "Unit Nbr": "MSNU9926538",
-      "Crane CHE": "S001",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "19/10/2026 23:53",
-      "Move Kind": "Load",
-      "Unit Nbr": "CAAU7474660",
-      "Crane CHE": "S001",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "19/10/2026 23:41",
-      "Move Kind": "Load",
-      "Unit Nbr": "MSNU5552039",
-      "Crane CHE": "S001",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "19/10/2026 23:47",
-      "Move Kind": "Load",
-      "Unit Nbr": "MSBU7662383",
-      "Crane CHE": "S001",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "19/10/2026 20:22",
-      "Move Kind": "Load",
-      "Unit Nbr": "UETU8409091",
-      "Crane CHE": "S002",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "19/10/2026 19:49",
-      "Move Kind": "Load",
-      "Unit Nbr": "MSBU5401729",
-      "Crane CHE": "S002",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "19/10/2026 19:49",
-      "Move Kind": "Load",
-      "Unit Nbr": "MSNU8279925",
-      "Crane CHE": "S002",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "19/10/2026 19:49",
-      "Move Kind": "Load",
-      "Unit Nbr": "MSNU8269151",
-      "Crane CHE": "S002",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "19/10/2026 19:49",
-      "Move Kind": "Load",
-      "Unit Nbr": "MSBU5624487",
-      "Crane CHE": "S002",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "19/10/2026 21:10",
-      "Move Kind": "Load",
-      "Unit Nbr": "MSNU3540471",
-      "Crane CHE": "S002",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "19/10/2026 21:10",
-      "Move Kind": "Load",
-      "Unit Nbr": "MSBU1784213",
-      "Crane CHE": "S002",
       "Carrier Visit": "MINGRUA642R",
       "Exclude": "false",
       "Restow Type": "-"
@@ -3631,19 +3631,19 @@
       "Restow Type": "R"
     },
     {
-      "Time Completed": "19/10/2026 16:49",
-      "Move Kind": "Discharge",
+      "Time Completed": "19/10/2026 21:10",
+      "Move Kind": "Load",
       "Unit Nbr": "SEGU8077728",
-      "Crane CHE": "S001",
+      "Crane CHE": "S002",
       "Carrier Visit": "MINGRUA642R",
       "Exclude": "false",
       "Restow Type": "R"
     },
     {
-      "Time Completed": "19/10/2026 21:10",
-      "Move Kind": "Load",
+      "Time Completed": "19/10/2026 16:49",
+      "Move Kind": "Discharge",
       "Unit Nbr": "SEGU8077728",
-      "Crane CHE": "S002",
+      "Crane CHE": "S001",
       "Carrier Visit": "MINGRUA642R",
       "Exclude": "false",
       "Restow Type": "R"
@@ -4333,18 +4333,18 @@
       "Restow Type": "-"
     },
     {
-      "Time Completed": "20/10/2026 03:35",
+      "Time Completed": "20/10/2026 06:00",
       "Move Kind": "Load",
-      "Unit Nbr": "TRIU8913499",
+      "Unit Nbr": "TEMU9018217",
       "Crane CHE": "S002",
       "Carrier Visit": "MINGRUA642R",
       "Exclude": "false",
       "Restow Type": "-"
     },
     {
-      "Time Completed": "20/10/2026 06:00",
+      "Time Completed": "20/10/2026 03:35",
       "Move Kind": "Load",
-      "Unit Nbr": "TEMU9018217",
+      "Unit Nbr": "TRIU8913499",
       "Crane CHE": "S002",
       "Carrier Visit": "MINGRUA642R",
       "Exclude": "false",
@@ -4378,18 +4378,18 @@
       "Restow Type": "-"
     },
     {
-      "Time Completed": "20/10/2026 00:21",
+      "Time Completed": "19/10/2026 20:57",
       "Move Kind": "Load",
-      "Unit Nbr": "MSNU5718264",
+      "Unit Nbr": "MSMU1843618",
       "Crane CHE": "S001",
       "Carrier Visit": "MINGRUA642R",
       "Exclude": "false",
       "Restow Type": "-"
     },
     {
-      "Time Completed": "19/10/2026 20:57",
+      "Time Completed": "20/10/2026 00:21",
       "Move Kind": "Load",
-      "Unit Nbr": "MSMU1843618",
+      "Unit Nbr": "MSNU5718264",
       "Crane CHE": "S001",
       "Carrier Visit": "MINGRUA642R",
       "Exclude": "false",
@@ -4423,27 +4423,9 @@
       "Restow Type": "-"
     },
     {
-      "Time Completed": "20/10/2026 00:18",
+      "Time Completed": "20/10/2026 04:00",
       "Move Kind": "Load",
-      "Unit Nbr": "MSNU5709215",
-      "Crane CHE": "S002",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "20/10/2026 04:24",
-      "Move Kind": "Load",
-      "Unit Nbr": "MSNU8417916",
-      "Crane CHE": "S002",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "20/10/2026 04:33",
-      "Move Kind": "Load",
-      "Unit Nbr": "FCIU7393954",
+      "Unit Nbr": "MSNU9908684",
       "Crane CHE": "S002",
       "Carrier Visit": "MINGRUA642R",
       "Exclude": "false",
@@ -4468,10 +4450,37 @@
       "Restow Type": "-"
     },
     {
-      "Time Completed": "20/10/2026 04:00",
+      "Time Completed": "20/10/2026 04:24",
       "Move Kind": "Load",
-      "Unit Nbr": "MSNU9908684",
+      "Unit Nbr": "MSNU8417916",
       "Crane CHE": "S002",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "20/10/2026 04:33",
+      "Move Kind": "Load",
+      "Unit Nbr": "FCIU7393954",
+      "Crane CHE": "S002",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "20/10/2026 00:18",
+      "Move Kind": "Load",
+      "Unit Nbr": "MSNU5709215",
+      "Crane CHE": "S002",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "19/10/2026 22:48",
+      "Move Kind": "Load",
+      "Unit Nbr": "TRIU8227673",
+      "Crane CHE": "S001",
       "Carrier Visit": "MINGRUA642R",
       "Exclude": "false",
       "Restow Type": "-"
@@ -4486,9 +4495,36 @@
       "Restow Type": "-"
     },
     {
-      "Time Completed": "19/10/2026 22:48",
+      "Time Completed": "20/10/2026 00:03",
       "Move Kind": "Load",
-      "Unit Nbr": "TRIU8227673",
+      "Unit Nbr": "TLLU8733192",
+      "Crane CHE": "S001",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "20/10/2026 00:02",
+      "Move Kind": "Load",
+      "Unit Nbr": "MSBU8096233",
+      "Crane CHE": "S001",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "19/10/2026 20:00",
+      "Move Kind": "Load",
+      "Unit Nbr": "MSNU8512512",
+      "Crane CHE": "S001",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "19/10/2026 20:32",
+      "Move Kind": "Load",
+      "Unit Nbr": "MSMU6707471",
       "Crane CHE": "S001",
       "Carrier Visit": "MINGRUA642R",
       "Exclude": "false",
@@ -4549,27 +4585,9 @@
       "Restow Type": "-"
     },
     {
-      "Time Completed": "20/10/2026 00:03",
-      "Move Kind": "Load",
-      "Unit Nbr": "TLLU8733192",
-      "Crane CHE": "S001",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "20/10/2026 00:02",
-      "Move Kind": "Load",
-      "Unit Nbr": "MSBU8096233",
-      "Crane CHE": "S001",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
       "Time Completed": "19/10/2026 19:37",
       "Move Kind": "Load",
-      "Unit Nbr": "MSDU8358963",
+      "Unit Nbr": "MSMU4519109",
       "Crane CHE": "S002",
       "Carrier Visit": "MINGRUA642R",
       "Exclude": "false",
@@ -4580,51 +4598,6 @@
       "Move Kind": "Load",
       "Unit Nbr": "MSNU5659048",
       "Crane CHE": "S001",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "19/10/2026 19:37",
-      "Move Kind": "Load",
-      "Unit Nbr": "MSMU4519109",
-      "Crane CHE": "S002",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "19/10/2026 20:22",
-      "Move Kind": "Load",
-      "Unit Nbr": "MSMU4216870",
-      "Crane CHE": "S002",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "19/10/2026 19:52",
-      "Move Kind": "Load",
-      "Unit Nbr": "MSDU7706848",
-      "Crane CHE": "S001",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "19/10/2026 19:50",
-      "Move Kind": "Load",
-      "Unit Nbr": "TRHU7568331",
-      "Crane CHE": "S001",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "19/10/2026 19:50",
-      "Move Kind": "Load",
-      "Unit Nbr": "MSMU7521901",
-      "Crane CHE": "S002",
       "Carrier Visit": "MINGRUA642R",
       "Exclude": "false",
       "Restow Type": "-"
@@ -4660,6 +4633,24 @@
       "Time Completed": "20/10/2026 04:21",
       "Move Kind": "Load",
       "Unit Nbr": "MSBU5514601",
+      "Crane CHE": "S002",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "19/10/2026 19:37",
+      "Move Kind": "Load",
+      "Unit Nbr": "MSDU8358963",
+      "Crane CHE": "S002",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "20/10/2026 03:17",
+      "Move Kind": "Load",
+      "Unit Nbr": "MSMU2355623",
       "Crane CHE": "S002",
       "Carrier Visit": "MINGRUA642R",
       "Exclude": "false",
@@ -4706,15 +4697,6 @@
       "Move Kind": "Load",
       "Unit Nbr": "MSDU1172112",
       "Crane CHE": "S001",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "20/10/2026 03:17",
-      "Move Kind": "Load",
-      "Unit Nbr": "MSMU2355623",
-      "Crane CHE": "S002",
       "Carrier Visit": "MINGRUA642R",
       "Exclude": "false",
       "Restow Type": "-"
@@ -4839,159 +4821,6 @@
     {
       "Time Completed": "19/10/2026 20:05",
       "Move Kind": "Load",
-      "Unit Nbr": "MSBU6583680",
-      "Crane CHE": "S001",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "19/10/2026 20:52",
-      "Move Kind": "Load",
-      "Unit Nbr": "MSNU1788237",
-      "Crane CHE": "S002",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "19/10/2026 19:57",
-      "Move Kind": "Load",
-      "Unit Nbr": "TXGU8379331",
-      "Crane CHE": "S001",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "19/10/2026 20:52",
-      "Move Kind": "Load",
-      "Unit Nbr": "MSBU2888676",
-      "Crane CHE": "S002",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "19/10/2026 20:05",
-      "Move Kind": "Load",
-      "Unit Nbr": "MSMU5277720",
-      "Crane CHE": "S001",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "20/10/2026 05:15",
-      "Move Kind": "Load",
-      "Unit Nbr": "MSDU2278027",
-      "Crane CHE": "S002",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "19/10/2026 19:34",
-      "Move Kind": "Load",
-      "Unit Nbr": "BMOU6880564",
-      "Crane CHE": "S001",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "20/10/2026 00:36",
-      "Move Kind": "Load",
-      "Unit Nbr": "UETU3070410",
-      "Crane CHE": "S001",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "19/10/2026 20:05",
-      "Move Kind": "Load",
-      "Unit Nbr": "MSNU8452389",
-      "Crane CHE": "S001",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "20/10/2026 04:31",
-      "Move Kind": "Load",
-      "Unit Nbr": "MSNU7616826",
-      "Crane CHE": "S002",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "19/10/2026 20:52",
-      "Move Kind": "Load",
-      "Unit Nbr": "MSDU1174537",
-      "Crane CHE": "S002",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "19/10/2026 19:40",
-      "Move Kind": "Load",
-      "Unit Nbr": "MSDU5529825",
-      "Crane CHE": "S001",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "20/10/2026 00:36",
-      "Move Kind": "Load",
-      "Unit Nbr": "MSMU1963969",
-      "Crane CHE": "S001",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "20/10/2026 04:35",
-      "Move Kind": "Load",
-      "Unit Nbr": "MSDU5461936",
-      "Crane CHE": "S002",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "19/10/2026 22:34",
-      "Move Kind": "Load",
-      "Unit Nbr": "SEKU4004559",
-      "Crane CHE": "S001",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "19/10/2026 21:57",
-      "Move Kind": "Load",
-      "Unit Nbr": "MSMU3280869",
-      "Crane CHE": "S001",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "20/10/2026 00:18",
-      "Move Kind": "Load",
-      "Unit Nbr": "CAAU8182770",
-      "Crane CHE": "S002",
-      "Carrier Visit": "MINGRUA642R",
-      "Exclude": "false",
-      "Restow Type": "-"
-    },
-    {
-      "Time Completed": "19/10/2026 20:05",
-      "Move Kind": "Load",
       "Unit Nbr": "MSDU8486563",
       "Crane CHE": "S001",
       "Carrier Visit": "MINGRUA642R",
@@ -5089,19 +4918,190 @@
       "Restow Type": "-"
     },
     {
-      "Time Completed": "19/10/2026 20:00",
+      "Time Completed": "19/10/2026 20:05",
       "Move Kind": "Load",
-      "Unit Nbr": "MSNU8512512",
+      "Unit Nbr": "MSNU8452389",
       "Crane CHE": "S001",
       "Carrier Visit": "MINGRUA642R",
       "Exclude": "false",
       "Restow Type": "-"
     },
     {
-      "Time Completed": "19/10/2026 20:32",
+      "Time Completed": "20/10/2026 04:31",
       "Move Kind": "Load",
-      "Unit Nbr": "MSMU6707471",
+      "Unit Nbr": "MSNU7616826",
+      "Crane CHE": "S002",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "19/10/2026 20:52",
+      "Move Kind": "Load",
+      "Unit Nbr": "MSDU1174537",
+      "Crane CHE": "S002",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "19/10/2026 19:40",
+      "Move Kind": "Load",
+      "Unit Nbr": "MSDU5529825",
       "Crane CHE": "S001",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "20/10/2026 00:36",
+      "Move Kind": "Load",
+      "Unit Nbr": "MSMU1963969",
+      "Crane CHE": "S001",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "20/10/2026 04:35",
+      "Move Kind": "Load",
+      "Unit Nbr": "MSDU5461936",
+      "Crane CHE": "S002",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "19/10/2026 22:34",
+      "Move Kind": "Load",
+      "Unit Nbr": "SEKU4004559",
+      "Crane CHE": "S001",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "19/10/2026 21:57",
+      "Move Kind": "Load",
+      "Unit Nbr": "MSMU3280869",
+      "Crane CHE": "S001",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "20/10/2026 00:18",
+      "Move Kind": "Load",
+      "Unit Nbr": "CAAU8182770",
+      "Crane CHE": "S002",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "19/10/2026 20:05",
+      "Move Kind": "Load",
+      "Unit Nbr": "MSBU6583680",
+      "Crane CHE": "S001",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "19/10/2026 20:52",
+      "Move Kind": "Load",
+      "Unit Nbr": "MSNU1788237",
+      "Crane CHE": "S002",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "19/10/2026 19:57",
+      "Move Kind": "Load",
+      "Unit Nbr": "TXGU8379331",
+      "Crane CHE": "S001",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "19/10/2026 20:52",
+      "Move Kind": "Load",
+      "Unit Nbr": "MSBU2888676",
+      "Crane CHE": "S002",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "19/10/2026 20:05",
+      "Move Kind": "Load",
+      "Unit Nbr": "MSMU5277720",
+      "Crane CHE": "S001",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "20/10/2026 05:15",
+      "Move Kind": "Load",
+      "Unit Nbr": "MSDU2278027",
+      "Crane CHE": "S002",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "19/10/2026 19:34",
+      "Move Kind": "Load",
+      "Unit Nbr": "BMOU6880564",
+      "Crane CHE": "S001",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "20/10/2026 00:36",
+      "Move Kind": "Load",
+      "Unit Nbr": "UETU3070410",
+      "Crane CHE": "S001",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "19/10/2026 19:52",
+      "Move Kind": "Load",
+      "Unit Nbr": "MSDU7706848",
+      "Crane CHE": "S001",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "19/10/2026 19:50",
+      "Move Kind": "Load",
+      "Unit Nbr": "TRHU7568331",
+      "Crane CHE": "S001",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "19/10/2026 20:22",
+      "Move Kind": "Load",
+      "Unit Nbr": "MSMU4216870",
+      "Crane CHE": "S002",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "19/10/2026 19:50",
+      "Move Kind": "Load",
+      "Unit Nbr": "MSMU7521901",
+      "Crane CHE": "S002",
       "Carrier Visit": "MINGRUA642R",
       "Exclude": "false",
       "Restow Type": "-"
