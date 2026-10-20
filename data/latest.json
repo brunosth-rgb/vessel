@@ -1,22 +1,22 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-20T02:07:05.336Z",
-  "reportReferenceTime": "2026-10-20T02:05:01.000Z",
+  "generatedAt": "2026-10-20T02:12:03.397Z",
+  "reportReferenceTime": "2026-10-20T02:10:02.000Z",
   "source": {
     "moveHistory": {
-      "fileName": "REP_VESSELDASHBOARD_803141380.csv",
-      "receivedAt": "2026-10-20T02:05:01.000Z",
+      "fileName": "REP_VESSELDASHBOARD_541362632.csv",
+      "receivedAt": "2026-10-20T02:10:02.000Z",
       "messageSubject": "VESSEL DASHBOARD"
     },
     "vesselVisits": {
-      "fileName": "REP_VESSELVISITSDASHBOARD_807180273.csv",
-      "receivedAt": "2026-10-20T02:05:01.000Z",
+      "fileName": "REP_VESSELVISITSDASHBOARD_-62395126.csv",
+      "receivedAt": "2026-10-20T02:10:02.000Z",
       "messageSubject": "VESSEL DASHBOARD"
     }
   },
   "stats": {
-    "moveRowsInput": 10227,
-    "moveRowsPublished": 686,
+    "moveRowsInput": 10226,
+    "moveRowsPublished": 689,
     "vesselRowsInput": 11,
     "vesselRowsPublished": 3
   },
@@ -845,6 +845,15 @@
       "Move Kind": "Discharge",
       "Unit Nbr": "EMCU9776944",
       "Crane CHE": "M005",
+      "Carrier Visit": "GHIBL26311E",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "19/10/2026 23:09",
+      "Move Kind": "Discharge",
+      "Unit Nbr": "CULU6164287",
+      "Crane CHE": "M006",
       "Carrier Visit": "GHIBL26311E",
       "Exclude": "false",
       "Restow Type": "-"
@@ -2668,19 +2677,19 @@
       "Restow Type": "-"
     },
     {
-      "Time Completed": "15/10/2026 22:00",
-      "Move Kind": "Discharge",
+      "Time Completed": "16/10/2026 01:30",
+      "Move Kind": "Load",
       "Unit Nbr": "HAMU4787028",
-      "Crane CHE": "S001",
+      "Crane CHE": "S002",
       "Carrier Visit": "WOTEL2635N",
       "Exclude": "false",
       "Restow Type": "R"
     },
     {
-      "Time Completed": "16/10/2026 01:30",
-      "Move Kind": "Load",
+      "Time Completed": "15/10/2026 22:00",
+      "Move Kind": "Discharge",
       "Unit Nbr": "HAMU4787028",
-      "Crane CHE": "S002",
+      "Crane CHE": "S001",
       "Carrier Visit": "WOTEL2635N",
       "Exclude": "false",
       "Restow Type": "R"
@@ -5242,9 +5251,27 @@
       "Restow Type": "-"
     },
     {
+      "Time Completed": "19/10/2026 23:09",
+      "Move Kind": "Load",
+      "Unit Nbr": "SEGU9212020",
+      "Crane CHE": "S001",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
       "Time Completed": "19/10/2026 22:16",
       "Move Kind": "Load",
       "Unit Nbr": "MSGU9136473",
+      "Crane CHE": "S001",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "19/10/2026 23:07",
+      "Move Kind": "Load",
+      "Unit Nbr": "OTPU6411400",
       "Crane CHE": "S001",
       "Carrier Visit": "MINGRUA642R",
       "Exclude": "false",
