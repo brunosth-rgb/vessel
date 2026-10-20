@@ -1,22 +1,22 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-20T00:22:12.251Z",
-  "reportReferenceTime": "2026-10-20T00:20:02.000Z",
+  "generatedAt": "2026-10-20T00:27:04.502Z",
+  "reportReferenceTime": "2026-10-20T00:25:01.000Z",
   "source": {
     "moveHistory": {
-      "fileName": "REP_VESSELDASHBOARD_-86633228.csv",
-      "receivedAt": "2026-10-20T00:20:02.000Z",
+      "fileName": "REP_VESSELDASHBOARD_-32679001.csv",
+      "receivedAt": "2026-10-20T00:25:01.000Z",
       "messageSubject": "VESSEL DASHBOARD"
     },
     "vesselVisits": {
-      "fileName": "REP_VESSELVISITSDASHBOARD_485902645.csv",
-      "receivedAt": "2026-10-20T00:20:02.000Z",
+      "fileName": "REP_VESSELVISITSDASHBOARD_-77990824.csv",
+      "receivedAt": "2026-10-20T00:25:01.000Z",
       "messageSubject": "VESSEL DASHBOARD"
     }
   },
   "stats": {
-    "moveRowsInput": 10232,
-    "moveRowsPublished": 559,
+    "moveRowsInput": 10231,
+    "moveRowsPublished": 563,
     "vesselRowsInput": 11,
     "vesselRowsPublished": 3
   },
@@ -440,6 +440,15 @@
       "Move Kind": "Discharge",
       "Unit Nbr": "TCNU7285739",
       "Crane CHE": "M005",
+      "Carrier Visit": "GHIBL26311E",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "19/10/2026 21:24",
+      "Move Kind": "Discharge",
+      "Unit Nbr": "CULU6193177",
+      "Crane CHE": "M006",
       "Carrier Visit": "GHIBL26311E",
       "Exclude": "false",
       "Restow Type": "-"
@@ -4036,6 +4045,15 @@
       "Restow Type": "R"
     },
     {
+      "Time Completed": "19/10/2026 21:22",
+      "Move Kind": "Load",
+      "Unit Nbr": "MEDU9789593",
+      "Crane CHE": "S002",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "R"
+    },
+    {
       "Time Completed": "19/10/2026 20:22",
       "Move Kind": "Load",
       "Unit Nbr": "MSNU6674160",
@@ -4076,6 +4094,24 @@
       "Move Kind": "Discharge",
       "Unit Nbr": "OTPU1027711",
       "Crane CHE": "S001",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "R"
+    },
+    {
+      "Time Completed": "19/10/2026 21:22",
+      "Move Kind": "Load",
+      "Unit Nbr": "OTPU1027711",
+      "Crane CHE": "S002",
+      "Carrier Visit": "MINGRUA642R",
+      "Exclude": "false",
+      "Restow Type": "R"
+    },
+    {
+      "Time Completed": "19/10/2026 21:22",
+      "Move Kind": "Load",
+      "Unit Nbr": "MSGU9198182",
+      "Crane CHE": "S002",
       "Carrier Visit": "MINGRUA642R",
       "Exclude": "false",
       "Restow Type": "R"
