@@ -1,22 +1,22 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-22T20:52:03.732Z",
-  "reportReferenceTime": "2026-10-22T20:50:02.000Z",
+  "generatedAt": "2026-10-22T20:57:05.043Z",
+  "reportReferenceTime": "2026-10-22T20:55:01.000Z",
   "source": {
     "moveHistory": {
-      "fileName": "REP_VESSELDASHBOARD_-48831022.csv",
-      "receivedAt": "2026-10-22T20:50:02.000Z",
+      "fileName": "REP_VESSELDASHBOARD_-80556061.csv",
+      "receivedAt": "2026-10-22T20:55:01.000Z",
       "messageSubject": "VESSEL DASHBOARD"
     },
     "vesselVisits": {
-      "fileName": "REP_VESSELVISITSDASHBOARD_-76037851.csv",
-      "receivedAt": "2026-10-22T20:50:02.000Z",
+      "fileName": "REP_VESSELVISITSDASHBOARD_-74201887.csv",
+      "receivedAt": "2026-10-22T20:55:01.000Z",
       "messageSubject": "VESSEL DASHBOARD"
     }
   },
   "stats": {
-    "moveRowsInput": 9025,
-    "moveRowsPublished": 600,
+    "moveRowsInput": 9019,
+    "moveRowsPublished": 601,
     "vesselRowsInput": 12,
     "vesselRowsPublished": 1
   },
@@ -169,6 +169,15 @@
       "Time Completed": "22/10/2026 17:39",
       "Move Kind": "Load",
       "Unit Nbr": "MSCU7395892",
+      "Crane CHE": "S001",
+      "Carrier Visit": "MSPAN643N",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "22/10/2026 17:50",
+      "Move Kind": "Load",
+      "Unit Nbr": "MEDU9857240",
       "Crane CHE": "S001",
       "Carrier Visit": "MSPAN643N",
       "Exclude": "false",
@@ -1561,8 +1570,8 @@
       "Restow Type": "-"
     },
     {
-      "Time Completed": "22/10/2026 08:59",
-      "Move Kind": "Load",
+      "Time Completed": "22/10/2026 08:06",
+      "Move Kind": "Discharge",
       "Unit Nbr": "TEMU9515018",
       "Crane CHE": "S001",
       "Carrier Visit": "MSPAN643N",
@@ -1570,8 +1579,8 @@
       "Restow Type": "R"
     },
     {
-      "Time Completed": "22/10/2026 08:06",
-      "Move Kind": "Discharge",
+      "Time Completed": "22/10/2026 08:59",
+      "Move Kind": "Load",
       "Unit Nbr": "TEMU9515018",
       "Crane CHE": "S001",
       "Carrier Visit": "MSPAN643N",
@@ -1705,8 +1714,8 @@
       "Restow Type": "-"
     },
     {
-      "Time Completed": "22/10/2026 08:59",
-      "Move Kind": "Load",
+      "Time Completed": "22/10/2026 08:09",
+      "Move Kind": "Discharge",
       "Unit Nbr": "CXRU1210352",
       "Crane CHE": "S001",
       "Carrier Visit": "MSPAN643N",
@@ -1714,8 +1723,8 @@
       "Restow Type": "R"
     },
     {
-      "Time Completed": "22/10/2026 08:09",
-      "Move Kind": "Discharge",
+      "Time Completed": "22/10/2026 08:59",
+      "Move Kind": "Load",
       "Unit Nbr": "CXRU1210352",
       "Crane CHE": "S001",
       "Carrier Visit": "MSPAN643N",
