@@ -1,22 +1,22 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-22T18:07:06.373Z",
-  "reportReferenceTime": "2026-10-22T18:05:04.000Z",
+  "generatedAt": "2026-10-22T18:12:17.737Z",
+  "reportReferenceTime": "2026-10-22T18:10:05.000Z",
   "source": {
     "moveHistory": {
-      "fileName": "REP_VESSELDASHBOARD_498777709.csv",
-      "receivedAt": "2026-10-22T18:05:04.000Z",
+      "fileName": "REP_VESSELDASHBOARD_551216894.csv",
+      "receivedAt": "2026-10-22T18:10:05.000Z",
       "messageSubject": "VESSEL DASHBOARD"
     },
     "vesselVisits": {
-      "fileName": "REP_VESSELVISITSDASHBOARD_-11478963.csv",
-      "receivedAt": "2026-10-22T18:05:04.000Z",
+      "fileName": "REP_VESSELVISITSDASHBOARD_-10696513.csv",
+      "receivedAt": "2026-10-22T18:10:05.000Z",
       "messageSubject": "VESSEL DASHBOARD"
     }
   },
   "stats": {
     "moveRowsInput": 9143,
-    "moveRowsPublished": 1869,
+    "moveRowsPublished": 1870,
     "vesselRowsInput": 12,
     "vesselRowsPublished": 5
   },
@@ -4012,6 +4012,15 @@
       "Time Completed": "22/10/2026 14:57",
       "Move Kind": "Load",
       "Unit Nbr": "MRKU2356904",
+      "Crane CHE": "S001",
+      "Carrier Visit": "MSPAN643N",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "22/10/2026 15:06",
+      "Move Kind": "Load",
+      "Unit Nbr": "GCXU5731314",
       "Crane CHE": "S001",
       "Carrier Visit": "MSPAN643N",
       "Exclude": "false",
@@ -13756,8 +13765,8 @@
       "Restow Type": "R"
     },
     {
-      "Time Completed": "19/10/2026 21:48",
-      "Move Kind": "Load",
+      "Time Completed": "19/10/2026 14:11",
+      "Move Kind": "Discharge",
       "Unit Nbr": "MEDU9748172",
       "Crane CHE": "S002",
       "Carrier Visit": "MINGRUA642R",
@@ -13765,8 +13774,8 @@
       "Restow Type": "R"
     },
     {
-      "Time Completed": "19/10/2026 14:11",
-      "Move Kind": "Discharge",
+      "Time Completed": "19/10/2026 21:48",
+      "Move Kind": "Load",
       "Unit Nbr": "MEDU9748172",
       "Crane CHE": "S002",
       "Carrier Visit": "MINGRUA642R",
