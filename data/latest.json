@@ -1,22 +1,22 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-22T20:32:09.814Z",
-  "reportReferenceTime": "2026-10-22T20:30:04.000Z",
+  "generatedAt": "2026-10-22T20:37:04.649Z",
+  "reportReferenceTime": "2026-10-22T20:35:04.000Z",
   "source": {
     "moveHistory": {
-      "fileName": "REP_VESSELDASHBOARD_223599346.csv",
-      "receivedAt": "2026-10-22T20:30:04.000Z",
+      "fileName": "REP_VESSELDASHBOARD_-96034891.csv",
+      "receivedAt": "2026-10-22T20:35:04.000Z",
       "messageSubject": "VESSEL DASHBOARD"
     },
     "vesselVisits": {
-      "fileName": "REP_VESSELVISITSDASHBOARD_-83078081.csv",
-      "receivedAt": "2026-10-22T20:30:04.000Z",
+      "fileName": "REP_VESSELVISITSDASHBOARD_-71300384.csv",
+      "receivedAt": "2026-10-22T20:35:04.000Z",
       "messageSubject": "VESSEL DASHBOARD"
     }
   },
   "stats": {
-    "moveRowsInput": 9026,
-    "moveRowsPublished": 582,
+    "moveRowsInput": 9023,
+    "moveRowsPublished": 583,
     "vesselRowsInput": 12,
     "vesselRowsPublished": 1
   },
@@ -710,6 +710,15 @@
       "Move Kind": "Load",
       "Unit Nbr": "MRSU7095848",
       "Crane CHE": "S001",
+      "Carrier Visit": "MSPAN643N",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "22/10/2026 17:32",
+      "Move Kind": "Load",
+      "Unit Nbr": "SELU4804841",
+      "Crane CHE": "S002",
       "Carrier Visit": "MSPAN643N",
       "Exclude": "false",
       "Restow Type": "-"
