@@ -1,22 +1,22 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-22T13:17:06.377Z",
-  "reportReferenceTime": "2026-10-22T13:15:02.000Z",
+  "generatedAt": "2026-10-22T13:22:11.605Z",
+  "reportReferenceTime": "2026-10-22T13:20:03.000Z",
   "source": {
     "moveHistory": {
-      "fileName": "REP_VESSELDASHBOARD_-60269534.csv",
-      "receivedAt": "2026-10-22T13:15:02.000Z",
+      "fileName": "REP_VESSELDASHBOARD_-79441735.csv",
+      "receivedAt": "2026-10-22T13:20:03.000Z",
       "messageSubject": "VESSEL DASHBOARD"
     },
     "vesselVisits": {
-      "fileName": "REP_VESSELVISITSDASHBOARD_-13592148.csv",
-      "receivedAt": "2026-10-22T13:15:02.000Z",
+      "fileName": "REP_VESSELVISITSDASHBOARD_-23058388.csv",
+      "receivedAt": "2026-10-22T13:20:03.000Z",
       "messageSubject": "VESSEL DASHBOARD"
     }
   },
   "stats": {
-    "moveRowsInput": 8941,
-    "moveRowsPublished": 2020,
+    "moveRowsInput": 8939,
+    "moveRowsPublished": 2021,
     "vesselRowsInput": 12,
     "vesselRowsPublished": 6
   },
@@ -3870,6 +3870,15 @@
       "Unit Nbr": "MNBU4103314",
       "Crane CHE": "S002",
       "Carrier Visit": "SINES643N",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "22/10/2026 10:18",
+      "Move Kind": "Discharge",
+      "Unit Nbr": "CAIU6928035",
+      "Crane CHE": "S001",
+      "Carrier Visit": "MSPAN643N",
       "Exclude": "false",
       "Restow Type": "-"
     },
@@ -8338,8 +8347,8 @@
       "Restow Type": "-"
     },
     {
-      "Time Completed": "20/10/2026 20:12",
-      "Move Kind": "Discharge",
+      "Time Completed": "20/10/2026 21:36",
+      "Move Kind": "Load",
       "Unit Nbr": "TRHU4251425",
       "Crane CHE": "S002",
       "Carrier Visit": "NYANA025N",
@@ -8347,8 +8356,8 @@
       "Restow Type": "R"
     },
     {
-      "Time Completed": "20/10/2026 21:36",
-      "Move Kind": "Load",
+      "Time Completed": "20/10/2026 20:12",
+      "Move Kind": "Discharge",
       "Unit Nbr": "TRHU4251425",
       "Crane CHE": "S002",
       "Carrier Visit": "NYANA025N",
@@ -14971,19 +14980,19 @@
       "Restow Type": "R"
     },
     {
-      "Time Completed": "19/10/2026 14:03",
-      "Move Kind": "Discharge",
+      "Time Completed": "19/10/2026 21:13",
+      "Move Kind": "Load",
       "Unit Nbr": "TGBU1326091",
-      "Crane CHE": "S001",
+      "Crane CHE": "S002",
       "Carrier Visit": "MINGRUA642R",
       "Exclude": "false",
       "Restow Type": "R"
     },
     {
-      "Time Completed": "19/10/2026 21:13",
-      "Move Kind": "Load",
+      "Time Completed": "19/10/2026 14:03",
+      "Move Kind": "Discharge",
       "Unit Nbr": "TGBU1326091",
-      "Crane CHE": "S002",
+      "Crane CHE": "S001",
       "Carrier Visit": "MINGRUA642R",
       "Exclude": "false",
       "Restow Type": "R"
