@@ -1,22 +1,22 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-25T00:17:05.193Z",
-  "reportReferenceTime": "2026-10-25T00:15:01.000Z",
+  "generatedAt": "2026-10-25T00:22:02.945Z",
+  "reportReferenceTime": "2026-10-25T00:20:01.000Z",
   "source": {
     "moveHistory": {
-      "fileName": "REP_VESSELDASHBOARD_310132771.csv",
-      "receivedAt": "2026-10-25T00:15:01.000Z",
+      "fileName": "REP_VESSELDASHBOARD_-39606088.csv",
+      "receivedAt": "2026-10-25T00:20:01.000Z",
       "messageSubject": "VESSEL DASHBOARD"
     },
     "vesselVisits": {
-      "fileName": "REP_VESSELVISITSDASHBOARD_617905567.csv",
-      "receivedAt": "2026-10-25T00:15:01.000Z",
+      "fileName": "REP_VESSELVISITSDASHBOARD_804431057.csv",
+      "receivedAt": "2026-10-25T00:20:01.000Z",
       "messageSubject": "VESSEL DASHBOARD"
     }
   },
   "stats": {
-    "moveRowsInput": 7529,
-    "moveRowsPublished": 563,
+    "moveRowsInput": 7534,
+    "moveRowsPublished": 568,
     "vesselRowsInput": 12,
     "vesselRowsPublished": 1
   },
@@ -35,6 +35,15 @@
       "Move Kind": "Load",
       "Unit Nbr": "TGHU5223339",
       "Crane CHE": "M006",
+      "Carrier Visit": "ZWILM28E",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "24/10/2026 21:16",
+      "Move Kind": "Load",
+      "Unit Nbr": "BSIU3015830",
+      "Crane CHE": "M005",
       "Carrier Visit": "ZWILM28E",
       "Exclude": "false",
       "Restow Type": "-"
@@ -4972,9 +4981,45 @@
       "Restow Type": "-"
     },
     {
+      "Time Completed": "24/10/2026 21:19",
+      "Move Kind": "Discharge",
+      "Unit Nbr": "CAAU9538300",
+      "Crane CHE": "S002",
+      "Carrier Visit": "ZWILM28E",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "24/10/2026 21:15",
+      "Move Kind": "Discharge",
+      "Unit Nbr": "CAAU5231423",
+      "Crane CHE": "S002",
+      "Carrier Visit": "ZWILM28E",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "24/10/2026 21:16",
+      "Move Kind": "Discharge",
+      "Unit Nbr": "HLBU6005658",
+      "Crane CHE": "S002",
+      "Carrier Visit": "ZWILM28E",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
       "Time Completed": "24/10/2026 21:09",
       "Move Kind": "Discharge",
       "Unit Nbr": "ZCSU6891931",
+      "Crane CHE": "S002",
+      "Carrier Visit": "ZWILM28E",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "24/10/2026 21:18",
+      "Move Kind": "Discharge",
+      "Unit Nbr": "FSCU8152117",
       "Crane CHE": "S002",
       "Carrier Visit": "ZWILM28E",
       "Exclude": "false",
