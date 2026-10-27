@@ -1,22 +1,22 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-27T13:12:02.431Z",
-  "reportReferenceTime": "2026-10-27T13:10:03.000Z",
+  "generatedAt": "2026-10-27T13:17:02.755Z",
+  "reportReferenceTime": "2026-10-27T13:15:03.000Z",
   "source": {
     "moveHistory": {
-      "fileName": "REP_VESSELDASHBOARD_-68311924.csv",
-      "receivedAt": "2026-10-27T13:10:03.000Z",
+      "fileName": "REP_VESSELDASHBOARD_663731314.csv",
+      "receivedAt": "2026-10-27T13:15:03.000Z",
       "messageSubject": "VESSEL DASHBOARD"
     },
     "vesselVisits": {
-      "fileName": "REP_VESSELVISITSDASHBOARD_836849076.csv",
-      "receivedAt": "2026-10-27T13:10:03.000Z",
+      "fileName": "REP_VESSELVISITSDASHBOARD_417813819.csv",
+      "receivedAt": "2026-10-27T13:15:03.000Z",
       "messageSubject": "VESSEL DASHBOARD"
     }
   },
   "stats": {
-    "moveRowsInput": 7170,
-    "moveRowsPublished": 579,
+    "moveRowsInput": 7163,
+    "moveRowsPublished": 580,
     "vesselRowsInput": 9,
     "vesselRowsPublished": 1
   },
@@ -1282,19 +1282,19 @@
       "Restow Type": "-"
     },
     {
-      "Time Completed": "27/10/2026 05:48",
-      "Move Kind": "Discharge",
+      "Time Completed": "27/10/2026 07:56",
+      "Move Kind": "Load",
       "Unit Nbr": "FCIU4460560",
-      "Crane CHE": "M006",
+      "Crane CHE": "S001",
       "Carrier Visit": "MSBASUA643R",
       "Exclude": "false",
       "Restow Type": "R"
     },
     {
-      "Time Completed": "27/10/2026 07:56",
-      "Move Kind": "Load",
+      "Time Completed": "27/10/2026 05:48",
+      "Move Kind": "Discharge",
       "Unit Nbr": "FCIU4460560",
-      "Crane CHE": "S001",
+      "Crane CHE": "M006",
       "Carrier Visit": "MSBASUA643R",
       "Exclude": "false",
       "Restow Type": "R"
@@ -4931,6 +4931,15 @@
       "Move Kind": "Discharge",
       "Unit Nbr": "MSGU9145794",
       "Crane CHE": "",
+      "Carrier Visit": "MSBASUA643R",
+      "Exclude": "false",
+      "Restow Type": "R"
+    },
+    {
+      "Time Completed": "27/10/2026 10:11",
+      "Move Kind": "Load",
+      "Unit Nbr": "MSGU9145794",
+      "Crane CHE": "S002",
       "Carrier Visit": "MSBASUA643R",
       "Exclude": "false",
       "Restow Type": "R"
