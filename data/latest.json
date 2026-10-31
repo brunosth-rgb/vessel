@@ -1,22 +1,22 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-31T07:17:03.223Z",
-  "reportReferenceTime": "2026-10-31T07:15:01.000Z",
+  "generatedAt": "2026-10-31T07:22:02.785Z",
+  "reportReferenceTime": "2026-10-31T07:20:01.000Z",
   "source": {
     "moveHistory": {
-      "fileName": "REP_VESSELDASHBOARD_-58294094.csv",
-      "receivedAt": "2026-10-31T07:15:01.000Z",
+      "fileName": "REP_VESSELDASHBOARD_-76801859.csv",
+      "receivedAt": "2026-10-31T07:20:01.000Z",
       "messageSubject": "VESSEL DASHBOARD"
     },
     "vesselVisits": {
-      "fileName": "REP_VESSELVISITSDASHBOARD_-89896688.csv",
-      "receivedAt": "2026-10-31T07:15:01.000Z",
+      "fileName": "REP_VESSELVISITSDASHBOARD_101368942.csv",
+      "receivedAt": "2026-10-31T07:20:01.000Z",
       "messageSubject": "VESSEL DASHBOARD"
     }
   },
   "stats": {
-    "moveRowsInput": 8654,
-    "moveRowsPublished": 1701,
+    "moveRowsInput": 8657,
+    "moveRowsPublished": 1707,
     "vesselRowsInput": 9,
     "vesselRowsPublished": 2
   },
@@ -305,6 +305,24 @@
       "Move Kind": "Load",
       "Unit Nbr": "FFAU3861509",
       "Crane CHE": "S002",
+      "Carrier Visit": "MRUBI644N",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "31/10/2026 04:19",
+      "Move Kind": "Load",
+      "Unit Nbr": "MSDU5475499",
+      "Crane CHE": "S001",
+      "Carrier Visit": "MRUBI644N",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "31/10/2026 04:17",
+      "Move Kind": "Load",
+      "Unit Nbr": "MSMU6979295",
+      "Crane CHE": "S001",
       "Carrier Visit": "MRUBI644N",
       "Exclude": "false",
       "Restow Type": "-"
@@ -2524,6 +2542,15 @@
       "Restow Type": "-"
     },
     {
+      "Time Completed": "31/10/2026 04:16",
+      "Move Kind": "Discharge",
+      "Unit Nbr": "TTNU8462045",
+      "Crane CHE": "S002",
+      "Carrier Visit": "MRUBI644N",
+      "Exclude": "false",
+      "Restow Type": "R"
+    },
+    {
       "Time Completed": "30/10/2026 23:28",
       "Move Kind": "Discharge",
       "Unit Nbr": "MSMU6975237",
@@ -3163,13 +3190,13 @@
       "Restow Type": "-"
     },
     {
-      "Time Completed": "30/10/2026 19:37",
+      "Time Completed": "31/10/2026 04:16",
       "Move Kind": "Discharge",
-      "Unit Nbr": "HASU4734610",
+      "Unit Nbr": "MRKU5592713",
       "Crane CHE": "S002",
       "Carrier Visit": "MRUBI644N",
       "Exclude": "false",
-      "Restow Type": "R"
+      "Restow Type": "-"
     },
     {
       "Time Completed": "31/10/2026 02:44",
@@ -3181,9 +3208,9 @@
       "Restow Type": "R"
     },
     {
-      "Time Completed": "31/10/2026 02:41",
-      "Move Kind": "Load",
-      "Unit Nbr": "HASU4817844",
+      "Time Completed": "30/10/2026 19:37",
+      "Move Kind": "Discharge",
+      "Unit Nbr": "HASU4734610",
       "Crane CHE": "S002",
       "Carrier Visit": "MRUBI644N",
       "Exclude": "false",
@@ -3192,6 +3219,15 @@
     {
       "Time Completed": "30/10/2026 19:39",
       "Move Kind": "Discharge",
+      "Unit Nbr": "HASU4817844",
+      "Crane CHE": "S002",
+      "Carrier Visit": "MRUBI644N",
+      "Exclude": "false",
+      "Restow Type": "R"
+    },
+    {
+      "Time Completed": "31/10/2026 02:41",
+      "Move Kind": "Load",
       "Unit Nbr": "HASU4817844",
       "Crane CHE": "S002",
       "Carrier Visit": "MRUBI644N",
@@ -10669,6 +10705,15 @@
       "Restow Type": "-"
     },
     {
+      "Time Completed": "31/10/2026 04:16",
+      "Move Kind": "Discharge",
+      "Unit Nbr": "MEDU6222939",
+      "Crane CHE": "M006",
+      "Carrier Visit": "MGIULQI642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
       "Time Completed": "31/10/2026 03:51",
       "Move Kind": "Discharge",
       "Unit Nbr": "TRHU2412217",
@@ -13103,6 +13148,15 @@
       "Move Kind": "Discharge",
       "Unit Nbr": "MSMU8540104",
       "Crane CHE": "M005",
+      "Carrier Visit": "MGIULQI642R",
+      "Exclude": "false",
+      "Restow Type": "-"
+    },
+    {
+      "Time Completed": "31/10/2026 04:16",
+      "Move Kind": "Discharge",
+      "Unit Nbr": "MEDU5374686",
+      "Crane CHE": "M006",
       "Carrier Visit": "MGIULQI642R",
       "Exclude": "false",
       "Restow Type": "-"
